@@ -1,0 +1,44 @@
+snippet gfeat "a new feature is introduced with the changes" b
+	feat:${1:judul}
+
+	${2:description}
+snippet gfix "a bug fix has occurred" b
+	fix:${1:judul}
+
+	${2:description}
+snippet gchore "changes that do not relate to a fix or feature \n and don't modify src or test files (for example updating dependencies)" b
+	chore:${1:judul}
+
+	${2:description}
+snippet grefactor "refactored code that neither fixes a bug nor adds a feature" b
+	refactor:${1:judul}
+
+	${2:description}
+snippet gdocs "updates to documentation such as a the README or other markdown files" b
+	docs:${1:judul}
+
+	${2:description}
+snippet gstyle "changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, and so on." b
+	style:${1:judul}
+
+	${2:description}
+snippet gtest "including new or correcting previous tests" b
+	test:${1:judul}
+
+	${2:description}
+snippet gperf "performance improvements" b
+	perf:${1:judul}
+
+	${2:description}
+snippet gci "continuous integration related" b
+	ci:${1:judul}
+
+	${2:description}
+snippet gbuild "changes that affect the build system or external dependencies" b
+	build:${1:judul}
+
+	${2:description}
+snippet grevert "reverts a previous commit" b
+	revert:${1:judul}
+
+	${2:description}

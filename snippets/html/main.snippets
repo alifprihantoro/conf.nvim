@@ -1,0 +1,25 @@
+snippet himg "Hugo image html" b
+{{ $${1:name} := resources.Get "/img/serabi.png" }}
+{{ $${1:name}min := $${1:name}.Fit "600x400" }}
+<a href="{{ $${1:name}.RelPermalink }}">
+  <img class=" " src="{{ $${1:name}min.RelPermalink }}" alt=""/>
+</a>
+
+snippet hmenu "hugo menu" b
+{{ range.Site.Menus.${1:name}.Sort.ByWeight }}
+${2:content}
+{{ end }}
+
+snippet tes "Description" b
+  ${2:${1:tes}}
+	${1/(\w+).*/$1/}
+	${1/\w+\s*/\u$0/g}
+	${1/\w+\s*/\l$0/g}
+	${1/\s+/-\L$0/g}
+	${1/(\w+)\s+/\L$1-/g}
+	${1/.*/\L$0/}
+	${1/.*/$0+1/}
+	`tes` 
+	`#/usr/bin/zsh
+    echo 'hello zsh'`
+
