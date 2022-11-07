@@ -4,8 +4,9 @@ TODO:
 - [X] wichmap
 - [X] telescope :
   - [X] command list
-- [ ] tmux :
-  - [ ] git versioning
+- [○] tmux :
+   - [ ] git versioning
+   - [x] jdkd
 - [ ] rest client
 - [ ] create docs and help
 

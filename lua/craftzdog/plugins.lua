@@ -1,6 +1,4 @@
 local status, packer = pcall(require, "packer")
-vim.cmd("let g:vimwiki_map_prefix = '<leader>v'")
-
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)

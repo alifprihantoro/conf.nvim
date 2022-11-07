@@ -1,3 +1,4 @@
+let g:vimwiki_map_prefix = '<leader>v'
 " vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -28,3 +29,12 @@ autocmd FileType markdown nnoremap <buffer> <leader>vs :VimwikiListChangeSymbolI
 autocmd FileType markdown vnoremap <buffer> <Space>vs :VimwikiListChangeSymbolI
 " toggle
 autocmd FileType markdown vnoremap <buffer> <leader>' :VimwikiToggleListItem<CR>
+
+
+" hilihgt
+autocmd BufNewFile,BufRead markdown set syntax match CheckListNotClear /^.*\[\ \]\(\s\|\w\|\:\)*/
+autocmd FileType markdown syntax match CheckListClearTitle /^.*\[\(\ \|\*\)\@!\]\(\s\|\w\|\:\)*/
+autocmd FileType markdown syntax match CheckListClear /^.*\[\x\]\(\s\|\w\|\:\)*/
+autocmd FileType markdown hi CheckListClear guibg=green
+autocmd FileType markdown hi CheckListNotClear guibg=red
+autocmd FileType markdown hi CheckListClearTitle guibg=blue
