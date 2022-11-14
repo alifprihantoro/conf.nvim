@@ -3,7 +3,7 @@ inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<up>"
 inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<down>"
 inoremap <expr> <c-k> coc#pum#visible() ? coc#pum#prev(1) : "\<up>"
 inoremap <expr> <c-j> coc#pum#visible() ? coc#pum#next(1) : "\<down>"
-let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<C-n>'
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\  \<c-r>=coc#on_enter()\<CR>"
 " confirm snippet

@@ -19,3 +19,5 @@ cmd("Help","exe 'tabnew '.nvimplug.'/nvim-conf/help/home.md'",{})
 -- plugin on wiki",{})
 cmd("W1","e ~/wiki/development/index.wiki",{})
 
+-- html on js literal
+cmd("Htl","%s/\\(=\\|return\\) `/\\1 html`/g",{})
