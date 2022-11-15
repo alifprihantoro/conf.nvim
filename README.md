@@ -41,3 +41,5 @@ TODO:
 
 NOTE:
 - https://colorffy.com/color-scheme-generator
+
+[Docs](docs/README.md)
