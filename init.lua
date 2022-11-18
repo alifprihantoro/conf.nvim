@@ -1,2 +1,2 @@
 vim.g.mapleader = " "
-require('craftzdog.plugins')
+require('plugins')

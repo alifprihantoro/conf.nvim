@@ -112,3 +112,6 @@ key('n','<leader>u','<C-^>')
 -- FILE TREE
 key('n','<leader><leader>e',':NvimTreeFindFileToggle %:h<CR>')
 key('n','<leader>e',':NvimTreeToggle<CR>')
+
+-- nvim config
+key('n','<leader>,',':e ~/.config/nvim/init.lua<CR>')

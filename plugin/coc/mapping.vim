@@ -33,3 +33,13 @@ nmap <leader>tn <Plug>(coc-rename)
 nmap <leader>th <Plug>(coc-rename)
 " Prettier
 command Prettier CocCommand prettier.formatFile
+
+" multi cursor
+" https://github.com/neoclide/coc.nvim/wiki/Multiple-cursors-support#start-multiple-cursors-session
+nmap <silent> <C-c> <Plug>(coc-cursors-position)
+nmap <silent> <C-d> <Plug>(coc-cursors-word)
+xmap <silent> <C-d> <Plug>(coc-cursors-range)
+" use normal command like `<leader>xi(`
+nmap <leader>x  <Plug>(coc-cursors-operator)
+" nmap <silent> <C-d> <Plug>(coc-cursors-word)*
+" xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn

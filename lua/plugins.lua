@@ -13,7 +13,10 @@ packer.startup(function(use)
   use 'windwp/nvim-ts-autotag'
 
   use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' -- For git blame & browse
+  use {
+    'dinhhuy258/git.nvim',
+    config = function() require('git').setup() end
+  } -- For git blame & browse
    use {
     'neoclide/coc.nvim', 
     branch = 'master',
@@ -42,7 +45,6 @@ use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  -- use 'preservim/vim-markdown'
   use 'wuelnerdotexe/vim-astro'
   -- plugin for js vanilla (delete if not use)
   use 'jonsmithers/vim-html-template-literals'
