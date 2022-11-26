@@ -1,4 +1,7 @@
 {
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
   "snippets.ultisnips.enable": false,
   "emmet.includeLanguages": {"vue-html": "html", "javascript": "html"},
   "sh.trace.server": "messages",
