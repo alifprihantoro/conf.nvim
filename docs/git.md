@@ -1,0 +1,2 @@
+- command :Git*
+- Telescope git_*

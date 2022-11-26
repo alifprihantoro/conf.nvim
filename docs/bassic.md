@@ -11,3 +11,4 @@
 - [embark-theme/vim](https://github.com/embark-theme/vim)
 - [vimwiki/vimwiki](https://github.com/vimwiki/vimwiki)
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)

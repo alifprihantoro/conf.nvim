@@ -96,8 +96,6 @@ key('n','<leader>h','<C-w>h')
 key('n','<leader>j','<C-w>j')
 -- go to screen top
 key('n','<leader>k','<C-w>k')
-
-
 key('n','<leader>dw',':cd ~/web<CR><CR>')
 key('n','<leader>dm',':cd ~/web/muryp-new<CR><CR>')
 key('n','<leader>dc',':cd ~/.myconf/<CR><CR>')
@@ -106,12 +104,11 @@ key('n','<leader>dn',':Cdn<CR><CR>')
 key('n','<leader>dg',':Cdg<CR><CR>')
 -- swich to file before
 key('n','<leader>u','<C-^>') 
--- " wiki
--- nnoremap <leader><leader>w :e ~/wiki/development/index.md<CR>
-
 -- FILE TREE
 key('n','<leader><leader>e',':NvimTreeFindFileToggle %:h<CR>')
 key('n','<leader>e',':NvimTreeToggle<CR>')
-
 -- nvim config
 key('n','<leader>,',':e ~/.config/nvim/init.lua<CR>')
+-- git
+key('n','<leader>gs',':Telescope git_status')
+key('n','<leader>gb',':Telescope git_branch')
