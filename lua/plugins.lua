@@ -44,9 +44,9 @@ packer.startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use 'wuelnerdotexe/vim-astro'
+  -- use 'wuelnerdotexe/vim-astro'
   -- plugin for js vanilla (delete if not use)
   use 'jonsmithers/vim-html-template-literals'
   use 'pangloss/vim-javascript'
-  use 'alvan/vim-closetag'
+  -- use 'alvan/vim-closetag'
 end)

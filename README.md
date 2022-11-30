@@ -9,6 +9,7 @@ TODO:
    - [x] jdkd
 - [ ] rest client
 - [ ] create docs and help
+- [ ] :TSInstall
 
 ## Plugin
 - packer.nvim
