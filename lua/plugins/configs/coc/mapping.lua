@@ -1,50 +1,37 @@
+local key = vim.keymap.set
+local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+-- navigate completion/snippet
+key("i", "<c-j>", [[coc#pum#visible() ? coc#pum#next(1) : "\<down>"]], opts)
+key("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<up>"]], opts)
+key("i", "<down>", [[coc#pum#visible() ? coc#pum#next(1) : "\<down>"]], opts)
+key("i", "<up>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<up>"]], opts)
+key("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\  \<c-r>=coc#on_enter()\<CR>"]], opts)
+-- scroll info 
+key("i", "<C-f>", [[coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]], opts)
+key("i", "<C-b>", [[coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]], opts)
+key("n", "<C-f>", [[coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]], opts)
+key("n", "<C-b>", [[coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]], opts)
 
+local opts2 = {silent = true, noremap = true}
+-- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+key("n", "[g", "<Plug>(coc-diagnostic-prev)", opts2)
+key("n", "]g", "<Plug>(coc-diagnostic-next)", opts2)
+-- GoTo code navigation.
+key("n", "<leader>td", "<Plug>(coc-definition)", opts2)
+key("n", "<leader>ty", "<Plug>(coc-type-definition)", opts2)
+key("n", "<leader>ti", "<Plug>(coc-fix-current)", opts2)
+key("n", "<leader>tr", "<Plug>(coc-references)", opts2)
+key("n", "<leader>tg", "<Plug>(coc-definition)", opts2)
+key("n", "<leader>tn", "<Plug>(coc-rename)", opts2)
+-- Use K to show documentation in preview window.
+key("n", "K", ":call ShowDocumentation()<CR>", opts2)
 
-vim.cmd [[
-  " use <c-space>for trigger completion
-  inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<up>"
-  inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<down>"
-  inoremap <expr> <c-k> coc#pum#visible() ? coc#pum#prev(1) : "\<up>"
-  inoremap <expr> <c-j> coc#pum#visible() ? coc#pum#next(1) : "\<down>"
-  let g:coc_snippet_next = '<C-n>'
-  inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
-                                \: "\<C-g>u\  \<c-r>=coc#on_enter()\<CR>"
-  " confirm snippet
-  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-  function! CheckBackSpace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-
-  " Use `[g` and `]g` to navigate diagnostics
-  nmap <silent> [g <Plug>(coc-diagnostic-prev)
-  nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-  " scroll info 
-  nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-
-  " Use K to show documentation in preview window.
-  nnoremap <silent> K :call ShowDocumentation()<CR>
-  nnoremap <silent> <Leader>tl :call Jsgoto()<CR>
-  nmap <silent> <leader>tg <Plug>(coc-definition)
-  nmap <silent> <leader>ti <Plug>(coc-fix-current)
-  nmap <leader>tn <Plug>(coc-rename)
-  nmap <leader>th <Plug>(coc-rename)
-  " Prettier
-  command Prettier CocCommand prettier.formatFile
-
-  " multi cursor
-  " https://github.com/neoclide/coc.nvim/wiki/Multiple-cursors-support#start-multiple-cursors-session
-  nmap <silent> <C-c> <Plug>(coc-cursors-position)
-  nmap <silent> <C-d> <Plug>(coc-cursors-word)
-  xmap <silent> <C-d> <Plug>(coc-cursors-range)
-  " use normal command like `<leader>xi(`
-  nmap <leader>x  <Plug>(coc-cursors-operator)
-  " nmap <silent> <C-d> <Plug>(coc-cursors-word)*
-  " xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
-
-]]
+-- multi cursor
+-- https://github.com/neoclide/coc.nvim/wiki/Multiple-cursors-support#start-multiple-cursors-session
+key("n", "<C-c>", "<Plug>(coc-cursors-position)", opts2)
+key("n", "<C-d>", "<Plug>(coc-cursors-word)", opts2)
+key("v", "<C-d>", "<Plug>(coc-cursors-range)", opts2)
+-- Prettier
+local cmd = vim.api.nvim_create_user_command
+cmd('Prettier','CocCommand prettier.formatFile',{})
+vim.cmd "let g:coc_snippet_next = '<C-n>'"
