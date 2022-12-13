@@ -49,4 +49,6 @@ packer.startup(function(use)
   use 'jonsmithers/vim-html-template-literals'
   use 'pangloss/vim-javascript'
   -- use 'alvan/vim-closetag'
+  -- use 'mg979/vim-visual-multi' -- multi select
+  use 'jxnblk/vim-mdx-js'
 end)
