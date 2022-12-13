@@ -1,4 +1,7 @@
 {
+  "lua.enable": true,
+  "Lua.runtime.version": "LuaJIT",
+  "lua.trace.server": "verbose",
   "tailwindCSS.includeLanguages": {
     "astro": "html"
   },

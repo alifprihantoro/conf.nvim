@@ -42,5 +42,9 @@ TODO:
 
 NOTE:
 - https://colorffy.com/color-scheme-generator
+- note use for now :
+  - use 'alvan/vim-closetag'
+  - use 'mg979/vim-visual-multi' -- multi select
+  - use 'jxnblk/vim-mdx-js'
 
 [Docs](docs/README.md)

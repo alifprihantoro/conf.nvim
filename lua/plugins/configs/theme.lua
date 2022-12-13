@@ -1,4 +1,8 @@
-vim.cmd([[
+vim.cmd [[
+  set termguicolors
+  colorscheme embark
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   hi Normal guibg=gray7
   hi CursorColumn guibg=gray15
   hi CursorLine guibg=gray15
@@ -8,7 +12,7 @@ vim.cmd([[
   hi GitSignsAddPreview guibg=gray15
   hi GitSignsDeletePreview guifg=gray guibg=#301e30
   hi Visual guibg=#391e9c
-]])
+]]
 -- hi Pmenu guibg=gray15
 -- hi PmenuSel guibg=gray1
 -- hi CocMenuSel guibg=gray1
