@@ -1,7 +1,4 @@
 {
-  "lua.enable": true,
-  "Lua.runtime.version": "LuaJIT",
-  "lua.trace.server": "verbose",
   "tailwindCSS.includeLanguages": {
     "astro": "html"
   },
@@ -41,7 +38,7 @@
   "diagnostic.infoSign": " ",
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.virtualTextAlign": "right",
+  "diagnostic.virtualTextAlign": "after",
   "diagnostic.virtualTextPrefix": "  ● ",
   "coc.preferences.jumpCommand":"edit",
   "css.lint.duplicateProperties": "warning",

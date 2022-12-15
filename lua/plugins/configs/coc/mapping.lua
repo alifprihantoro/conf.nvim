@@ -24,7 +24,7 @@ key("n", "<leader>tr", "<Plug>(coc-references)", opts2)
 key("n", "<leader>tg", "<Plug>(coc-definition)", opts2)
 key("n", "<leader>tn", "<Plug>(coc-rename)", opts2)
 -- Use K to show documentation in preview window.
-key("n", "K", ":call ShowDocumentation()<CR>", opts2)
+key("n", "K", '<CMD>lua _G.show_docs()<CR>', opts2)
 
 -- multi cursor
 -- https://github.com/neoclide/coc.nvim/wiki/Multiple-cursors-support#start-multiple-cursors-session

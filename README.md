@@ -46,5 +46,6 @@ NOTE:
   - use 'alvan/vim-closetag'
   - use 'mg979/vim-visual-multi' -- multi select
   - use 'jxnblk/vim-mdx-js'
+- :let b:coc_suggest_disable = 1
 
 [Docs](docs/README.md)
