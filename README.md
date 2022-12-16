@@ -1,15 +1,16 @@
 TODO:
-- [X] prettier
-- [X] js react coc config deep
-- [X] wichmap
-- [X] telescope :
-  - [X] command list
-- [○] tmux :
-   - [ ] git versioning
-   - [x] jdkd
-- [ ] rest client
+- [x] prettier
+- [x] js react coc config deep
+- [x] wichmap
+- [x] telescope :
+  - [x] command list
+- [ ] tmux :
+   - [ ] git versioning :
+- [ ] rest client :
+  - [x] asdflj
 - [ ] create docs and help
 - [ ] :TSInstall
+
 
 ## Plugin
 - packer.nvim

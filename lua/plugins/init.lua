@@ -4,6 +4,28 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use 'wbthomason/packer.nvim'
+  -- coc install
+  use {
+    'neoclide/coc.nvim', 
+    branch = 'master',
+    run = 'yarn install --frozen-lockfile',
+    event = "BufWinEnter",
+    config = "require('plugins.configs.coc')"
+  } 
+  use {
+    'neovim/nvim-lspconfig',
+    cmd = "Lsp",
+    config = "require('plugins.configs.lsp')"
+  }
+  use {
+   'hrsh7th/nvim-cmp',
+    after = "nvim-lspconfig"
+  }
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    after = "nvim-lspconfig",
+    config = "require('plugins.configs.cmp')"
+  }
   -- Statusline
   use {
     'nvim-lualine/lualine.nvim',
@@ -12,7 +34,6 @@ packer.startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    event = "BufEnter",
     config = function()
       require "plugins.configs.treesitter"
     end,
@@ -43,14 +64,6 @@ packer.startup(function(use)
     config = function() require('git').setup() end,
     event = "BufWinEnter"
   } 
-  -- coc install
-  use {
-    'neoclide/coc.nvim', 
-    branch = 'master',
-    run = 'yarn install --frozen-lockfile',
-    event = "BufWinEnter",
-    config = "require('plugins.configs.coc')"
-  } 
   use {
     "folke/which-key.nvim",
     event = "BufWinEnter",
@@ -75,8 +88,8 @@ packer.startup(function(use)
   }
   use{
     'vimwiki/vimwiki',
-    ft = "vimwiki",
-    event = "BufWinEnter"
+    event = "BufWinEnter",
+    config = "require('plugins.configs.wiki.after')"
   }
   use {
     "lukas-reineke/indent-blankline.nvim",
