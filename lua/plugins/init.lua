@@ -61,9 +61,9 @@ packer.startup(function(use)
   -- For git blame & browse
   use {
     'dinhhuy258/git.nvim',
-    config = function() require('git').setup() end,
+    config = "require('plugins.configs.git')",
     event = "BufWinEnter"
-  } 
+  }
   use {
     "folke/which-key.nvim",
     event = "BufWinEnter",

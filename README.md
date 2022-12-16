@@ -13,7 +13,9 @@ TODO:
 - [ ] coc with lsp :
   - [ ] if on .lua coc disable
   - [ ] if on .astro combine
-
+- [ ] git :
+  - [ ] gsp
+  - [ ] gsv
 
 ## Plugin
 - packer.nvim
@@ -51,5 +53,6 @@ NOTE:
   - use 'mg979/vim-visual-multi' -- multi select
   - use 'jxnblk/vim-mdx-js'
 - :let b:coc_suggest_disable = 1
+- vim.api.nvim_create_user_command
 
 [Docs](docs/README.md)

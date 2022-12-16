@@ -3,7 +3,7 @@
     "astro": "html"
   },
   "snippets.ultisnips.enable": false,
-  "emmet.includeLanguages": {"vue-html": "html", "javascript": "html"},
+  "emmet.includeLanguages": { "vue-html": "html", "javascript": "html" },
   "sh.trace.server": "messages",
   "suggest.completionItemKindLabels": {
     "text": "",
@@ -40,7 +40,7 @@
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextAlign": "after",
   "diagnostic.virtualTextPrefix": "  ● ",
-  "coc.preferences.jumpCommand":"edit",
+  "coc.preferences.jumpCommand": "edit",
   "css.lint.duplicateProperties": "warning",
   "html-css-support.enable": false,
   "colors.enable": true,
