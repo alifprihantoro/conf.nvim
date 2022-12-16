@@ -1,4 +1,4 @@
-local status, packer = pcall(require, "packer")
+local status,packer = pcall(require, "packer")
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
@@ -6,12 +6,12 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- coc install
   use {
-    'neoclide/coc.nvim', 
+    'neoclide/coc.nvim',
     branch = 'master',
     run = 'yarn install --frozen-lockfile',
     event = "BufWinEnter",
     config = "require('plugins.configs.coc')"
-  } 
+  }
   use {
     'neovim/nvim-lspconfig',
     cmd = "Lsp",
@@ -74,7 +74,7 @@ packer.startup(function(use)
     "terrortylor/nvim-comment",
     config = function() require('nvim_comment').setup() end,
     event = "BufWinEnter"
-  } 
+  }
   use {
   'nvim-tree/nvim-tree.lua',
   tag = 'nightly', -- optional, updated every week. (see issue #1193)

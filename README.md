@@ -10,6 +10,9 @@ TODO:
   - [x] asdflj
 - [ ] create docs and help
 - [ ] :TSInstall
+- [ ] coc with lsp :
+  - [ ] if on .lua coc disable
+  - [ ] if on .astro combine
 
 
 ## Plugin

@@ -17,6 +17,6 @@ local function mappingWiki()
   ]]
 end
 vim.api.nvim_create_autocmd(
-    "Vimenter",
+  {"Vimenter","BufNewFile","BufRead"},
     { pattern = "*.md", callback = mappingWiki }
 )
