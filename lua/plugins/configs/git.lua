@@ -1,7 +1,7 @@
 require('git').setup()
 local cmd = vim.api.nvim_create_user_command
-function TesPrint(args)
-  local TesIni = args["args"]
-  vim.cmd('echo "'..TesIni..'"')
+local function gitPushCommit()
+  local GET_PATH_NOW = vim.fn.expand('%:p:h')
+  vim.cmd("!tmux popup -E 'cd "..GET_PATH_NOW.." && fzf'")
 end
-cmd("Gsp", TesPrint , { nargs = '?' })
+cmd("Gsp", gitPushCommit , {})

@@ -1,5 +1,5 @@
 local key = vim.keymap.set
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+local opts = {silent = true, expr = true, replace_keycodes = false}
 -- navigate completion/snippet
 key("i", "<c-j>", [[coc#pum#visible() ? coc#pum#next(1) : "\<down>"]], opts)
 key("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<up>"]], opts)

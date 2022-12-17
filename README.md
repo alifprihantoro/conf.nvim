@@ -13,6 +13,8 @@ TODO:
 - [ ] coc with lsp :
   - [ ] if on .lua coc disable
   - [ ] if on .astro combine
+  - [ ] mapping
+  - [ ] save for format no enter
 - [ ] git :
   - [ ] gsp
   - [ ] gsv
@@ -45,6 +47,23 @@ TODO:
 - indent-blankline.nvim
 - telescope.nvim
 - plenary.nvim
+
+```lua
+-- disable auto complete in comment
+require 'cmp'.setup({
+  enabled = function()
+    local lnum, col = vim.fn.line('.'), math.min(vim.fn.col('.'), #vim.fn.getline('.'))
+    for _, syn_id in ipairs(vim.fn.synstack(lnum, col)) do
+      syn_id = vim.fn.synIDtrans(syn_id) -- Resolve :highlight links
+      print(vim.fn.synIDattr(syn_id, 'name'))
+      if vim.fn.synIDattr(syn_id, 'name') == 'Comment' then
+        return false
+      end
+    end
+    return true
+  end,
+})
+```
 
 NOTE:
 - https://colorffy.com/color-scheme-generator

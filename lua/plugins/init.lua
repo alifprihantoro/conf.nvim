@@ -1,8 +1,8 @@
-local status,packer = pcall(require, "packer")
+local status, packer = pcall(require, "packer")
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use "lewis6991/impatient.nvim"
+  -- use "lewis6991/impatient.nvim"
   use 'wbthomason/packer.nvim'
   -- coc install
   use {
@@ -12,20 +12,43 @@ packer.startup(function(use)
     event = "BufWinEnter",
     config = "require('plugins.configs.coc')"
   }
+  -- lsp
   use {
     'neovim/nvim-lspconfig',
     cmd = "Lsp",
-    config = "require('plugins.configs.lsp')"
+    config = "require('plugins.configs.lsp')",
   }
+  -- cmp start
   use {
-   'hrsh7th/nvim-cmp',
+    'hrsh7th/nvim-cmp',
+    config = "require('plugins.configs.cmp')",
     after = "nvim-lspconfig"
   }
   use {
     'hrsh7th/cmp-nvim-lsp',
-    after = "nvim-lspconfig",
-    config = "require('plugins.configs.cmp')"
+    after = "nvim-cmp",
   }
+  use {
+    'hrsh7th/cmp-buffer',
+    after = "cmp-nvim-lsp"
+  }
+  use {
+    'hrsh7th/cmp-path',
+    after = "cmp-nvim-lsp"
+  }
+  use {
+    'hrsh7th/cmp-cmdline',
+    after = "cmp-nvim-lsp"
+  }
+  use {
+    'dcampos/nvim-snippy',
+    after = "cmp-nvim-lsp"
+  }
+  use {
+    'dcampos/cmp-snippy',
+    after = "cmp-nvim-lsp",
+  }
+  --end cmp
   -- Statusline
   use {
     'nvim-lualine/lualine.nvim',
@@ -76,17 +99,17 @@ packer.startup(function(use)
     event = "BufWinEnter"
   }
   use {
-  'nvim-tree/nvim-tree.lua',
-  tag = 'nightly', -- optional, updated every week. (see issue #1193)
-  cmd = "NvimTreeToggle",
-  config = "require('plugins.configs.fileTree')"
+    'nvim-tree/nvim-tree.lua',
+    tag = 'nightly', -- optional, updated every week. (see issue #1193)
+    cmd = "NvimTreeToggle",
+    config = "require('plugins.configs.fileTree')"
   }
   use {
     'embark-theme/vim',
     as = 'embark',
     config = "require('plugins.configs.theme')"
   }
-  use{
+  use {
     'vimwiki/vimwiki',
     event = "BufWinEnter",
     config = "require('plugins.configs.wiki.after')"
@@ -98,7 +121,7 @@ packer.startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} },
+    requires = { { 'nvim-lua/plenary.nvim' } },
     cmd = 'Telescope',
     config = "require('plugins.configs.telescope')"
   }
