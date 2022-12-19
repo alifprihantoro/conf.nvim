@@ -1,0 +1,4 @@
+-- local key = vim.keymap.set
+-- local opts = {silent = true, replace_keycodes = false}
+-- key("i", "<c-j>", "<Down>", opts)
+-- key("i", "<c-k>", "<Up>", opts)

@@ -9,7 +9,6 @@ packer.startup(function(use)
     'neoclide/coc.nvim',
     branch = 'master',
     run = 'yarn install --frozen-lockfile',
-    event = "BufWinEnter",
     config = "require('plugins.configs.coc')"
   }
   -- lsp
@@ -47,6 +46,7 @@ packer.startup(function(use)
   use {
     'dcampos/cmp-snippy',
     after = "cmp-nvim-lsp",
+    config = "require('plugins.configs.snippy')"
   }
   --end cmp
   -- Statusline
@@ -56,7 +56,7 @@ packer.startup(function(use)
   }
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
+    cmd = 'TSUpdate',
     config = function()
       require "plugins.configs.treesitter"
     end,
@@ -64,39 +64,42 @@ packer.startup(function(use)
   -- File icons
   use {
     'kyazdani42/nvim-web-devicons',
-    event = "BufRead",
+    event = "BufWinEnter",
     config = "require('plugins.configs.devicons')"
   }
   use {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
+    after = "nvim-tree.lua",
     config = "require('plugins.configs.autopairs')"
   }
   use {
     'windwp/nvim-ts-autotag',
-    event = "InsertEnter"
+    event = "InsertEnter",
+    after = "nvim-treesitter",
+    config = "require('plugins.configs.tsAutoTag')"
   }
   use {
     'lewis6991/gitsigns.nvim',
-    event = "BufWinEnter",
+    event = "VimEnter",
     config = "require('plugins.configs.gitsigns')"
   }
   -- For git blame & browse
   use {
     'dinhhuy258/git.nvim',
     config = "require('plugins.configs.git')",
-    event = "BufWinEnter"
+    event = "VimEnter"
   }
   use {
     "folke/which-key.nvim",
-    event = "BufWinEnter",
+    cmd = "WhicKey",
     config = "require('plugins.configs.wichKey')"
   }
   -- comment togle
   use {
     "terrortylor/nvim-comment",
     config = function() require('nvim_comment').setup() end,
-    event = "BufWinEnter"
+    event = "VimEnter"
   }
   use {
     'nvim-tree/nvim-tree.lua',
@@ -116,7 +119,8 @@ packer.startup(function(use)
   }
   use {
     "lukas-reineke/indent-blankline.nvim",
-    event = "BufWinEnter",
+    event = "InsertEnter",
+    after = "nvim-treesitter",
     config = "require('plugins.configs.indentBlank')"
   }
   use {

@@ -1,5 +1,8 @@
 local cmd = vim.api.nvim_create_user_command
+local active = require('core.servers_swich.active')
+
 cmd('Lsp', function()
+  active.lsp()
   print('lsp loaded')
 end, {})
 cmd('LspDiagnosticOpenFloat', vim.diagnostic.open_float, {})
@@ -17,4 +20,3 @@ end, {})
 cmd('LspBufDef', vim.lsp.buf.type_definition, {})
 cmd('LspBufRename', vim.lsp.buf.rename, {})
 cmd('LspBufCodeAction', vim.lsp.buf.code_action, {})
-cmd('LspFormat', function() vim.lsp.buf.format { async = true } end, {})

@@ -15,6 +15,9 @@ TODO:
   - [ ] if on .astro combine
   - [ ] mapping
   - [ ] save for format no enter
+  - [ ] coc-disable
+    - [ ] first load
+    - [ ] bufenter
 - [ ] git :
   - [ ] gsp
   - [ ] gsv
