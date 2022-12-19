@@ -1,11 +1,11 @@
 snippet nfc "next function" b
-export default function ${1:Home}() {
-	return (
-	<${2:tag}>
-	${3:content}
-	</${2/(\w+).*/$1/}>
-	)
-}
+	export default function ${1:Home}() {
+		return (
+		<${2:tag}>
+		${3:content}
+		</${2/(\w+).*/$1/}>
+		)
+	}
 snippet rfc "react function" b
 	import React from 'react'
 	export default function ${1:Home}() {

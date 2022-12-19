@@ -18,6 +18,7 @@ TODO:
   - [ ] coc-disable
     - [ ] first load
     - [ ] bufenter
+  - [ ] get map cmp,snippy
 - [ ] git :
   - [ ] gsp
   - [ ] gsv

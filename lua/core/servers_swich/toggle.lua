@@ -7,6 +7,7 @@ return function()
     TOGGLE_SERVER_LSP = true
   else
     active.coc()
+    print('coc actived...')
     TOGGLE_SERVER_LSP = false
   end
 end

@@ -6,9 +6,14 @@ M.lsp = function()
   -- disable coc completion
   vim.b.coc_suggest_disable = 1
   -- enable lsp completion
-  require 'cmp'.setup({
-    enabled = true
-  })
+  if CEK_LSP_ACTIVE == true then
+    require 'cmp'.setup({
+      enabled = true
+    })
+    require('plugins.configs.cmp')
+    require('plugins.configs.snippy')
+  end
+  CEK_LSP_ACTIVE = true
   lsp()
 end
 

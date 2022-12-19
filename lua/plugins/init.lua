@@ -20,32 +20,45 @@ packer.startup(function(use)
   -- cmp start
   use {
     'hrsh7th/nvim-cmp',
+    -- after = "nvim-lspconfig",
+    -- requires = {
+    --   'hrsh7th/cmp-nvim-lsp',
+    -- 'hrsh7th/cmp-buffer',
+    -- 'hrsh7th/cmp-path',
+    -- 'hrsh7th/cmp-cmdline',
+    -- 'dcampos/nvim-snippy',
+    -- },
     config = "require('plugins.configs.cmp')",
-    after = "nvim-lspconfig"
   }
   use {
     'hrsh7th/cmp-nvim-lsp',
-    after = "nvim-cmp",
+    after = "nvim-lspconfig",
+    requires = { "hrsh7th/nvim-cmp" }
   }
   use {
     'hrsh7th/cmp-buffer',
-    after = "cmp-nvim-lsp"
+    after = "nvim-lspconfig",
+    requires = { "hrsh7th/nvim-cmp" }
   }
   use {
     'hrsh7th/cmp-path',
-    after = "cmp-nvim-lsp"
+    after = "nvim-lspconfig",
+    requires = { "hrsh7th/nvim-cmp" }
   }
   use {
     'hrsh7th/cmp-cmdline',
-    after = "cmp-nvim-lsp"
+    after = "nvim-lspconfig",
+    requires = { "hrsh7th/nvim-cmp" }
   }
   use {
     'dcampos/nvim-snippy',
-    after = "cmp-nvim-lsp"
+    after = "nvim-lspconfig",
+    requires = { "hrsh7th/nvim-cmp" }
   }
   use {
     'dcampos/cmp-snippy',
-    after = "cmp-nvim-lsp",
+    after = "nvim-lspconfig",
+    requires = { "hrsh7th/nvim-cmp",'dcampos/nvim-snippy' },
     config = "require('plugins.configs.snippy')"
   }
   --end cmp
@@ -79,17 +92,18 @@ packer.startup(function(use)
     after = "nvim-treesitter",
     config = "require('plugins.configs.tsAutoTag')"
   }
+  -- git start
   use {
     'lewis6991/gitsigns.nvim',
+    config = "require('plugins.configs.git.signs')",
     event = "VimEnter",
-    config = "require('plugins.configs.gitsigns')"
   }
-  -- For git blame & browse
-  use {
+  use { -- For git blame & browse
     'dinhhuy258/git.nvim',
-    config = "require('plugins.configs.git')",
+    config = "require('plugins.configs.git.signs')",
     event = "VimEnter"
   }
+  -- git end
   use {
     "folke/which-key.nvim",
     cmd = "WhicKey",
@@ -101,17 +115,20 @@ packer.startup(function(use)
     config = function() require('nvim_comment').setup() end,
     event = "VimEnter"
   }
+  -- file tree
   use {
     'nvim-tree/nvim-tree.lua',
     tag = 'nightly', -- optional, updated every week. (see issue #1193)
-    cmd = "NvimTreeToggle",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     config = "require('plugins.configs.fileTree')"
   }
+  -- theme color scheme
   use {
     'embark-theme/vim',
     as = 'embark',
     config = "require('plugins.configs.theme')"
   }
+  -- vimwiki or for md
   use {
     'vimwiki/vimwiki',
     event = "BufWinEnter",
@@ -129,7 +146,6 @@ packer.startup(function(use)
     cmd = 'Telescope',
     config = "require('plugins.configs.telescope')"
   }
-  -- use 'wuelnerdotexe/vim-astro'
   -- plugin for js vanilla (delete if not use)
   use {
     'jonsmithers/vim-html-template-literals',
