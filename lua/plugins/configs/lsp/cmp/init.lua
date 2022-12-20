@@ -43,3 +43,4 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
+CEK_LSP_ACTIVE = true

@@ -18,49 +18,42 @@ packer.startup(function(use)
     config = "require('plugins.configs.lsp')",
   }
   -- cmp start
-  use {
-    'hrsh7th/nvim-cmp',
-    -- after = "nvim-lspconfig",
-    -- requires = {
-    --   'hrsh7th/cmp-nvim-lsp',
-    -- 'hrsh7th/cmp-buffer',
-    -- 'hrsh7th/cmp-path',
-    -- 'hrsh7th/cmp-cmdline',
-    -- 'dcampos/nvim-snippy',
-    -- },
-    config = "require('plugins.configs.cmp')",
-  }
-  use {
-    'hrsh7th/cmp-nvim-lsp',
-    after = "nvim-lspconfig",
-    requires = { "hrsh7th/nvim-cmp" }
-  }
-  use {
-    'hrsh7th/cmp-buffer',
-    after = "nvim-lspconfig",
-    requires = { "hrsh7th/nvim-cmp" }
-  }
-  use {
-    'hrsh7th/cmp-path',
-    after = "nvim-lspconfig",
-    requires = { "hrsh7th/nvim-cmp" }
-  }
-  use {
-    'hrsh7th/cmp-cmdline',
-    after = "nvim-lspconfig",
-    requires = { "hrsh7th/nvim-cmp" }
-  }
-  use {
-    'dcampos/nvim-snippy',
-    after = "nvim-lspconfig",
-    requires = { "hrsh7th/nvim-cmp" }
-  }
-  use {
-    'dcampos/cmp-snippy',
-    after = "nvim-lspconfig",
-    requires = { "hrsh7th/nvim-cmp",'dcampos/nvim-snippy' },
-    config = "require('plugins.configs.snippy')"
-  }
+   use {
+     'hrsh7th/nvim-cmp',
+    cmd = "Lsp",
+     config = "require('plugins.configs.lsp.cmp')",
+   }
+   use {
+     'hrsh7th/cmp-nvim-lsp',
+     after = "nvim-lspconfig",
+     requires = { "hrsh7th/nvim-cmp" }
+   }
+   use {
+     'hrsh7th/cmp-buffer',
+     after = "nvim-lspconfig",
+     requires = { "hrsh7th/nvim-cmp" }
+   }
+   use {
+     'hrsh7th/cmp-path',
+     after = "nvim-lspconfig",
+     requires = { "hrsh7th/nvim-cmp" }
+   }
+   use {
+     'hrsh7th/cmp-cmdline',
+     after = "nvim-lspconfig",
+     requires = { "hrsh7th/nvim-cmp" }
+   }
+   use {
+     'dcampos/nvim-snippy',
+     after = "nvim-lspconfig",
+     requires = { "hrsh7th/nvim-cmp" },
+   }
+   use {
+     'dcampos/cmp-snippy',
+     after = "nvim-snippy",
+     requires = { "hrsh7th/nvim-cmp",'dcampos/nvim-snippy' },
+     config = "require('plugins.configs.lsp.snippy')"
+   }
   --end cmp
   -- Statusline
   use {

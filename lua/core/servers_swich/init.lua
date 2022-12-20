@@ -5,7 +5,7 @@ local lazy = require('global.lazy').lazyLoadBuf
 -- default lsp active
 TOGGLE_SERVER_LSP = false
 CEK_FIRST_SERVER = 0
-CEK_LSP_ACTIVE = true
+CEK_CMP_ACTIVE = 0
 
 local callback = function()
   if CEK_FIRST_SERVER == 0 then
