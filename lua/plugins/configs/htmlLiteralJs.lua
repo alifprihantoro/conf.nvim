@@ -3,7 +3,7 @@ vim.cmd [[
     let LAST_UNDO_COUNT = changenr()
     let LINE_NOW = line(".")
     execute "%s/html`/`/g"
-    execute 'w|e'
+    execute 'w'
     let UNDO_COUNT = changenr()
     let RESULT_COUNT = UNDO_COUNT-LAST_UNDO_COUNT
     execute 'earlier '.RESULT_COUNT

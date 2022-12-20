@@ -1,7 +1,7 @@
 local key = vim.keymap.set
 -- command
 key('n',';',':')
-key('n','<leader>w',':w|e<CR>')
+key('n','<leader>w',':w<CR>')
 key('n','<leader>q',':q<CR>')
 -- search
 key('n','<leader>s',':%s /')

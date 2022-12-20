@@ -9,19 +9,17 @@ cmp.setup({
       require('snippy').expand_snippet(args.body) -- For `snippy` users.
     end,
   },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
   mapping = cmp.mapping.preset.insert(maps),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'snippy' }, -- For snippy users.
   }, {
     { name = 'buffer' },
+    { name = 'path' },
   }),
-formatting = {
-    format = icons.setup
+  formatting = {
+    format = icons.setup,
   },
 })
+
 CEK_CMP_ACTIVE = true
