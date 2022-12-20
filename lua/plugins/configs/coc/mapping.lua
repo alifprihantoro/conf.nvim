@@ -8,7 +8,7 @@ return function()
   -- navigate completion/snippet
   key("i", "<c-j>", [[coc#pum#visible() ? coc#pum#next(1) : "\<down>"]], opts)
   key("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<up>"]], opts)
-  key("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\  \<c-r>=coc#on_enter()\<CR>"]], opts)
+  key("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
   -- scroll info
   key("i", "<C-f>", [[coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]], opts)
   key("i", "<C-b>", [[coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]], opts)
@@ -33,5 +33,6 @@ return function()
   key("n", "<C-c>", "<Plug>(coc-cursors-position)", opts2)
   key("n", "<C-d>", "<Plug>(coc-cursors-word)", opts2)
   key("v", "<C-d>", "<Plug>(coc-cursors-range)", opts2)
-  vim.cmd "let g:coc_snippet_next = '<C-n>'"
+  -- vim.cmd "let g:coc_snippet_next = '<Tab>'"
+  vim.g.coc_snippet_next = '<Tab>'
 end

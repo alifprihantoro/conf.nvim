@@ -7,8 +7,9 @@ packer.startup(function(use)
   -- coc install
   use {
     'neoclide/coc.nvim',
-    branch = 'master',
-    run = 'yarn install --frozen-lockfile',
+    -- branch = 'master',
+    cmd = "Coc",
+    -- run = 'yarn install --frozen-lockfile',
     config = "require('plugins.configs.coc')"
   }
   -- lsp
@@ -18,42 +19,36 @@ packer.startup(function(use)
     config = "require('plugins.configs.lsp')",
   }
   -- cmp start
-   use {
-     'hrsh7th/nvim-cmp',
-      event = "InsertEnter",
-     config = "require('plugins.configs.lsp.cmp')",
-   }
-   use {
-     'hrsh7th/cmp-nvim-lsp',
-     after = "nvim-cmp",
-     -- requires = { "hrsh7th/nvim-cmp" }
-   }
-   use {
-     'hrsh7th/cmp-buffer',
-     after = "cmp-nvim-lsp",
-     -- requires = { "hrsh7th/nvim-cmp" }
-   }
-   use {
-     'hrsh7th/cmp-path',
-     after = "cmp-buffer",
-     -- requires = { "hrsh7th/nvim-cmp" }
-   }
-   use {
-     'hrsh7th/cmp-cmdline',
-     after = "cmp-path",
-     -- requires = { "hrsh7th/nvim-cmp" }
-   }
-   use {
-     'dcampos/nvim-snippy',
-     after = "cmp-cmdline",
-     -- requires = { "hrsh7th/nvim-cmp" },
-   }
-   use {
-     'dcampos/cmp-snippy',
-     after = "nvim-snippy",
-     -- requires = { "hrsh7th/nvim-cmp",'dcampos/nvim-snippy' },
-     config = "require('plugins.configs.lsp.snippy')"
-   }
+  use {
+    'hrsh7th/nvim-cmp',
+    after = "nvim-lspconfig",
+    config = "require('plugins.configs.lsp.cmp')",
+  }
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    after = "nvim-cmp",
+  }
+  use {
+    'hrsh7th/cmp-buffer',
+    after = "cmp-nvim-lsp",
+  }
+  use {
+    'hrsh7th/cmp-path',
+    after = "cmp-buffer",
+  }
+  use {
+    'hrsh7th/cmp-cmdline',
+    after = "cmp-path",
+  }
+  use {
+    'dcampos/nvim-snippy',
+    after = "cmp-cmdline",
+  }
+  use {
+    'dcampos/cmp-snippy',
+    after = "nvim-snippy",
+    config = "require('plugins.configs.lsp.snippy')"
+  }
   --end cmp
   -- Statusline
   use {

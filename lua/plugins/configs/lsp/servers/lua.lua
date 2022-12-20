@@ -1,5 +1,22 @@
-require'lspconfig'.luau_lsp.setup{}
-require'lspconfig'.sumneko_lua.setup {
+local on_attach = require('plugins.configs.lsp.servers.astro')
+require 'lspconfig'.luau_lsp.setup {}
+require 'lspconfig'.sumneko_lua.setup {
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("CursorHold", {
+      buffer = bufnr,
+      callback = function()
+        local opts = {
+          focusable = false,
+          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+          border = 'rounded',
+          source = 'always',
+          prefix = ' ',
+          scope = 'cursor',
+        }
+        vim.diagnostic.open_float(nil, opts)
+      end
+    })
+  end,
   settings = {
     Lua = {
       runtime = {
@@ -8,7 +25,7 @@ require'lspconfig'.sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files

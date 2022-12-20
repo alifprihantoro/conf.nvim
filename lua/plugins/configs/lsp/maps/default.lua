@@ -2,8 +2,9 @@ local cmd = vim.api.nvim_create_user_command
 local active = require('core.servers_swich.active')
 
 cmd('Lsp', function()
+  TOGGLE_SERVER_LSP = true
   active.lsp()
-  print('lsp loaded')
+  print('lsp loaded...')
 end, {})
 cmd('LspDiagnosticOpenFloat', vim.diagnostic.open_float, {})
 cmd('LspDiagnosticPrev', vim.diagnostic.goto_prev, {})
