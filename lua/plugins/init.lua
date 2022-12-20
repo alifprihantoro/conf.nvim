@@ -20,38 +20,38 @@ packer.startup(function(use)
   -- cmp start
    use {
      'hrsh7th/nvim-cmp',
-    cmd = "Lsp",
+      event = "InsertEnter",
      config = "require('plugins.configs.lsp.cmp')",
    }
    use {
      'hrsh7th/cmp-nvim-lsp',
-     after = "nvim-lspconfig",
-     requires = { "hrsh7th/nvim-cmp" }
+     after = "nvim-cmp",
+     -- requires = { "hrsh7th/nvim-cmp" }
    }
    use {
      'hrsh7th/cmp-buffer',
-     after = "nvim-lspconfig",
-     requires = { "hrsh7th/nvim-cmp" }
+     after = "cmp-nvim-lsp",
+     -- requires = { "hrsh7th/nvim-cmp" }
    }
    use {
      'hrsh7th/cmp-path',
-     after = "nvim-lspconfig",
-     requires = { "hrsh7th/nvim-cmp" }
+     after = "cmp-buffer",
+     -- requires = { "hrsh7th/nvim-cmp" }
    }
    use {
      'hrsh7th/cmp-cmdline',
-     after = "nvim-lspconfig",
-     requires = { "hrsh7th/nvim-cmp" }
+     after = "cmp-path",
+     -- requires = { "hrsh7th/nvim-cmp" }
    }
    use {
      'dcampos/nvim-snippy',
-     after = "nvim-lspconfig",
-     requires = { "hrsh7th/nvim-cmp" },
+     after = "cmp-cmdline",
+     -- requires = { "hrsh7th/nvim-cmp" },
    }
    use {
      'dcampos/cmp-snippy',
      after = "nvim-snippy",
-     requires = { "hrsh7th/nvim-cmp",'dcampos/nvim-snippy' },
+     -- requires = { "hrsh7th/nvim-cmp",'dcampos/nvim-snippy' },
      config = "require('plugins.configs.lsp.snippy')"
    }
   --end cmp
@@ -82,7 +82,6 @@ packer.startup(function(use)
   use {
     'windwp/nvim-ts-autotag',
     event = "InsertEnter",
-    after = "nvim-treesitter",
     config = "require('plugins.configs.tsAutoTag')"
   }
   -- git start
