@@ -118,7 +118,7 @@ packer.startup(function(use)
   -- vimwiki or for md
   use {
     'vimwiki/vimwiki',
-    event = "BufWinEnter",
+    cmd = 'VimwikiShowVersion',
     config = "require('plugins.configs.wiki.after')"
   }
   use {

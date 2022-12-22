@@ -12,11 +12,16 @@ local callback = function()
   if CEK_FIRST_SERVER == 0 then
     CEK_FIRST_SERVER = 1
     require('core.servers_swich.cekFile')()
+    if TOGGLE_SERVER_LSP == true then
+      vim.cmd('Lsp')
+    else
+      vim.cmd('Coc')
+    end
   end
   if TOGGLE_SERVER_LSP == true then
-    vim.cmd('Lsp')
+    vim.b.coc_suggest_disable = 1
   else
-    vim.cmd('Coc')
+    vim.b.coc_suggest_disable = 0
   end
 end
 lazy('_server_swich', callback)

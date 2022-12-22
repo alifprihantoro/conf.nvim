@@ -5,6 +5,7 @@
   "snippets.ultisnips.enable": false,
   "emmet.includeLanguages": { "vue-html": "html", "javascript": "html" },
   "sh.trace.server": "messages",
+  "suggest.enableFloat": true,
   "suggest.completionItemKindLabels": {
     "text": "",
     "method": "",

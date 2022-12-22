@@ -32,11 +32,11 @@ M.setup = function(entry, vim_item)
   vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
   -- Source
   vim_item.menu = ({
-    buffer = "[Buffer]",
-    nvim_lsp = "[LSP]",
-    snippy = "[Snippy]",
-    nvim_lua = "[Lua]",
-    latex_symbols = "[LaTeX]",
+    buffer = "[B]",
+    nvim_lsp = "[Ls]",
+    snippy = "[S]",
+    nvim_lua = "[Lu]",
+    latex_symbols = "[La]",
   })[entry.source.name]
   return vim_item
 end
