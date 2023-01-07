@@ -5,19 +5,19 @@ return function(use)
     -- branch = 'master',
     cmd = "Coc",
     -- run = 'yarn install --frozen-lockfile',
-    config = "require('plugins.configs.coc')"
+    config = "require('configs.lsp.coc')"
   }
   -- lsp
   use {
     'neovim/nvim-lspconfig',
     cmd = "Lsp",
-    config = "require('plugins.configs.lsp')",
+    config = "require('configs.lsp.lspConf')",
   }
   -- cmp start
   use {
     'hrsh7th/nvim-cmp',
     after = "nvim-lspconfig",
-    config = "require('plugins.configs.lsp.cmp')",
+    config = "require('configs.lsp.lspConf.cmp')",
   }
   use {
     'hrsh7th/cmp-nvim-lsp',
@@ -42,7 +42,7 @@ return function(use)
   use {
     'dcampos/cmp-snippy',
     after = "nvim-snippy",
-    config = "require('plugins.configs.lsp.snippy')"
+    config = "require('configs.lsp.lspConf.snippy')"
   }
   --end cmp
 end

@@ -4,12 +4,12 @@ return function (use)
     'nvim-tree/nvim-tree.lua',
     tag = 'nightly', -- optional, updated every week. (see issue #1193)
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    config = "require('plugins.configs.fileTree')"
+    config = "require('configs.file.fileTree')"
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { { 'nvim-lua/plenary.nvim' } },
     cmd = 'Telescope',
-    config = "require('plugins.configs.telescope')"
+    config = "require('configs.file.telescope')"
   }
 end

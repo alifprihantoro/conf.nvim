@@ -3,12 +3,12 @@ return function (use)
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     after = "nvim-tree.lua",
-    config = "require('plugins.configs.autopairs')"
+    config = "require('configs.editor.autopairs')"
   }
   use {
     'windwp/nvim-ts-autotag',
     event = "InsertEnter",
-    config = "require('plugins.configs.tsAutoTag')"
+    config = "require('configs.editor.tsAutoTag')"
   }
   -- comment togle
   use {
@@ -20,16 +20,16 @@ return function (use)
   use {
     'vimwiki/vimwiki',
     cmd = 'VimwikiShowVersion',
-    config = "require('plugins.configs.wiki.after')"
+    config = "require('configs.editor.wiki.after')"
   }
   -- plugin for js vanilla (delete if not use)
   use {
     'jonsmithers/vim-html-template-literals',
     cmd = 'Htl',
-    config = "require('plugins.configs.htmlLiteralJs')"
+    config = "require('configs.editor.htmlLiteralJs')"
   }
   use {
     'pangloss/vim-javascript',
-    config = "require('plugins.configs.jsNative')"
+    config = "require('configs.editor.jsNative')"
   }
 end
