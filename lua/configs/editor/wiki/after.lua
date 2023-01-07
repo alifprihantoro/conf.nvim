@@ -1,5 +1,6 @@
 local key = vim.keymap.set
 local opts = {silent = true, noremap = true, replace_keycodes = false, buffer = true}
+
 local function mappingWiki()
   key("n","<leader>'",":VimwikiToggleListItem<CR>",opts)
   key("n","<leader>vs",":VimwikiListChangeSymbolI",opts)

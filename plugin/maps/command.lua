@@ -1,4 +1,5 @@
 local cmd = vim.api.nvim_create_user_command
+
 -- command
 cmd('Hel','echo "hello world!"',{})
 cmd("De","cd ~/",{})

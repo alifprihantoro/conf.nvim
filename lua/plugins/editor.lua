@@ -1,4 +1,6 @@
-return function (use)
+local cmd = vim.api.nvim_create_user_command
+
+return function(use)
   use {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -19,8 +21,10 @@ return function (use)
   -- vimwiki or for md
   use {
     'vimwiki/vimwiki',
-    cmd = 'VimwikiShowVersion',
-    config = "require('configs.editor.wiki.after')"
+    cmd = 'VimWiki',
+    config = function()
+      cmd('VimWiki', require('configs.editor.wiki.after'))
+    end
   }
   -- plugin for js vanilla (delete if not use)
   use {
