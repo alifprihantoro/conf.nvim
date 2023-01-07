@@ -1,5 +1,5 @@
-local icons = require('plugins.configs.lsp.cmp.icons')
-local maps = require('plugins.configs.lsp.cmp.maps')
+local icons = require('configs.lsp.lspConf.cmp.icons')
+local maps = require('configs.lsp.lspConf.cmp.maps')
 local cmp = require 'cmp'
 
 vim.cmd('set completeopt=menu,menuone,noselect')

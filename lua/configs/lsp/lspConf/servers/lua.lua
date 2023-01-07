@@ -1,4 +1,4 @@
-local on_attach = require('plugins.configs.lsp.servers.astro')
+local on_attach = require('configs.lsp.lspConf.servers.astro')
 require 'lspconfig'.luau_lsp.setup {}
 require 'lspconfig'.sumneko_lua.setup {
   on_attach = function(client, bufnr)

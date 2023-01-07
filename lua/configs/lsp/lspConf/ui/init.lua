@@ -1,3 +1,3 @@
-require('plugins.configs.lsp.ui.diagnostic')
-require('plugins.configs.lsp.ui.hi_line_number')
-require('plugins.configs.lsp.ui.go_to')
+require('configs.lsp.lspConf.ui.diagnostic')
+require('configs.lsp.lspConf.ui.hi_line_number')
+require('configs.lsp.lspConf.ui.go_to')

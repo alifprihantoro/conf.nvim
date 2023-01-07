@@ -1,3 +1,3 @@
-require('plugins.configs.lsp.maps.default')
-require('plugins.configs.lsp.servers')
-require('plugins.configs.lsp.ui')
+require('configs.lsp.lspConf.maps.default')
+require('configs.lsp.lspConf.servers')
+require('configs.lsp.lspConf.ui')

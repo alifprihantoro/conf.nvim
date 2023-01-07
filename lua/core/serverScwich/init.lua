@@ -1,5 +1,4 @@
 require('core.serverScwich.maps')
-local active = require('core.serverScwich.active')
 local lazy = require('global.lazy').lazyLoadBuf
 
 -- default lsp active

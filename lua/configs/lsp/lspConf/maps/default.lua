@@ -1,5 +1,5 @@
 local cmd = vim.api.nvim_create_user_command
-local active = require('core.servers_swich.active')
+local active = require('core.serverScwich.active')
 
 cmd('Lsp', function()
   TOGGLE_SERVER_LSP = true

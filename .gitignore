@@ -104,3 +104,4 @@ dist
 .tern-port
 
 plugin/packer_compiled.lua
+lua/.luarc*

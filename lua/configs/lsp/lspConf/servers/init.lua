@@ -2,8 +2,8 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require('plugins.configs.lsp.servers.lua')
-require('plugins.configs.lsp.servers.astro')
+require('configs.lsp.lspConf.servers.lua')
+require('configs.lsp.lspConf.servers.astro')
 require 'lspconfig'.tailwindcss.setup {
   filetype =
   { "aspnetcorerazor", "astro", "astro-markdown", "blade", "django-html", "htmldjango", "edge", "eelixir", "elixir",
