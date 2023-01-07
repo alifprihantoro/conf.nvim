@@ -22,6 +22,33 @@ TODO:
 - [ ] git :
   - [ ] gsp
   - [ ] gsv
+- hilight :
+  - error color none, bg red (bold,underline)
+  - 
+- https://youtu.be/wUd_DdfoKag
+folder :
+- plugin :
+  - lsp
+  - styling
+  - custom :
+    - git
+- config :
+  - lsp :
+    - coc :
+    - lsp-conf :
+      - init
+      - plugins :
+        - [name lang]
+  - filesystem :
+    - telescope
+    - nvimtree/etc
+    - git
+  - style :
+    - tresitter
+    - theme
+  - other :
+    - vimwiki
+- mapping
 
 ## Plugin
 - packer.nvim
