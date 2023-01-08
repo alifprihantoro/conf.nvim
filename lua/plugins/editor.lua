@@ -22,9 +22,16 @@ return function(use)
   use {
     'vimwiki/vimwiki',
     cmd = 'VimWiki',
-    config = function()
-      cmd('VimWiki', require('configs.editor.wiki.after'))
-    end
+    -- event = "VimEnter",
+    -- bufread = true,
+    setup = function()
+      -- cmd('VimWiki', function()
+        print('vimwiki load')
+        require('configs.editor.wiki.before')
+        -- vim.cmd('WikiActive')
+      -- end, {})
+    end,
+    config = "require('configs.editor.wiki.after')"
   }
   -- plugin for js vanilla (delete if not use)
   use {
@@ -34,6 +41,7 @@ return function(use)
   }
   use {
     'pangloss/vim-javascript',
+    after = 'nvim-html-template-literals',
     config = "require('configs.editor.jsNative')"
   }
 end

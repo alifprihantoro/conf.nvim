@@ -8,6 +8,7 @@ require('snippy').setup({
       return scopes
     end,
     javascript = { '_', 'html', 'javascript','typescriptreact' },
+    markdown = { '_', 'markdown'},
   },
   mappings = {
     is = {

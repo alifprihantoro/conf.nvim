@@ -1,17 +1,15 @@
 return function (use)
-  -- git start
-  use {
+  use {-- git sign
     'lewis6991/gitsigns.nvim',
     config = "require('configs.helper.git.signs')",
     event = "VimEnter",
   }
   use { -- For git blame & browse
     'dinhhuy258/git.nvim',
-    config = "require('configs.helper.git.signs')",
+    config = "require('configs.helper.git.cmd')",
     event = "VimEnter"
   }
-  -- git end
-  use {
+    use {
     "folke/which-key.nvim",
     cmd = "WhicKey",
     config = "require('configs.helper.wichKey')"
