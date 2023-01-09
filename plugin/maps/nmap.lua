@@ -109,6 +109,3 @@ key('n','<leader><leader>e',':NvimTreeFindFileToggle %:h<CR>')
 key('n','<leader>e',':NvimTreeToggle<CR>')
 -- nvim config
 key('n','<leader>,',':e ~/.config/nvim/init.lua<CR>')
--- git
-key('n','<leader>gs',':Telescope git_status')
-key('n','<leader>gb',':Telescope git_branch')

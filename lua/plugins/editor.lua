@@ -41,7 +41,7 @@ return function(use)
   }
   use {
     'pangloss/vim-javascript',
-    after = 'nvim-html-template-literals',
+    after = 'vim-html-template-literals',
     config = "require('configs.editor.jsNative')"
   }
 end
