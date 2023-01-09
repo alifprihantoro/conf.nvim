@@ -1,5 +1,6 @@
 local actions = require "telescope.actions"
-require('telescope').setup{
+
+require('telescope').setup {
   defaults = {
     layout_config = {
       -- vertical = { width = 100 },
@@ -27,6 +28,5 @@ require('telescope').setup{
     --   theme = "dropdown",
     -- }
   },
-  extensions = {
-  }
 }
+

@@ -1,4 +1,4 @@
-return function (use)
+return function(use)
   -- file tree
   use {
     'nvim-tree/nvim-tree.lua',
@@ -8,7 +8,10 @@ return function (use)
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } },
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { "nvim-telescope/telescope-github.nvim" },
+    },
     cmd = 'Telescope',
     config = "require('configs.file.telescope')"
   }
