@@ -4,9 +4,9 @@ return function(use)
     config = "require('configs.helper.gitSigns')",
     event = "VimEnter",
   }
-  use {
-    "folke/which-key.nvim",
-    cmd = "WhicKey",
+  use { 'folke/which-key.nvim',
+    opt = true,
+    keys = { "<leader>", "z", "b" },
     config = "require('configs.helper.wichKey')"
   }
 end

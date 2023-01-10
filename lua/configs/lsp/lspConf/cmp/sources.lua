@@ -6,5 +6,6 @@ M.sc1 = {
 M.sc2 = {
   { name = 'buffer' },
   { name = 'path' },
+  { name = 'emoji' }
 }
 return M

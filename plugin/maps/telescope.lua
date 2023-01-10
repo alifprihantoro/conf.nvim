@@ -1,3 +1,4 @@
+vim.keymap.set('n', '<leader>f', ":Telescope<CR>", {})
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
 vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>", {})
 vim.keymap.set('n', '<leader>fr', ":Telescope grep_string<CR>", {})
