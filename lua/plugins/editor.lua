@@ -21,9 +21,8 @@ return function(use)
   -- vimwiki or for md
   use {
     'vimwiki/vimwiki',
-    cmd = 'VimWiki',
-    -- event = "VimEnter",
-    -- bufread = true,
+    opts = true,
+    ft = {"markdown"},
     setup = function()
       -- cmd('VimWiki', function()
         print('vimwiki load')
