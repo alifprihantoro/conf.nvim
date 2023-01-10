@@ -10,7 +10,6 @@ return function(use)
   -- lsp
   use {
     'neovim/nvim-lspconfig',
-    cmd = "Lsp",
     config = "require('configs.lsp.lspConf')",
   }
   -- cmp start
