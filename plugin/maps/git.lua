@@ -11,7 +11,7 @@ local function gitPushCommit()
   vim.cmd([[ 
     Cdn
     Cdg
-    !tmux popup -E 'gssh && git pushall'
+    !tmux popup -E 'cd % && cdg && gssh && git pushall'
   ]])
 end
 
