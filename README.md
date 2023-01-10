@@ -23,6 +23,10 @@ TODO:
   - [ ] lsp :
     - [ ] autocmd config ext
     - [ ] snippy file ext
+- [ ] plug install :
+  - [ ] lsp :
+    - [ ] https://github.com/hrsh7th/cmp-cmdline
+    - [ ] https://github.com/dmitmel/cmp-cmdline-history
 - hilight :
   - error color none, bg red (bold,underline)
   - 

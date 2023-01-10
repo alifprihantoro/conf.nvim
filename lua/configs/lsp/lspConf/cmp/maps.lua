@@ -14,27 +14,27 @@ local M = {
     else
       fallback()
     end
-  end, { 'i', 's' }),
+  end, { 'i', 's', 'c' }),
   ['<Up>'] = cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.select_prev_item()
     else
       fallback()
     end
-  end, { 'i', 's' }),
+  end, { 'i', 's', 'c' }),
   ['<C-j>'] = cmp.mapping(function()
     if cmp.visible() then
       cmp.select_next_item()
     else
       vim.cmd('normal j')
     end
-  end, { 'i', 's' }),
+  end, { 'i', 's', 'c' }),
   ['<C-k>'] = cmp.mapping(function()
     if cmp.visible() then
       cmp.select_prev_item()
     else
       vim.cmd('normal k')
     end
-  end, { 'i', 's' }),
+  end, { 'i', 's', 'c' }),
 }
 return M

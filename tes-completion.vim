@@ -4,4 +4,3 @@ function TesCompletil() abort
   call complete_info(col('.'),words)
   return ''
 endfunction
-
