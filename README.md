@@ -9,19 +9,20 @@ TODO:
 - [ ] rest client :
   - [x] asdflj
 - [ ] create docs and help
-- [ ] :TSInstall
+- [x] :TSInstall
 - [ ] coc with lsp :
-  - [ ] if on .lua coc disable
-  - [ ] if on .astro combine
-  - [ ] mapping
-  - [ ] save for format no enter
-  - [ ] coc-disable
-    - [ ] first load
-    - [ ] bufenter
-  - [ ] get map cmp,snippy
-- [ ] git :
-  - [ ] gsp
-  - [ ] gsv
+  - [ ] coc enable if on class
+- [x] git :
+  - [x] gsp
+  - [x] gsv
+- [ ] opts :
+  - [ ] git :
+    - [ ] ssh folder
+    - [ ] width heigh tmux
+  - [ ] telescope :
+  - [ ] lsp :
+    - [ ] autocmd config ext
+    - [ ] snippy file ext
 - hilight :
   - error color none, bg red (bold,underline)
   - 

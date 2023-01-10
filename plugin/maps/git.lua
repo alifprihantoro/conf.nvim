@@ -2,17 +2,11 @@ local key = vim.keymap.set
 
 local gitCommitCmd = " && cd $(git rev-parse --show-toplevel) && git add . && git commit"
 local function gitCommit()
-  local GET_PATH_NOW = vim.fn.expand('%:p:h')
-  vim.cmd("!tmux popup -E 'cd " .. GET_PATH_NOW .. gitCommitCmd .. "'")
+  vim.cmd("!tmux popup -E 'cd %:h" .. gitCommitCmd .. "'")
 end
 
 local function gitPushCommit()
-  local GET_PATH_NOW = vim.fn.expand('%:p:h')
-  vim.cmd([[ 
-    Cdn
-    Cdg
-    !tmux popup -E 'cd % && cdg && gssh && git pushall'
-  ]])
+  vim.cmd("!cd %:h && eval \"$(ssh-agent -s)\" && ssh-add ~/.ssh/github && git push --all")
 end
 
 -- normal
