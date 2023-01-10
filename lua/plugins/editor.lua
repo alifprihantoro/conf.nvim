@@ -1,5 +1,3 @@
-local cmd = vim.api.nvim_create_user_command
-
 return function(use)
   use {
     'windwp/nvim-autopairs',
@@ -22,13 +20,10 @@ return function(use)
   use {
     'vimwiki/vimwiki',
     opts = true,
-    ft = {"markdown"},
+    ft = { "markdown" },
     setup = function()
-      -- cmd('VimWiki', function()
-        print('vimwiki load')
-        require('configs.editor.wiki.before')
-        -- vim.cmd('WikiActive')
-      -- end, {})
+      print('vimwiki load')
+      require('configs.editor.wiki.before')
     end,
     config = "require('configs.editor.wiki.after')"
   }
