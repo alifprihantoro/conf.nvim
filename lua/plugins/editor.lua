@@ -21,10 +21,6 @@ return function(use)
     'vimwiki/vimwiki',
     opts = true,
     ft = { "markdown" },
-    setup = function()
-      print('vimwiki load')
-      require('configs.editor.wiki.before')
-    end,
     config = "require('configs.editor.wiki.after')"
   }
   -- plugin for js vanilla (delete if not use)

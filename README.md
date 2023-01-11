@@ -82,7 +82,7 @@ folder :
 - vimwiki
 - indent-blankline.nvim
 - telescope.nvim
-- plenary.nvim
+- plenary nvim
 
 ```lua
 -- disable auto complete in comment
