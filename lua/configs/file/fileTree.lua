@@ -11,6 +11,8 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
+        { key = "<leader>h", action = "toggle_help" },
+        { key = "<leader><CR>", action = "cd" },
       },
     },
   },
