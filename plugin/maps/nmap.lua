@@ -103,9 +103,6 @@ key('n','<leader>dv',':cd ~/.config/plugin/<CR><CR>')
 key('n','<leader>dn',':Cdn<CR><CR>')
 key('n','<leader>dg',':Cdg<CR><CR>')
 -- swich to file before
-key('n','<leader>u','<C-^>') 
--- FILE TREE
-key('n','<leader><leader>e',':NvimTreeFindFileToggle %:h<CR>')
-key('n','<leader>e',':NvimTreeToggle<CR>')
+key('n','<leader>u','<C-^>')
 -- nvim config
 key('n','<leader>,',':e ~/.config/nvim/init.lua<CR>')
