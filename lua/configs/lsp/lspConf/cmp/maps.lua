@@ -14,14 +14,14 @@ local M = {
     else
       fallback()
     end
-  end, { 'i', 's', 'c' }),
+  end, { 'i', 's' }),
   ['<Up>'] = cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.select_prev_item()
     else
       fallback()
     end
-  end, { 'i', 's', 'c' }),
+  end, { 'i', 's'}),
   ['<C-j>'] = cmp.mapping(function()
     if cmp.visible() then
       cmp.select_next_item()
