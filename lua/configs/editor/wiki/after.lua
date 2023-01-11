@@ -4,10 +4,8 @@ local opts = {silent = true, noremap = true, replace_keycodes = false, buffer = 
 local function mappingWiki()
   key("n","<leader>'",":VimwikiToggleListItem<CR>",opts)
   key("n","<leader>vs",":VimwikiListChangeSymbolI",opts)
-  -- key("n","<CR>",":VimwikiFollowLink<CR>",opts)
   key("v","<Space>vs",":VimwikiListChangeSymbolI",opts)
   key("v","<leader>'",":VimwikiToggleListItem<CR>",opts)
-  -- key("v","<CR>",":VimwikiNormalizeLinkVisualCR<CR>",opts)
   vim.cmd [[
     set filetype=markdown
     syntax match CheckListNotClear /^.*\[\ \]\(\s\|\w\|\:\)*/
