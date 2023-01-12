@@ -3,7 +3,7 @@ return function(use)
   use {
     'nvim-tree/nvim-tree.lua',
     tag = 'nightly', -- optional, updated every week. (see issue #1193)
-    cmd = { "NvimTreeOpen", "NvimTreeFindFileToggle","NvimTreeToggle" },
+    cmd = { "NvimTreeOpen", "NvimTreeFindFileToggle", "NvimTreeToggle" },
     config = "require('configs.file.fileTree')"
   }
   use {
