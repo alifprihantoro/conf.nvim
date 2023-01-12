@@ -1,5 +1,6 @@
 local cmd = vim.api.nvim_create_user_command
 local active = require('core.serverScwich.active')
+local installServer = require('configs.lsp.lspConf.utils.installServer')
 
 cmd('Lsp', function()
   TOGGLE_SERVER_LSP = true
@@ -22,3 +23,6 @@ end, {})
 cmd('LspBufDef', vim.lsp.buf.type_definition, {})
 cmd('LspBufRename', vim.lsp.buf.rename, {})
 cmd('LspBufCodeAction', vim.lsp.buf.code_action, {})
+cmd('LspInstallServerTermux', function()
+  installServer({cli=false})
+end, {})

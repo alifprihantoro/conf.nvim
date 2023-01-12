@@ -20,8 +20,14 @@ ts.setup {
     "html",
     "lua",
     "javascript",
+    "typescript",
     "astro",
-    "bash"
+    "bash",
+    "rust",
+    "python",
+    "markdown",
+    "markdown_inline",
+    "go",
   },
   autotag = {
     enable = true,

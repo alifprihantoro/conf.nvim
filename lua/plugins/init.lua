@@ -5,8 +5,10 @@ local editor = require('plugins.editor')
 local helper = require('plugins.helper')
 local file = require('plugins.file')
 
+if status == false then
+  return
+end
 vim.cmd [[packadd packer.nvim]]
-
 packer.startup(function(use)
   -- use "lewis6991/impatient.nvim"
   use 'wbthomason/packer.nvim'
