@@ -8,11 +8,10 @@ return function(use)
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    cmd = 'Telescope',
+    config = "require('configs.file.telescope')",
     requires = {
       { 'nvim-lua/plenary.nvim' },
-      { "nvim-telescope/telescope-github.nvim" },
     },
-    cmd = 'Telescope',
-    config = "require('configs.file.telescope')"
   }
 end

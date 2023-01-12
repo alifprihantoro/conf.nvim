@@ -17,6 +17,7 @@ TODO:
   - [x] gsv
 - [ ] opts :
   - [ ] git :
+    - [ ] git cli or ssh
     - [ ] ssh folder
     - [ ] width heigh tmux
   - [ ] telescope :

@@ -8,4 +8,3 @@ require('telescope').setup {
     mappings = maps,
   },
 }
-
