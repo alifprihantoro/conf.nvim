@@ -1,7 +1,7 @@
 local key = vim.keymap.set
 local opts = { silent = true }
 -- FILE TREE
-key('n', '<leader>ee', ':NvimTreeOpen<CR>', opts)
+key('n', '<leader>ee', ':NvimTreeToggle<CR>', opts)
 key('n', '<leader>eg',
   ":exec 'NvimTreeOpen' fnameescape(fnamemodify(finddir('.git', escape(expand('%:p:h'), ' ') . ';'), ':h'))<CR>", opts)
 key('n', '<leader>ef', ":NvimTreeFindFileToggle %:h<CR>", opts)
