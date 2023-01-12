@@ -13,6 +13,7 @@ require("nvim-tree").setup({
         { key = "u", action = "dir_up" },
         { key = "<leader>h", action = "toggle_help" },
         { key = "<leader><CR>", action = "cd" },
+        { key = "<C-k>", action = "" },
       },
     },
   },
