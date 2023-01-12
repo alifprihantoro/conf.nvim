@@ -6,5 +6,13 @@ require('telescope').setup {
   defaults = {
     layout_config = layout,
     mappings = maps,
+    extensions = {
+      emoji = {
+        action = function(emoji)
+          vim.fn.setreg("*", emoji.value)
+          print([[Press p or "*p to paste this emoji]] .. emoji.value)
+        end,
+      }
+    },
   },
 }

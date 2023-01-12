@@ -14,4 +14,9 @@ return function(use)
       { 'nvim-lua/plenary.nvim' },
     },
   }
+  use {
+    'xiyaowong/telescope-emoji.nvim',
+    after = 'telescope.nvim',
+    config = 'require("telescope").load_extension("emoji")',
+  }
 end
