@@ -6,6 +6,9 @@ vim.g.loaded_netrwPlugin = 1
 -- OR setup with some options
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
+  filesystem_watchers = {
+    enable = false,
+  },
   view = {
     adaptive_size = true,
     mappings = {
@@ -20,27 +23,28 @@ require("nvim-tree").setup({
   renderer = {
     group_empty = true,
     indent_markers = {
-        enable = true,
-        inline_arrows = true,
-        icons = {
-          corner = "└",
-          edge = "│",
-          item = "│",
-          bottom = "─",
-          none = " ",
-        },
-      },
+      enable = true,
+      inline_arrows = true,
       icons = {
-        webdev_colors = true,
-        git_placement = "before",
-        padding = " ",
-        symlink_arrow = " ➛ ",
-        show = {
-          file = true,
-          folder = true,
-          folder_arrow = true,
-          git = true,
-        }}
+        corner = "└",
+        edge = "│",
+        item = "│",
+        bottom = "─",
+        none = " ",
+      },
+    },
+    icons = {
+      webdev_colors = true,
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      }
+    }
   },
   filters = {
     dotfiles = true,
