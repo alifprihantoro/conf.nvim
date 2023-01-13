@@ -76,11 +76,6 @@ key('n','<leader>zc',':set nofoldenable<CR>')
 key('n','<leader>zf','vtazf')
 -- create folding in css/sass/js
 key('n','<leader>zt','v%zf')
-
--- comment toogle
-key({'v','n'},'<leader>/',':CommentToggle<CR>')
-key({'v','n'},'<leader><leader>/',':lua vim.api.nvim_buf_set_option(0, "commentstring", "{/* %s */}")<CR>:CommentToggle<CR>:lua vim.api.nvim_buf_set_option(0, "commentstring", "// %s")<CR>')
-
 -- Split Vertical
 -- Split Horizontal
 key('n','<leader>-','<C-w>s')

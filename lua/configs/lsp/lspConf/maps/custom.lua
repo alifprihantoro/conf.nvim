@@ -7,6 +7,7 @@ return function()
 
   key('n', 'K', vim.lsp.buf.hover, bufopts)
   key('n', '<leader>tr', vim.lsp.buf.references, bufopts)
+  key('n', '<leader>tn', vim.lsp.buf.rename, bufopts)
   key('n', '<leader>ti', vim.lsp.buf.implementation, bufopts)
   key('n', '<leader>tg', vim.lsp.buf.definition, bufopts)
   key('n', '<C-f>', format, bufopts)

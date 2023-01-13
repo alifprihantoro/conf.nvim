@@ -13,8 +13,7 @@ return function(use)
   -- comment togle
   use {
     "terrortylor/nvim-comment",
-    config = function() require('nvim_comment').setup() end,
-    event = "VimEnter"
+    config = "require('configs.editor.commentToggle')",
   }
   -- vimwiki or for md
   use {
