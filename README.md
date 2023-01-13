@@ -28,7 +28,10 @@ TODO:
   - [ ] lsp :
     - [ ] https://github.com/hrsh7th/cmp-cmdline
     - [ ] https://github.com/dmitmel/cmp-cmdline-history
-    - [ ] hover 
+    - [ ] hover
+- [ ] snippet :
+  - [ ] bash
+  - [ ] jsx
 - hilight :
   - error color none, bg red (bold,underline)
   - 

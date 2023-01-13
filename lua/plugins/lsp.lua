@@ -40,8 +40,28 @@ return function(use)
   }
   use {
     'dcampos/cmp-snippy',
-    after = "nvim-snippy",
+    after = "nvim-cmp",
     config = "require('configs.lsp.lspConf.snippy')"
+  }
+  use {
+    'tamago324/cmp-zsh',
+    after = 'nvim-cmp',
+  }
+  use {
+    'Shougo/deol.nvim',
+    after = 'nvim-cmp',
+  }
+  use {
+    "jcha0713/cmp-tw2css",
+    after = 'nvim-cmp',
+  }
+  use {
+    'dcampos/cmp-emmet-vim',
+    after = 'nvim-cmp',
+  }
+  use {
+    "mattn/emmet-vim",
+    after = 'cmp-emmet-vim'
   }
   --end cmp
 end
