@@ -16,14 +16,20 @@ TODO:
   - [x] gsp
   - [x] gsv
 - [ ] opts :
+  - [ ] workspace :
+    - [ ] grub :
+      - [ ] child
+    - [ ] exam : project : muryp
   - [ ] git :
     - [ ] git cli or ssh
     - [ ] ssh folder
     - [ ] width heigh tmux
+    - [ ] ssh dir
   - [ ] telescope :
   - [ ] lsp :
     - [ ] autocmd config ext
     - [ ] snippy file ext
+    - [ ] json ls root vimrc
 - [ ] plug install :
   - [ ] lsp :
     - [ ] https://github.com/hrsh7th/cmp-cmdline

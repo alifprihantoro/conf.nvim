@@ -40,7 +40,7 @@ return function(use)
   }
   use {
     'dcampos/cmp-snippy',
-    after = "nvim-cmp",
+    after = "nvim-snippy",
     config = "require('configs.lsp.lspConf.snippy')"
   }
   use {

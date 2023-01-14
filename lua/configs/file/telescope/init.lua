@@ -1,9 +1,9 @@
 local layout = require "configs.file.telescope.configs.layout"
 local maps = require "configs.file.telescope.configs.maps"
-local new_maker = require "configs.file.telescope.plugins.preview"
+local new_maker = require "configs.file.telescope.extensi.preview"
 local extentions= require "configs.file.telescope.configs.extentions"
 
-require "configs.file.telescope.plugins"
+require "configs.file.telescope.extensi"
 require('telescope').setup {
   defaults = {
     layout_config = layout,
