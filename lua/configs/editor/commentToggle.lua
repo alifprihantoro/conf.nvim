@@ -7,12 +7,6 @@ require('nvim_comment').setup({
   comment_empty_trim_whitespace = false,
   -- Should key mappings be created
   create_mappings = true,
-  -- Normal mode mapping left hand side
-  line_mapping = "<leader>/",
-  -- Visual/Operator mapping left hand side
-  operator_mapping = "<leader><leader>/",
-  -- text object mapping, comment chunk,,
-  comment_chunk_text_object = "<leader>]",
   -- Hook function to call before commenting takes place
   hook = function()
     if vim.api.nvim_buf_get_option(0, "filetype") == "javascript" then
