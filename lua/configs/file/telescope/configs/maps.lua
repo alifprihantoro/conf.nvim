@@ -8,6 +8,7 @@ return {
     ["<c-n>"] = actions.preview_scrolling_down,
     ["<c-u>"] = false,
     ["<c-l>"] = false,
+    ['<C-p>'] = require('telescope.actions.layout').toggle_preview
   },
   n = {
     ["q"] = actions.close,
