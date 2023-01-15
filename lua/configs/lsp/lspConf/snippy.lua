@@ -7,6 +7,7 @@ require('snippy').setup({
       return scopes
     end,
     javascript = { '_', 'html', 'javascript', 'typescriptreact', 'typescript' },
+    typescript = { '_', 'html', 'javascript', 'typescriptreact', 'typescript' },
     typescriptreact = { '_', 'javascriptreact', 'typescriptreact' },
   },
   mappings = {
