@@ -1,4 +1,5 @@
 local cmp = require 'cmp'
+local snippy = require('snippy')
 local map = cmp.mapping
 local confirm = map.confirm {
   behavior = cmp.ConfirmBehavior.Replace,
@@ -20,7 +21,26 @@ local up = function(arg)
     if cmp.visible() then
       cmp.select_prev_item()
     else
-      fallback()
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end
+  end, arg)
+end
+
+local tab = function(arg)
+  return map(function(fallback)
+    if snippy.can_expand() then
+      snippy.expand()
+      return
+    else
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
     end
   end, arg)
 end
@@ -30,7 +50,7 @@ local M = {
   ['<C-f>'] = map.scroll_docs(4),
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
-  ['<Tab>'] = down({ 'i', 's', 'c' }),
+  ['<Tab>'] = tab({ 'i' }),
   ['<CR>'] = confirm,
   ['<Down>'] = down({ 'i', 's' }),
   ['<Up>'] = up({ 'i', 's' }),

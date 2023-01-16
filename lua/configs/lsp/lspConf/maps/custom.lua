@@ -11,5 +11,7 @@ return function()
   key('n', '<leader>ti', vim.lsp.buf.implementation, bufopts)
   key('n', '<leader>tg', vim.lsp.buf.definition, bufopts)
   key('n', '<C-f>', format, bufopts)
+  key('n', '<c-d>', ":LspDiagnosticOpenFloat<CR>", bufopts)
   vim.api.nvim_create_user_command('Format', format, {})
+
 end
