@@ -15,6 +15,17 @@ return function(use)
   -- cmp start
   use {
     'hrsh7th/nvim-cmp',
+    -- require = { {'dcampos/nvim-snippy'}, {'dcampos/cmp-snippy'} },
+    -- config = "require('configs.lsp.lspConf.snippy')"
+  }
+  use {
+    'dcampos/nvim-snippy',
+    after = "nvim-cmp",
+  }
+  use {
+    'dcampos/cmp-snippy',
+    after = 'nvim-snippy',
+    config = "require('configs.lsp.lspConf.snippy')"
   }
   use {
     'hrsh7th/cmp-nvim-lsp',
@@ -47,15 +58,6 @@ return function(use)
   use {
     'dcampos/cmp-emmet-vim',
     after = 'nvim-cmp',
-  }
-  use {
-    'dcampos/nvim-snippy',
-    after = "cmp-cmdline",
-  }
-  use {
-    'dcampos/cmp-snippy',
-    after = 'nvim-snippy',
-    config = "require('configs.lsp.lspConf.snippy')"
   }
   use {
     "mattn/emmet-vim",

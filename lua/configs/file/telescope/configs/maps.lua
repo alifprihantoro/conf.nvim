@@ -9,6 +9,8 @@ return {
     ["<C-f>"] = require('telescope.actions.layout').toggle_preview,
     ["<c-u>"] = false,
     ["<c-l>"] = false,
+    ["<C-s>"] = actions.cycle_previewers_next,
+    ["<C-a>"] = actions.cycle_previewers_prev,
   },
   n = {
     ["q"] = actions.close,

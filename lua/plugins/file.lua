@@ -19,4 +19,8 @@ return function(use)
     after = 'telescope.nvim',
     config = 'require("telescope").load_extension("emoji")',
   }
+  -- use {
+  --   "nvim-telescope/telescope-github.nvim",
+  -- }
+
 end
