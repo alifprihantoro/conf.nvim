@@ -16,6 +16,7 @@ TODO:
   - [x] gsp
   - [x] gsv
 - [ ] opts :
+  - [ ] device
   - [ ] workspace :
     - [ ] grub :
       - [ ] child
@@ -26,6 +27,8 @@ TODO:
     - [ ] width heigh tmux
     - [ ] ssh dir
   - [ ] telescope :
+    - [ ] git change header
+    - [ ] update gh issue
   - [ ] lsp :
     - [ ] autocmd config ext
     - [ ] snippy file ext
