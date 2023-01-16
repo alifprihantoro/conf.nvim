@@ -33,10 +33,6 @@ return function(use)
     after = "cmp-path",
   }
   use {
-    'dcampos/nvim-snippy',
-    after = "cmp-cmdline",
-  }
-  use {
     'tamago324/cmp-zsh',
     after = 'nvim-cmp',
   }
@@ -53,9 +49,13 @@ return function(use)
     after = 'nvim-cmp',
   }
   use {
+    'dcampos/nvim-snippy',
+    after = "cmp-cmdline",
+  }
+  use {
     'dcampos/cmp-snippy',
-    after = "nvim-cmp",
-    config = { "require('configs.lsp.lspConf.snippy')", "require('configs.lsp.lspConf.cmp')" }
+    after = 'nvim-snippy',
+    config = "require('configs.lsp.lspConf.snippy')"
   }
   use {
     "mattn/emmet-vim",

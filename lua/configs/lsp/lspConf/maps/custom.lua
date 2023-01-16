@@ -13,5 +13,7 @@ return function()
   key('n', '<C-f>', format, bufopts)
   key('n', '<c-d>', ":LspDiagnosticOpenFloat<CR>", bufopts)
   vim.api.nvim_create_user_command('Format', format, {})
-
+  -- key({ 'i', 's', 'i' }, '<Tab>', function()
+  --   vim.cmd("lua require('configs.lsp.lspConf.maps.tab')")
+  -- end, bufopts)
 end

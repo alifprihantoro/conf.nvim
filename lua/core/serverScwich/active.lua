@@ -9,7 +9,6 @@ M.lsp = function()
       enabled = true
     })
     require('configs.lsp.lspConf.cmp')
-    require('configs.lsp.lspConf.snippy')
   end
   lsp()
 end
