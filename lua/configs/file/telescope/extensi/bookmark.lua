@@ -11,12 +11,14 @@ return function()
       callBack = function(selection2)
         vim.cmd('cd ' .. opts.list_bookmark[selection[1]])
         vim.cmd('execute "' .. opts.option[selection2[1]] .. '"')
-      end
+      end,
+      title = "choose what command do you want"
     })
   end
 
   picker({
     opts = names,
-    callBack = callback
+    callBack = callback,
+    title = 'choose your path favorite'
   })
 end

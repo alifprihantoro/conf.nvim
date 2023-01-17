@@ -7,10 +7,25 @@ return function(arg)
   local action_state = require "telescope.actions.state"
   local callback = arg.callBack
   local opts = arg.opts
-  local preview_arg = arg.preview_arg
+  local preview_arg = arg.isPreview
+  local title = arg.title
 
+  local showPreview
+  if preview_arg == true then
+    showPreview = previewers.new_termopen_previewer {
+      get_command = function(entry)
+        local tmp_table = vim.split(entry.value, "\t")
+        if vim.tbl_isempty(tmp_table) then
+          return { "echo", "" }
+        end
+        return { "gh", "issue", "view", tmp_table[1] }
+      end,
+    }
+  else
+    showPreview = false
+  end
   pickers.new({}, {
-    prompt_title = "Select cloned repo to remove",
+    prompt_title = title,
     finder = finders.new_table {
       results = opts
     },
@@ -26,15 +41,7 @@ return function(arg)
       -- keep default keybindings
       return true
     end,
-    previewer = previewers.new_termopen_previewer {
-      get_command = function(entry)
-        local tmp_table = vim.split(entry.value, "\t")
-        if vim.tbl_isempty(tmp_table) then
-          return { "echo", "" }
-        end
-        return { "gh", "issue", "view", tmp_table[1] }
-      end,
-    },
+    previewer = showPreview,
     sorter = conf.generic_sorter({}),
   }):find()
 end

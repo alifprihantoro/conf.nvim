@@ -15,6 +15,8 @@ return function()
 
   picker({
     opts = list_issue,
-    callBack = callback
+    callBack = callback,
+    isPreview = true,
+    title = 'choose your issue'
   })
 end

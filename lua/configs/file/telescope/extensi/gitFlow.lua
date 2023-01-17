@@ -18,6 +18,7 @@ return function()
 
   picker({
     opts = list_branch_obj,
-    callBack = callback
+    callBack = callback,
+    title = "choose branch want to merge"
   })
 end
