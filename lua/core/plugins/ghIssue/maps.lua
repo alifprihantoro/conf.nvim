@@ -8,7 +8,7 @@ local getVar = function()
 end
 M.edit = function()
   local var = getVar()
-  vim.cmd('!tmux popup "cd ' .. var.gitRoot .. ' && gh issue edit ' .. var.getIssue .. '"')
+  vim.cmd('!' .. _G.TMUX_POPUP .. ' "cd ' .. var.gitRoot .. ' && gh issue edit ' .. var.getIssue .. '"')
 end
 M.open = function()
   vim.cmd('!gh issue view -w ' .. getVar().getIssue)

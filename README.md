@@ -4,43 +4,43 @@ TODO:
 - [x] wichmap
 - [x] telescope :
   - [x] command list
-- [ ] tmux :
-   - [ ] git versioning :
+- [x] tmux :
+   - [x] git versioning :
 - [ ] rest client :
   - [x] asdflj
 - [ ] create docs and help
 - [x] :TSInstall
-- [ ] coc with lsp :
-  - [ ] coc enable if on class
+- [x] coc with lsp :
+  - [x] coc enable if on class
 - [x] git :
   - [x] gsp
   - [x] gsv
-- [ ] opts :
-  - [ ] device
-  - [ ] workspace :
-    - [ ] grub :
-      - [ ] child
-    - [ ] exam : project : muryp
-  - [ ] git :
-    - [ ] git cli or ssh
-    - [ ] ssh folder
-    - [ ] width heigh tmux
-    - [ ] ssh dir
-  - [ ] telescope :
-    - [ ] git change header
-    - [ ] update gh issue
-  - [ ] lsp :
-    - [ ] autocmd config ext
-    - [ ] snippy file ext
-    - [ ] json ls root vimrc
-- [ ] plug install :
-  - [ ] lsp :
-    - [ ] https://github.com/hrsh7th/cmp-cmdline
-    - [ ] https://github.com/dmitmel/cmp-cmdline-history
-    - [ ] hover
-- [ ] snippet :
-  - [ ] bash
-  - [ ] jsx
+- [x] opts :
+  - [x] device
+  - [x] workspace :
+    - [x] grub :
+      - [x] child
+    - [x] exam : project : muryp
+  - [x] git :
+    - [x] git cli or ssh
+    - [x] ssh folder
+    - [x] width heigh tmux
+    - [x] ssh dir
+  - [x] telescope :
+    - [x] git change header
+    - [x] update gh issue
+  - [x] lsp :
+    - [x] autocmd config ext
+    - [x] snippy file ext
+    - [x] json ls root vimrc
+- [x] plug install :
+  - [x] lsp :
+    - [x] https://github.com/hrsh7th/cmp-cmdline
+    - [x] https://github.com/dmitmel/cmp-cmdline-history
+    - [x] hover
+- [x] snippet :
+  - [x] bash
+  - [x] jsx
 - hilight :
   - error color none, bg red (bold,underline)
   - 
