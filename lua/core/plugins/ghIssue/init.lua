@@ -7,7 +7,19 @@ local ghIssue = function(issue_number)
   local file = dirname .. filename
   local getIssue = vim.fn.system("gh issue view " .. issue_number)
   local _, _, replaceIssue = string.find(getIssue, "(number:\t%d+)")
-  local delteNum = getIssue:gsub("number:.+%d\n--.", replaceIssue .. "\n-->")
+  local helper = [[
+
+<!--
+maps :
+- <leader><leader>p => push
+- <leader><leader>e => edit header
+- <leader><leader>o => open browser
+-->
+<!--
+NOTE : puth text under comment(all comment eddit is no effect )
+-->
+]]
+  local delteNum = getIssue:gsub("number:.+%d\n--.", replaceIssue .. "-->" .. helper)
   local newBody = "<!--\n" .. delteNum
 
   os.execute("mkdir " .. dirname)

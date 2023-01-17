@@ -1,5 +1,4 @@
 -- vim.cmd("autocmd!")
-
 local set=vim.opt
 set.swapfile=false
 set.background='dark'
