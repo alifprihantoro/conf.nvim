@@ -4,6 +4,7 @@
 -- end, 0)
 vim.g.mapleader = " "
 require('plugins')
+require('opts')
 require('configs.editor.wiki.before')
 require('core.serverScwich')
 require('core.loadTreeSitter')
