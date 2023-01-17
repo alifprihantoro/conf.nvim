@@ -1,4 +1,4 @@
-return function (use)
+return function(use)
   -- Statusline
   use {
     'nvim-lualine/lualine.nvim',
@@ -6,7 +6,6 @@ return function (use)
   }
   use {
     'nvim-treesitter/nvim-treesitter',
-    cmd = 'TSUpdate',
     config = function()
       require "configs.style.treesitter"
     end,

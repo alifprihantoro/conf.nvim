@@ -5,7 +5,6 @@ local installServer = require('configs.lsp.lspConf.utils.installServer')
 cmd('Lsp', function()
   TOGGLE_SERVER_LSP = true
   active.lsp()
-  print('lsp loaded...')
 end, {})
 vim.cmd('Lsp')
 cmd('LspDiagnosticOpenFloat', vim.diagnostic.open_float, {})
