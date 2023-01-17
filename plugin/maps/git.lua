@@ -12,5 +12,7 @@ end
 key('n', '<leader>gs', ':Telescope git_status<CR>')
 key('n', '<leader>gc', ':Telescope git_branches<CR>')
 key('n', '<leader>gf', ':Telescope git_flow<CR>')
+key('n', '<leader>gi', ':Telescope git_issue<CR>')
+key('n', '<leader>ga', ':TmuxPopup gh issue create<CR>')
 key('n', '<leader>gv', gitCommit)
 key('n', '<leader>gp', gitPushCommit)
