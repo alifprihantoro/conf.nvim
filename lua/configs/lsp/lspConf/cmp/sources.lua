@@ -1,8 +1,8 @@
 local M = {}
 M.sc1 = {
   { name = 'nvim_lsp' },
-  { name = 'snippy' }, -- For snippy users.
   -- { name = 'zsh' },
+  { name = 'luasnip' }, -- For luasnip users.
   { name = 'cmp-tw2css' },
   { name = 'emmet_vim' },
 }

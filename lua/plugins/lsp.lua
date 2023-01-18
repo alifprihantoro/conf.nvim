@@ -15,18 +15,34 @@ return function(use)
   -- cmp start
   use {
     'hrsh7th/nvim-cmp',
-    -- require = { {'dcampos/nvim-snippy'}, {'dcampos/cmp-snippy'} },
-    -- config = "require('configs.lsp.lspConf.snippy')"
   }
-  use {
-    'dcampos/nvim-snippy',
-    after = "nvim-cmp",
+  -- use {
+  --   'SirVer/ultisnips',
+  --   after='nvim-cmp'
+  -- }
+  -- use {
+  --   'quangnguyen30192/cmp-nvim-ultisnips',
+  --   after='ultisnips',
+  --   config = "require('configs.lsp.lspConf.ultisnip')"
+  -- }
+use {
+    'L3MON4D3/LuaSnip',
+    after='nvim-cmp'
   }
-  use {
-    'dcampos/cmp-snippy',
-    after = 'nvim-snippy',
-    config = "require('configs.lsp.lspConf.snippy')"
+use {
+    'saadparwaiz1/cmp_luasnip',
+    after='nvim-cmp',
+    config = "require('configs.lsp.lspConf.luasnip')"
   }
+  -- use {
+  --   'dcampos/nvim-snippy',
+  --   after = "nvim-cmp",
+  -- }
+  -- use {
+  --   'dcampos/cmp-snippy',
+  --   after = 'nvim-snippy',
+  --   config = "require('configs.lsp.lspConf.snippy')"
+  -- }
   use {
     'hrsh7th/cmp-nvim-lsp',
     after = "nvim-cmp",

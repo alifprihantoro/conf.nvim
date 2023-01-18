@@ -1,5 +1,5 @@
 return {
   expand = function(args)
-    require('snippy').expand_snippet(args.body) -- For `snippy` users.
+    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
   end,
 }
