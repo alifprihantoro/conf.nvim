@@ -9,7 +9,7 @@ local capabilities = { capabilities = capability }
 
 -- lang, core
 lsp.sumneko_lua.setup(lua) -- lua
-lsp.tsserver.setup {} -- js typescript
+lsp.tsserver.setup { capabilities } -- js typescript
 lsp.html.setup(capabilities)
 lsp.jsonls.setup(jsonls)
 lsp.cssls.setup(css)
