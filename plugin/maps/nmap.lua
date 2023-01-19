@@ -101,5 +101,3 @@ key('n', '<leader>dg', ':Cdg<CR><CR>')
 key('n', '<leader>u', '<C-^>')
 -- nvim config
 key('n', '<leader>,', ':e ~/.config/nvim/init.lua<CR>')
--- toggle maps
-key({ 'n', 'v' }, '<leader>/', ':CommentToggle<CR>')

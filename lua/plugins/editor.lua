@@ -13,15 +13,11 @@ return function(use)
   -- comment togle
   use {
     'JoosepAlviste/nvim-ts-context-commentstring',
-    config = "require('configs.editor.commentToggle')"
   }
   use {
     'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup({
-        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-      })
-    end
+    after = 'nvim-ts-context-commentstring',
+    config = "require('configs.editor.commentToggle')"
   }
   -- vimwiki or for md
   use {
