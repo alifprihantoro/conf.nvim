@@ -16,13 +16,13 @@ return function(use)
   use {
     'hrsh7th/nvim-cmp',
   }
-use {
+  use {
     'L3MON4D3/LuaSnip',
-    after='nvim-cmp'
+    after = 'nvim-cmp'
   }
-use {
+  use {
     'saadparwaiz1/cmp_luasnip',
-    after='nvim-cmp',
+    after = 'nvim-cmp',
     config = "require('configs.lsp.lspConf.luasnip')"
   }
   use {

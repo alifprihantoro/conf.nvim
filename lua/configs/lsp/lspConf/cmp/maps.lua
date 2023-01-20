@@ -45,7 +45,7 @@ end
 
 local M = {
   ['<C-b>'] = map.scroll_docs(-4),
-  ['<C-f>'] = map.scroll_docs(4),
+  ['<C-m>'] = map.scroll_docs(4),
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
   ['<Tab>'] = tab({ 'i', 's', 'i' }),

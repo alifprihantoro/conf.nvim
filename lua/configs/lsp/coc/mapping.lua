@@ -10,10 +10,8 @@ return function()
   key("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<up>"]], opts)
   key("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
   -- scroll info
-  key("i", "<C-f>", [[coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]], opts)
-  key("i", "<C-b>", [[coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]], opts)
-  key("n", "<C-f>", [[coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]], opts)
-  key("n", "<C-b>", [[coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]], opts)
+  key({ 'n', "i" }, "<C-m>", [[coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]], opts)
+  key({ 'n', "i" }, "<C-b>", [[coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]], opts)
 
   -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
   key("n", "[g", "<Plug>(coc-diagnostic-prev)", opts2)

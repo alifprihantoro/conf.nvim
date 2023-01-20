@@ -1,9 +1,9 @@
 local M = {}
 M.sc1 = {
-  { name = 'nvim_lsp', priority = 8 },
+  { name = 'nvim_lsp'},
   -- { name = 'zsh' },
-  { name = 'luasnip', priority = 7 }, -- For luasnip users.
-  { name = 'cmp-tw2css', priority = 7 },
+  { name = 'luasnip'}, -- For luasnip users.
+  { name = 'cmp-tw2css'},
 }
 M.sc2 = {
   { name = 'buffer', priority = 7 },

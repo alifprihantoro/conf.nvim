@@ -3,6 +3,8 @@
     "astro": "html"
   },
   "snippets.ultisnips.enable": false,
+  "emmet.includeLanguages": { "vue-html": "html", "javascript": "html" },
+  "sh.trace.server": "messages",
   "suggest.enableFloat": true,
   "suggest.completionItemKindLabels": {
     "text": "",
@@ -41,6 +43,24 @@
   "diagnostic.virtualTextPrefix": "  ● ",
   "coc.preferences.jumpCommand": "edit",
   "css.lint.duplicateProperties": "warning",
+  "html-css-support.enable": false,
   "colors.enable": true,
+  "html-css-support.styleSheets": ["/style.css", "style.css"],
+  "html-css-support.enabledLanguages": [
+    "html",
+    "vue",
+    "blade",
+    "htmldjango",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "snippets.extends": {
+    "cpp": ["c"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"],
+    "vimwiki ": ["markdown"],
+    "html ": ["hugo"],
+    "toml": ["hugo"]
+  },
   "tailwindCSS.emmetCompletions": true
 }
