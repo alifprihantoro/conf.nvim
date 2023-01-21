@@ -53,6 +53,15 @@ local confirmCmd = function()
     fallback()
   end, { 'c', 's' })
 end
+local cr = function()
+  return map(function(fallback)
+    if cmp.visible() then
+      confirm()
+      return
+    end
+    fallback()
+  end, { 'i' })
+end
 
 local M = {
   ['<C-b>'] = map.scroll_docs(-4),
@@ -60,7 +69,7 @@ local M = {
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
   ['<Tab>'] = tab(),
-  ['<CR>'] = confirm,
+  ['<CR>'] = cr(),
   ['<Down>'] = down({ 'i', 's' }),
   ['<Up>'] = up({ 'i', 's' }),
   ['<C-j>'] = down({ 'i', 's', 'c' }),
