@@ -1,12 +1,6 @@
 local cmd = vim.api.nvim_create_user_command
-local active = require('core.serverScwich.active')
 local installServer = require('configs.lsp.lspConf.utils.installServer')
 
-cmd('Lsp', function()
-  TOGGLE_SERVER_LSP = true
-  active.lsp()
-end, {})
-vim.cmd('Lsp')
 cmd('LspDiagnosticOpenFloat', vim.diagnostic.open_float, {})
 cmd('LspDiagnosticPrev', vim.diagnostic.goto_prev, {})
 cmd('LspDecDiagnosticNext', vim.diagnostic.goto_next, {})

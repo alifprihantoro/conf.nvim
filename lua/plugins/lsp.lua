@@ -3,7 +3,7 @@ return function(use)
   use {
     'neoclide/coc.nvim',
     -- branch = 'master',
-    cmd = "Coc",
+    cmd = "CocEnable",
     -- run = 'yarn install --frozen-lockfile',
     config = "require('configs.lsp.coc')"
   }
@@ -22,7 +22,7 @@ return function(use)
   }
   use {
     'saadparwaiz1/cmp_luasnip',
-    after = 'nvim-cmp',
+    after = 'LuaSnip',
     config = "require('configs.lsp.lspConf.luasnip')"
   }
   use {

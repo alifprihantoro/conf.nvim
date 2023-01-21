@@ -1,6 +1,6 @@
 local key = vim.keymap.set
 local cmd = vim.api.nvim_create_user_command
-local opts = { silent = true, expr = true, replace_keycodes = false }
+local opts = { silent = true, expr = true, replace_keycodes = true }
 local opts2 = { silent = true }
 return function()
   -- Prettier

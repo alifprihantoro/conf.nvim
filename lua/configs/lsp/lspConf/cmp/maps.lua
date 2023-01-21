@@ -1,4 +1,4 @@
-local cmp = require 'cmp'
+local cmp = require('cmp')
 local luasnip = require("luasnip")
 local map = cmp.mapping
 local confirm = map.confirm {
@@ -11,7 +11,7 @@ local down = function(arg)
     if cmp.visible() then
       cmp.select_next_item()
     else
-      fallback()
+      vim.cmd([[exe "normal! \<Down>"]])
     end
   end, arg)
 end
@@ -24,7 +24,7 @@ local up = function(arg)
       if cmp.visible() then
         cmp.select_next_item()
       else
-        fallback()
+        vim.cmd([[exe "normal! \<Up>"]])
       end
     end
   end, arg)
@@ -44,6 +44,7 @@ local tab = function()
     fallback()
   end, { 'i' })
 end
+
 local confirmCmd = function()
   return map(function(fallback)
     if cmp.visible() then
@@ -53,15 +54,6 @@ local confirmCmd = function()
     fallback()
   end, { 'c', 's' })
 end
-local cr = function()
-  return map(function(fallback)
-    if cmp.visible() then
-      confirm()
-      return
-    end
-    fallback()
-  end, { 'i' })
-end
 
 local M = {
   ['<C-b>'] = map.scroll_docs(-4),
@@ -69,7 +61,7 @@ local M = {
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
   ['<Tab>'] = tab(),
-  ['<CR>'] = cr(),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
   ['<Down>'] = down({ 'i', 's' }),
   ['<Up>'] = up({ 'i', 's' }),
   ['<C-j>'] = down({ 'i', 's', 'c' }),
