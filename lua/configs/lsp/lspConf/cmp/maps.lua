@@ -31,16 +31,27 @@ local up = function(arg)
 end
 
 
-local tab = function(arg)
+local tab = function()
   return map(function(fallback)
-    if luasnip.expand_or_jumpable() then
-      luasnip.expand_or_jump()
-    elseif cmp.visible() then
-      confirm()
-    else
-      fallback()
+    if luasnip.jumpable() then
+      luasnip.jump(1)
+      return
     end
-  end, arg)
+    if cmp.visible() then
+      confirm()
+      return
+    end
+    fallback()
+  end, { 'i' })
+end
+local confirmCmd = function()
+  return map(function(fallback)
+    if cmp.visible() then
+      confirm()
+      return
+    end
+    fallback()
+  end, { 'c', 's' })
 end
 
 local M = {
@@ -48,11 +59,13 @@ local M = {
   ['<C-m>'] = map.scroll_docs(4),
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
-  ['<Tab>'] = tab({ 'i', 's', 'i' }),
+  ['<Tab>'] = tab(),
   ['<CR>'] = confirm,
   ['<Down>'] = down({ 'i', 's' }),
   ['<Up>'] = up({ 'i', 's' }),
   ['<C-j>'] = down({ 'i', 's', 'c' }),
   ['<C-k>'] = up({ 'i', 's', 'c' }),
+  ['<C-l>'] = confirmCmd(),
 }
+
 return M
