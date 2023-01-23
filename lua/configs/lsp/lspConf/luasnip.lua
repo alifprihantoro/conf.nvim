@@ -1,11 +1,16 @@
 -- require("luasnip.loaders.from_vscode").lazy_load()
 local extend = require("luasnip").filetype_extend
 require("luasnip.loaders.from_snipmate").lazy_load()
+local merger = require("global.merger")
 
-extend("javascript", { '_', 'html', 'javascript', 'typescriptreact', 'typescript' })
-extend("typescript", { '_', 'html', 'javascript', 'typescriptreact', 'typescript' })
-extend("typescriptreact", { '_', 'html', 'javascript', 'javascriptreact', 'typescriptreact' })
-extend("javascriptreact", { '_', 'html', 'javascript', 'javascriptreact', 'typescriptreact' })
-extend("astro", { '_', 'javascript', 'javascriptreact', 'typescriptreact', 'html' })
+local js = { '_', 'html', 'javascript' }
+local jsx = { '_', 'html', 'javascript', 'javascriptreact' }
+local tsx = merger(jsx, { 'typescript', 'typescriptreact' })
+
+extend("javascript", js)
+extend("typescript", merger(js, { 'typescript' }))
+extend("typescriptreact", jsx)
+extend("javascriptreact", tsx)
+extend("astro", merger(tsx, { 'astro' }))
 
 require('core.serverScwich.active').lsp()

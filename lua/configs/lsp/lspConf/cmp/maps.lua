@@ -11,7 +11,8 @@ local down = function(arg)
     if cmp.visible() then
       cmp.select_next_item()
     else
-      vim.cmd([[exe "normal! \<Down>"]])
+      fallback()
+      -- vim.cmd([[exe "normal! \<Down>"]])
     end
   end, arg)
 end
@@ -24,7 +25,8 @@ local up = function(arg)
       if cmp.visible() then
         cmp.select_next_item()
       else
-        vim.cmd([[exe "normal! \<Up>"]])
+        -- vim.cmd([[exe "normal! \<Up>"]])
+        fallback()
       end
     end
   end, arg)
