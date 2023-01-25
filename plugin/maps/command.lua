@@ -19,6 +19,15 @@ cmd("Gplugvim", "call Goplugvim()", {})
 cmd("Help", "exe 'tabnew '.nvimplug.'/nvim-conf/help/home.md'", {})
 -- plugin on wiki",{})
 cmd("W1", "e ~/wiki/development/index.wiki", {})
+cmd("Cmdh", function()
+  local CURRENT_HEIGHT = vim.api.nvim_command_output('set cmdheight'):gsub(".*=", "")
+  local IsZero = CURRENT_HEIGHT == "0"
+  if IsZero then
+    vim.cmd('set cmdheight=1')
+  else
+    vim.cmd('set cmdheight=0')
+  end
+end, {})
 cmd("TmuxPopup", function(args)
   local gitRoot = vim.fn.system("git rev-parse --show-toplevel"):gsub('\n', '')
   vim.cmd('!' .. _G.TMUX_POPUP .. '"cd ' .. gitRoot .. ' && ' .. args.args .. '"')

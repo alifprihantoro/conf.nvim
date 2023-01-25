@@ -46,6 +46,15 @@ local tab = function()
     fallback()
   end, { 'i' })
 end
+local cr = function()
+  return map(function(fallback)
+    if cmp.visible() then
+      confirm()
+      return
+    end
+    fallback()
+  end, { 'i' })
+end
 
 local confirmCmd = function()
   return map(function(fallback)
@@ -63,7 +72,7 @@ local M = {
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
   ['<Tab>'] = tab(),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  ['<CR>'] = cr(),
   ['<Down>'] = down({ 'i', 's' }),
   ['<Up>'] = up({ 'i', 's' }),
   ['<C-j>'] = down({ 'i', 's', 'c' }),
