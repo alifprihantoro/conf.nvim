@@ -1,11 +1,11 @@
 local icons = require('configs.lsp.lspConf.cmp.icons')
-local maps = require('configs.lsp.lspConf.cmp.maps')
+local mapping = require('configs.lsp.lspConf.cmp.maps')
 local cmp = require 'cmp'
 local window = require 'configs.lsp.lspConf.cmp.window'
 local snippet = require 'configs.lsp.lspConf.cmp.snippet'
 local sources = require 'configs.lsp.lspConf.cmp.sources'
-require('configs.lsp.lspConf.cmp.cmdLine')
 
+-- command
 vim.cmd('set completeopt=menu,menuone,noselect')
 cmp.setup({
   view = {
@@ -15,11 +15,12 @@ cmp.setup({
     }
   },
   snippet = snippet,
-  mapping = cmp.mapping.preset.insert(maps),
+  mapping = mapping,
   sources = cmp.config.sources(sources.sc1, sources.sc2),
   formatting = {
     format = icons.setup,
   },
 })
 
+require('configs.lsp.lspConf.cmp.cmdLine')
 CEK_CMP_ACTIVE = true

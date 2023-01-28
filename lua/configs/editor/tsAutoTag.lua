@@ -17,10 +17,10 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 require 'nvim-treesitter.configs'.setup {
   autotag = {
     enable = true,
-    filetypes = { "html", "xml", "astro" },
+    filetypes = { "html", "xml", "astro","javascriptreact","typescriptreact" },
   }
 }
 -- OR
 require('nvim-ts-autotag').setup({
-  filetypes = { "html", "xml", "astro" },
+  filetypes = { "html", "xml", "astro","javascriptreact","typescriptreact"  },
 })

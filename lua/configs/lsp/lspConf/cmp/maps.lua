@@ -12,20 +12,18 @@ local down = function(arg)
       cmp.select_next_item()
     else
       fallback()
-      -- vim.cmd([[exe "normal! \<Down>"]])
     end
   end, arg)
 end
 
 local up = function(arg)
-  return cmp.mapping(function(fallback)
+  return map(function(fallback)
     if cmp.visible() then
       cmp.select_prev_item()
     else
       if cmp.visible() then
         cmp.select_next_item()
       else
-        -- vim.cmd([[exe "normal! \<Up>"]])
         fallback()
       end
     end
@@ -63,16 +61,16 @@ local confirmCmd = function()
       return
     end
     fallback()
-  end, { 'c', 's' })
+  end, { 'c', 's', 'i' })
 end
 
 local M = {
+  ['<CR>'] = cr(),
   ['<C-b>'] = map.scroll_docs(-4),
   ['<C-m>'] = map.scroll_docs(4),
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
   ['<Tab>'] = tab(),
-  ['<CR>'] = cr(),
   ['<Down>'] = down({ 'i', 's' }),
   ['<Up>'] = up({ 'i', 's' }),
   ['<C-j>'] = down({ 'i', 's', 'c' }),

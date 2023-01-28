@@ -17,15 +17,6 @@ return function(use)
     'hrsh7th/nvim-cmp',
   }
   use {
-    'L3MON4D3/LuaSnip',
-    after = 'nvim-cmp'
-  }
-  use {
-    'saadparwaiz1/cmp_luasnip',
-    after = 'LuaSnip',
-    config = "require('configs.lsp.lspConf.luasnip')"
-  }
-  use {
     'hrsh7th/cmp-nvim-lsp',
     after = "nvim-cmp",
   }
@@ -60,6 +51,15 @@ return function(use)
   use {
     "mattn/emmet-vim",
     after = 'cmp-emmet-vim'
+  }
+  use {
+    'L3MON4D3/LuaSnip',
+    after = 'emmet-vim'
+  }
+  use {
+    'saadparwaiz1/cmp_luasnip',
+    after = 'LuaSnip',
+    config = "require('configs.lsp.lspConf.luasnip')"
   }
   --end cmp
 end

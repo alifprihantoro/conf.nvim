@@ -10,7 +10,7 @@ if status == false then
 end
 vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
-  -- use "lewis6991/impatient.nvim"
+  use "lewis6991/impatient.nvim"
   use 'wbthomason/packer.nvim'
   lsp(use)
   style(use)
