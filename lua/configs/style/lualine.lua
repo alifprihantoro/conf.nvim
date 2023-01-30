@@ -53,10 +53,10 @@ require('lualine').setup {
     lualine_x = {},
     lualine_y = { 'diff', 'diagnostics', 'filetype', },
     lualine_z = {
-      { 
+      {
         'branch',
         separator    = { right = '' },
-        left_padding = 2 
+        left_padding = 2
       },
     },
   },
