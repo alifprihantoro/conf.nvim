@@ -19,8 +19,9 @@ return function(use)
     after = 'telescope.nvim',
     config = 'require("telescope").load_extension("emoji")',
   }
-  -- use {
-  --   "nvim-telescope/telescope-github.nvim",
-  -- }
-
+  use {
+    'muryp/nvim-muryp-git',
+    after = 'telescope.nvim',
+    -- config = "require('configs.file.fileTree')"
+  }
 end
