@@ -101,3 +101,4 @@ key('n', '<leader>dg', ':Cdg<CR><CR>')
 key('n', '<leader>u', '<C-^>')
 -- nvim config
 key('n', '<leader>,', ':e ~/.config/nvim/init.lua<CR>')
+key('t', '<C-q>', [[<C-\><C-n>]]) ---go normal mode from cli

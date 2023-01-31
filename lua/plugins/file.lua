@@ -21,15 +21,12 @@ return function(use)
   }
   use {
     'muryp/nvim-muryp-git',
-    after = 'telescope.nvim',
+    -- after = 'telescope.nvim',
     config = function()
       require('nvim-muryp-git').setup {
         mapping = {
           issue = function()
             require('nvim-muryp-git.telescope.gh.ghIssue.maps').maps()
-          end,
-          git = function()
-            
           end,
         },
         SSH_PATH = { '~/ssh/github' },
