@@ -17,6 +17,7 @@ require("nvim-tree").setup({
         { key = "<leader>h", action = "toggle_help" },
         { key = "<leader><CR>", action = "cd" },
         { key = "<C-k>", action = "" },
+        { key = "<leader>k", action = "toggle_file_info" },
       },
     },
   },

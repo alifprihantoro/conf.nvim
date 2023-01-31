@@ -8,8 +8,6 @@ return function(use)
     },
   }
   use { 'folke/which-key.nvim',
-    opt = true,
-    keys = { "<leader>", "z", "b" },
     config = "require('configs.helper.wichKey')"
   }
 end
