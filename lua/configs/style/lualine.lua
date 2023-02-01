@@ -1,4 +1,4 @@
-local status, _ = pcall(require, "lualine")
+local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
 -- Bubbles config for lualine
@@ -34,7 +34,7 @@ local bubbles_theme = {
   },
 }
 
-require('lualine').setup {
+lualine.setup {
   options = {
     theme                = bubbles_theme,
     component_separators = '|',
@@ -50,7 +50,13 @@ require('lualine').setup {
     },
     lualine_b = { { 'filename', path = 1 } },
     lualine_c = {},
-    lualine_x = {},
+    lualine_x = {
+      {
+        require("lazy.status").updates,
+        cond = require("lazy.status").has_updates,
+        color = { fg = "#ff9e64" },
+      },
+    },
     lualine_y = { 'diff', 'diagnostics', 'filetype', },
     lualine_z = {
       {

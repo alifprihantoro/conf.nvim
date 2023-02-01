@@ -1,29 +1,39 @@
-return function(use)
+return {
   -- Statusline
-  use {
+  {
     'nvim-lualine/lualine.nvim',
-    config = "require('configs.style.lualine')"
+    event = "VeryLazy",
+    config = function()
+      require('configs.style.lualine')
+    end
   }
-  use {
+  , {
     'nvim-treesitter/nvim-treesitter',
     config = function()
       require "configs.style.treesitter"
     end,
   }
   -- File icons
-  use {
+  , {
     'kyazdani42/nvim-web-devicons',
     event = "BufWinEnter",
-    config = "require('configs.style.devicons')"
+    config = function() require('configs.style.devicons') end
   }
   -- theme color scheme
-  use {
+  , {
     'embark-theme/vim',
     as = 'embark',
-    config = "require('configs.style.theme')"
+    config = function()
+      vim.cmd.colorscheme("embark")
+      vim.cmd [[
+        set termguicolors
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+      ]]
+    end
   }
-  use {
+  , {
     "lukas-reineke/indent-blankline.nvim",
-    config = "require('configs.style.indentBlank')"
+    config = function() require('configs.style.indentBlank') end
   }
-end
+}

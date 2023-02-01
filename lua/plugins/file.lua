@@ -1,21 +1,20 @@
-return function(use)
-  use {
+-- Unless you are still migrating, remove the deprecated commands from v1.x
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+return {
+  {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     cmd = 'Telescope',
-    config = "require('configs.file.telescope')",
+    config = function() require('configs.file.telescope') end,
     requires = {
       { 'nvim-lua/plenary.nvim' },
     },
   }
-  use {
+  , {
     'xiyaowong/telescope-emoji.nvim',
     after = 'telescope.nvim',
-    config = 'require("telescope").load_extension("emoji")',
-  }
-  -- Unless you are still migrating, remove the deprecated commands from v1.x
-  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
-  use {
+    config = function()require("telescope").load_extension("emoji")end,
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = {
@@ -23,6 +22,6 @@ return function(use)
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
-    config = "require('configs.file.neotree')",
+    config = function() require('configs.file.neotree') end,
   }
-end
+}
