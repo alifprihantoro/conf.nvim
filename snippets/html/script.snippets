@@ -1,3 +1,0 @@
-snippet hscript "Add script" b
-	{{ $js := resources.Get "${1:url}" | minify }}
-	<script src="{{ $js.Permalink }}"></script>

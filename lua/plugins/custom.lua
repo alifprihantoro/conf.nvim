@@ -6,4 +6,5 @@ return function(use)
       require('nvim-muryp-git').setup {}
     end
   }
+  use 'muryp/nvim-muryp-snippet-collection'
 end
