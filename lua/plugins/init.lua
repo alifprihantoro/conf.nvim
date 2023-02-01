@@ -5,33 +5,18 @@ local helper = require('plugins.helper')
 local file = require('plugins.file')
 local custom = require('plugins.custom')
 
-local root = vim.fn.fnamemodify("./.repro", ":p")
-
--- set stdpaths to use .repro
-for _, name in ipairs({ "config", "data", "state", "cache" }) do
-  vim.env[("XDG_%s_HOME"):format(name:upper())] = root .. "/" .. name
-end
-
--- bootstrap lazy
-local lazypath = root .. "/plugins/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
-    "--single-branch",
     "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
-vim.opt.runtimepath:prepend(lazypath)
-
--- install plugins
-local plugins = {
-  -- do not remove the colorscheme!
-  "folke/tokyonight.nvim",
-  -- add any other pugins here
-}
+vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   "nvim-lua/plenary.nvim",
   "MunifTanjim/nui.nvim",
@@ -41,5 +26,6 @@ require("lazy").setup({
   helper,
   file,
   custom,
-},{})
+},{
+  })
 -- use "lewis6991/impatient.nvim"

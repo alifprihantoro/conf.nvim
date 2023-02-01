@@ -50,13 +50,7 @@ lualine.setup {
     },
     lualine_b = { { 'filename', path = 1 } },
     lualine_c = {},
-    lualine_x = {
-      {
-        require("lazy.status").updates,
-        cond = require("lazy.status").has_updates,
-        color = { fg = "#ff9e64" },
-      },
-    },
+    lualine_x = {},
     lualine_y = { 'diff', 'diagnostics', 'filetype', },
     lualine_z = {
       {

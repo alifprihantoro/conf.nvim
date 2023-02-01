@@ -1,12 +1,12 @@
 return {
   -- coc install
-  {
-    'neoclide/coc.nvim',
-    -- branch = 'master',
-    cmd = "CocEnable",
-    -- run = 'yarn install --frozen-lockfile',
-    config = function()require('configs.lsp.coc')end
-  }
+  -- {
+  --   'neoclide/coc.nvim',
+  --   -- branch = 'master',
+  --   cmd = "CocEnable",
+  --   -- run = 'yarn install --frozen-lockfile',
+  --   config = function()require('configs.lsp.coc')end
+  -- }
   -- lsp
   , {
     'neovim/nvim-lspconfig',
