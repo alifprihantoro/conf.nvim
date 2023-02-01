@@ -7,7 +7,8 @@ return function(use)
       { 'nvim-lua/plenary.nvim' },
     },
   }
-  use { 'folke/which-key.nvim',
+  use {
+    'folke/which-key.nvim',
     config = "require('configs.helper.wichKey')"
   }
 end

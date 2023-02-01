@@ -28,7 +28,3 @@ cmd("Cmdh", function()
     vim.cmd('set cmdheight=0')
   end
 end, {})
-cmd("TmuxPopup", function(args)
-  local gitRoot = vim.fn.system("git rev-parse --show-toplevel"):gsub('\n', '')
-  vim.cmd('!' .. _G.TMUX_POPUP .. '"cd ' .. gitRoot .. ' && ' .. args.args .. '"')
-end, { nargs = "*" })

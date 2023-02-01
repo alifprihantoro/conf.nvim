@@ -2,7 +2,7 @@ return function(use)
   use {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    after = "nvim-tree.lua",
+    after = "nvim-treesitter",
     config = "require('configs.editor.autopairs')"
   }
   use {

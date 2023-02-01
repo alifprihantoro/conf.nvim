@@ -24,8 +24,6 @@ return function(use)
   }
   use {
     "lukas-reineke/indent-blankline.nvim",
-    event = "InsertEnter",
-    after = "nvim-treesitter",
     config = "require('configs.style.indentBlank')"
   }
 end

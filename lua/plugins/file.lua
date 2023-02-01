@@ -1,11 +1,4 @@
 return function(use)
-  -- file tree
-  use {
-    'nvim-tree/nvim-tree.lua',
-    tag = 'nightly', -- optional, updated every week. (see issue #1193)
-    cmd = { "NvimTreeOpen", "NvimTreeFindFileToggle", "NvimTreeToggle" },
-    config = "require('configs.file.fileTree')"
-  }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     cmd = 'Telescope',
@@ -19,11 +12,17 @@ return function(use)
     after = 'telescope.nvim',
     config = 'require("telescope").load_extension("emoji")',
   }
-  use {
-    'muryp/nvim-muryp-git',
-    config = function()
-      require('nvim-muryp-git')
-    end
-  }
+  -- Unless you are still migrating, remove the deprecated commands from v1.x
+  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+    config = "require('configs.file.neotree')",
+  }
 end
