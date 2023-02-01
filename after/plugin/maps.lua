@@ -45,7 +45,7 @@ wk.register({
   },
 }, { prefix = "<leader>" })
 
--- wk.register({
---   d = { '"+d', 'CUT', mode = { "v" } },
---   y = { '"+y', 'COPY', mode = { "v" } }
--- })
+wk.register({
+  d = { '"+d', 'CUT', mode = { "v" } },
+  y = { '"+y', 'COPY', mode = { "v" } }
+})

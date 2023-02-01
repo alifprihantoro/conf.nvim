@@ -15,6 +15,7 @@ key('n', 'ya', 'ggVGy')
 key('n', 'da', 'ggVGd')
 -- just cut
 key('n', '<BS>', 'v"_d')
+key('n', '<C-p>', '"+p')
 key('v', '<BS>', '"_d')
 key('n', '<Del>', 'v"_d')
 key('t', '<C-q>', [[<C-\><C-n>]]) ---go normal mode from cli
