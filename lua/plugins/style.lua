@@ -2,10 +2,10 @@ return {
   -- Statusline
   {
     'nvim-lualine/lualine.nvim',
-    event = "VeryLazy",
     config = function()
       require('configs.style.lualine')
-    end
+    end,
+    lazy = false,
   }
   , {
     'nvim-treesitter/nvim-treesitter',
@@ -22,7 +22,8 @@ return {
   -- theme color scheme
   , {
     'embark-theme/vim',
-    as = 'embark',
+    name = 'embark',
+    lazy = false,
     config = function()
       vim.cmd.colorscheme("embark")
       vim.cmd [[
@@ -34,6 +35,7 @@ return {
   }
   , {
     "lukas-reineke/indent-blankline.nvim",
-    config = function() require('configs.style.indentBlank') end
+    config = function() require('configs.style.indentBlank') end,
+    lazy = false,
   }
 }

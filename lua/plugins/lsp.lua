@@ -8,7 +8,7 @@ return {
   --   config = function()require('configs.lsp.coc')end
   -- }
   -- lsp
-  , {
+   {
     'neovim/nvim-lspconfig',
     config = function()require('configs.lsp.lspConf')end,
   }

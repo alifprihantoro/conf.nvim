@@ -9,7 +9,7 @@ return {
   , 'muryp/nvim-muryp-snippet-collection'
   , {
     'muryp/vimwiki',
-    opts = true,
+    lazy = true,
     ft = { "markdown" },
     config = function() require('configs.editor.wiki.after') end
   }

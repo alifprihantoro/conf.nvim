@@ -11,7 +11,8 @@ return {
     config = function() require('configs.editor.tsAutoTag') end
   }
   -- comment togle
-  , {
+  , 
+  {
     'JoosepAlviste/nvim-ts-context-commentstring',
   }
   , {
