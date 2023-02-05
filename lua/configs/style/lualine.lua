@@ -1,4 +1,4 @@
-local status, _ = pcall(require, "lualine")
+local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
 -- Bubbles config for lualine
@@ -35,7 +35,7 @@ local bubbles_theme = {
   },
 }
 
-require('lualine').setup {
+lualine.setup {
   options = {
     theme                = bubbles_theme,
     component_separators = '|',
@@ -64,3 +64,5 @@ require('lualine').setup {
   tabline = {},
   extensions = {},
 }
+lualine.hide({})
+_G.LUALINE_DISABLE = true
