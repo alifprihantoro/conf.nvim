@@ -12,16 +12,7 @@ wk.register({
   h = { '<C-w>h', "GO_LEFT_SCREEN" },
   j = { '<C-w>j', "GO_DOWN_SCREEN" },
   k = { '<C-w>k', "GO_UP_SCREEN" },
-  x = { function()
-    local lualine = require "lualine"
-    if _G.LUALINE_DISABLE == true then
-      lualine.hide({ unhide = true })
-      _G.LUALINE_DISABLE = false
-    else
-      lualine.hide({})
-      _G.LUALINE_DISABLE = true
-    end
-  end, "TOOGLE_LUALINE" },
+  x = { ':LualineToggle<CR>', "TOOGLE_LUALINE" },
   [','] = { ':e ~/.config/nvim/init.lua<CR>', "GOTO_NVIM_CONF" },
   ['-'] = { '<C-w>s', "SPLIT_HORIZONTAL" },
   [']'] = { '<C-w>>', "SPLIT_LEFT" },

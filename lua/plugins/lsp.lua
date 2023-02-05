@@ -15,6 +15,7 @@ return function(use)
   -- cmp start
   use {
     'hrsh7th/nvim-cmp',
+    event = "InsertEnter",
   }
   use {
     'hrsh7th/cmp-nvim-lsp',

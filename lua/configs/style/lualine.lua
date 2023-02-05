@@ -64,5 +64,13 @@ lualine.setup {
   tabline = {},
   extensions = {},
 }
-lualine.hide({})
-_G.LUALINE_DISABLE = true
+local cmd = vim.api.nvim_create_user_command
+cmd('LualineToggle', function()
+  if _G.LUALINE_DISABLE == false then
+    lualine.hide({})
+    _G.LUALINE_DISABLE = true
+  else
+    lualine.hide({ unhide = true })
+    _G.LUALINE_DISABLE = false
+  end
+end, {})

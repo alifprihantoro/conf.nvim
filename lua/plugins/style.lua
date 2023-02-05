@@ -2,7 +2,8 @@ return function(use)
   -- Statusline
   use {
     'nvim-lualine/lualine.nvim',
-    config = "require('configs.style.lualine')"
+    config = "require('configs.style.lualine')",
+    cmd = 'LualineToggle',
   }
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -39,9 +40,6 @@ return function(use)
   })
   use({
     "rcarriga/nvim-notify",
-    -- setup = function()
-    --   vim.cmd('set termguicolors')
-    -- end,
     config = "require('configs.style.notify')",
   })
 end
