@@ -2,9 +2,9 @@ return function(use)
   -- coc install
   use {
     'neoclide/coc.nvim',
-    -- branch = 'master',
+    branch = 'release',
     cmd = "CocEnable",
-    -- run = 'yarn install --frozen-lockfile',
+    run = 'yarn install --frozen-lockfile',
     config = "require('configs.lsp.coc')"
   }
   -- lsp

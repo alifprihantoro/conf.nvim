@@ -8,7 +8,8 @@ if (not status) then return end
 -- stylua: ignore
 local colors = {
   blue   = '#80a0ff',
-  cyan   = '#79dac8',
+  main   = '#03589c',
+  cyan   = '#391e9c',
   black  = '#080808',
   white  = '#c6c6c6',
   red    = '#ff5189',
@@ -18,12 +19,12 @@ local colors = {
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.blue },
+    a = { fg = colors.black, bg = colors.main },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
   },
 
-  insert  = { a = { fg = colors.black, bg = colors.violet } },
+  insert  = { a = { fg = colors.black, bg = colors.blue } },
   visual  = { a = { fg = colors.black, bg = colors.cyan } },
   replace = { a = { fg = colors.black, bg = colors.red } },
 

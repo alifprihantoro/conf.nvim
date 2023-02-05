@@ -6,7 +6,7 @@ require("which-key").register({
       ":exec 'Neotree' fnameescape(fnamemodify(finddir('.git', escape(expand('%:p:h'), ' ') . ';'), ':h'))<CR>",
       "GIT_DIR"
     },
-    f    = { ":Neotree %:h<CR>", "FILE" },
+    f    = { ":Neotree focus %<CR>", "FOCUS" },
     n    = { ":lua _G.TreeOpenNow()<CR>", "PWD" },
     q    = { ":Neotree close<CR>", "QUIT" },
   },

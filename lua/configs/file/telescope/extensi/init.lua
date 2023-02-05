@@ -3,3 +3,4 @@ local workspace = require('configs.file.telescope.extensi.workspace')
 
 plug.work_space = workspace
 require('nvim-muryp-git').resgisterTelescope()
+require("telescope").load_extension("notify")

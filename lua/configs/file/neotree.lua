@@ -20,6 +20,9 @@ require("neo-tree").setup({
   window = {
     mappings = {
       ["Z"] = "expand_all_nodes",
+      ["Y"] = function(arg)
+        _G.KEY_VALUE = arg
+      end,
     }
   },
   nesting_rules = {},
@@ -63,15 +66,11 @@ require("neo-tree").setup({
     {
       event = "neo_tree_buffer_enter",
       handler = function()
-        vim.cmd [[hi NeoTreeTitleBar guifg=white]]
-      end
-    },
-    {
-      event = "file_renamed",
-      handler = function(args)
-        -- fix references to file
-        print(vim.inspect(args))
-        print(args.source, " renamed to ", args.destination)
+        vim.cmd [[
+        hi NeoTreeTitleBar guifg=white
+        hi NeoTreeDirectoryName guifg=#80a0ff
+        hi NeoTreeDirectoryIcon guifg=#80a0ff
+        ]]
       end
     },
   },

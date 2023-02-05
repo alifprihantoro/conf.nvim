@@ -26,4 +26,22 @@ return function(use)
     "lukas-reineke/indent-blankline.nvim",
     config = "require('configs.style.indentBlank')"
   }
+  use({
+    "folke/noice.nvim",
+    config = "require('configs.style.noice')",
+    after = 'nvim-notify',
+    setup = function()
+      vim.cmd('set nolazyredraw')
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+    }
+  })
+  use({
+    "rcarriga/nvim-notify",
+    -- setup = function()
+    --   vim.cmd('set termguicolors')
+    -- end,
+    config = "require('configs.style.notify')",
+  })
 end
