@@ -16,7 +16,7 @@ lsp.html.setup(capabilities)
 lsp.jsonls.setup(jsonls)
 lsp.cssls.setup(css)
 -- lsp.cssmodules_ls.setup {}
-lsp.eslint.setup {}
+lsp.eslint.setup(capabilities)
 lsp.yamlls.setup(yaml)
 lsp.bashls.setup(capabilities)
 lsp.pyright.setup {}
@@ -25,4 +25,4 @@ lsp.taplo.setup {
   cmd = { "taplo", "lsp", "stdio" }
 }
 -- framework
-lsp.astro.setup {} -- astro
+lsp.astro.setup(capabilities) -- astro

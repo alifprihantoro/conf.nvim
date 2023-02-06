@@ -13,4 +13,5 @@ return function()
   key('n', '<C-f>', format, bufopts)
   key('n', '<c-d>', ":LspDiagnosticOpenFloat<CR>", bufopts)
   vim.api.nvim_create_user_command('Format', format, {})
+
 end
