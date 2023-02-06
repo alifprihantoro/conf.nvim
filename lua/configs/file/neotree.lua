@@ -20,13 +20,36 @@ require("neo-tree").setup({
   window = {
     mappings = {
       ["Z"] = "expand_all_nodes",
-      ["Y"] = function(arg)
-        _G.KEY_VALUE = arg
-      end,
-    }
+      ["Y"] = "copy_path_name_txt",
+      ["<c-y>"] = "copy_full_path_txt",
+      ["<c-p>"] = "print_full_path",
+      ["<"] = "noop",
+      [">"] = "noop",
+      ["w"] = "noop",
+    },
   },
   nesting_rules = {},
   filesystem = {
+    commands = {
+      print_full_path = function(state)
+        local node = state.tree:get_node()
+        print(node.path)
+      end,
+      copy_full_path_txt = function(state)
+        local node = state.tree:get_node()
+        local ARG = node.path
+        local cmd = [[let @+="]] .. ARG .. '"'
+        vim.cmd(cmd)
+        print('copy ' .. ARG)
+      end,
+      copy_path_name_txt = function(state)
+        local node = state.tree:get_node()
+        local ARG = node.name
+        local cmd = [[let @+="]] .. ARG .. '"'
+        vim.cmd(cmd)
+        print('copy ' .. ARG)
+      end
+    },
     filtered_items = {
       hide_by_name = {
         --"node_modules"
