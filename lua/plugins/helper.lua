@@ -7,11 +7,12 @@ return {
       { 'nvim-lua/plenary.nvim' },
     },
   },
-    -- "folke/which-key.nvim",
+  -- "folke/which-key.nvim",
   {
     'folke/which-key.nvim',
-    config = function() 
+    event = "BufWinEnter",
+    init = function()
+      require('configs.helper.wichKey')
     end,
-    lazy = true
   }
 }

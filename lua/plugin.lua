@@ -1,22 +1,29 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "--single-branch",
-    "https://github.com/folke/lazy.nvim.git",
-    lazypath,
-  })
+  -- bootstrap lazy.nvim
+  -- stylua: ignore
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
+    lazypath })
 end
-
-vim.opt.runtimepath:prepend(lazypath)
-
-require("lazy").setup("plugins", {
-  defaults = { lazy = true },
-  checker = { enabled = true },
+vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+require("lazy").setup({
+  spec = {
+    {
+      import = "plugins",
+    },
+  },
+  defaults = {
+    lazy = true, -- every plugin is lazy-loaded by default
+    version = "*", -- try installing the latest stable version for plugins that support semver
+  },
+  ui = { border = "rounded", browser = "chrome", throttle = 40, custom_keys = { ["<localleader>l"] = false } },
+  change_detection = { enabled = false, notify = false },
+  checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
+      -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
         "matchit",
@@ -26,9 +33,8 @@ require("lazy").setup("plugins", {
         "tohtml",
         "tutor",
         "zipPlugin",
+        "lazyredraw",
       },
     },
   },
-  --debug = true,
-  --
-}) --https://link.medium.com/0anurBqz4wb
+})
