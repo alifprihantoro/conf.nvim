@@ -8,5 +8,5 @@ require('notify').setup
   minimum_width = 1,
   render = "compact",
   stages = "static",
-  timeout = 2000,
+  timeout = 500,
 }

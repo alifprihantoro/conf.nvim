@@ -8,6 +8,6 @@ require("which-key").register({
     b    = { ":Telescope buffers<CR>", "BUFFER" },
     h    = { ":Telescope help_tags<CR>", "HELP" },
     c    = { ":Telescope commands<CR>", "COMMAND" },
-    n    = { ":Telescope work_space<CR>", "WORK_SPACE" },
+    w    = { ":Telescope work_space<CR>", "WORK_SPACE" },
   },
 }, { prefix = "<leader>" })
