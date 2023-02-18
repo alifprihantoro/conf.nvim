@@ -7,6 +7,8 @@ return function(use)
   }
   use {
     'nvim-treesitter/nvim-treesitter',
+		event = "BufRead",
+    opts = true,
     config = function()
       require "configs.style.treesitter"
     end,
@@ -14,17 +16,20 @@ return function(use)
   -- File icons
   use {
     'kyazdani42/nvim-web-devicons',
+    opts = true,
     event = "BufWinEnter",
     config = "require('configs.style.devicons')"
   }
-  -- theme color scheme
   use {
-    'embark-theme/vim',
-    as = 'embark',
-    config = "require('configs.style.theme')"
+    "folke/tokyonight.nvim",
+    config = function()
+      require("configs.style.tokyonight")
+    end,
   }
   use {
     "lukas-reineke/indent-blankline.nvim",
+    event = "BufWinEnter",
+    opts = true,
     config = "require('configs.style.indentBlank')"
   }
   use({
@@ -40,6 +45,8 @@ return function(use)
   })
   use({
     "rcarriga/nvim-notify",
+		event = "BufRead",
+    opts = true,
     config = "require('configs.style.notify')",
   })
 end

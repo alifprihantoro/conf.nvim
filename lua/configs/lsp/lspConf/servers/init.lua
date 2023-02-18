@@ -8,7 +8,7 @@ local rust         = require('configs.lsp.lspConf.servers.rust')
 local capabilities = { capabilities = capability }
 
 -- lang, core
-lsp.sumneko_lua.setup(lua) -- lua
+lsp.lua_ls.setup(lua) -- lua
 lsp.flow.setup(capabilities)
 lsp.tailwindcss.setup(capabilities)
 lsp.tsserver.setup(capabilities) -- js typescript

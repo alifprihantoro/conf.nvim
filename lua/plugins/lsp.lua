@@ -10,12 +10,15 @@ return function(use)
   -- lsp
   use {
     'neovim/nvim-lspconfig',
+    event = "BufWinEnter",
+    opts = true,
     config = "require('configs.lsp.lspConf')",
   }
   -- cmp start
   use {
     'hrsh7th/nvim-cmp',
-    event = "InsertEnter",
+    event = "BufWinEnter",
+    opts = true,
   }
   use {
     'hrsh7th/cmp-nvim-lsp',

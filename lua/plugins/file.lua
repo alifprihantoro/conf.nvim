@@ -17,6 +17,8 @@ return function(use)
 
   use {
     "nvim-neo-tree/neo-tree.nvim",
+		event = "BufWinEnter",
+		cmd = "Neotree",
     branch = "v2.x",
     requires = {
       "nvim-lua/plenary.nvim",
