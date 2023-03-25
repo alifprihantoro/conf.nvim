@@ -1,14 +1,12 @@
-Language : English | [Indonesia](./README-ID.md)
-# Neovim Configuration
+Language : [English](./README.md) | Indonesia
+# Konfigurasi Neovim
 
 [![License: Apache](https://img.shields.io/badge/License-Apache-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![Neovim version](https://img.shields.io/badge/Neovim-0.5.x-green.svg)
+![Neovim version](https://img.shields.io/badge/Neovim-0.8.x-green.svg)
 ![Lua version](https://img.shields.io/badge/Lua-5.4-yellow.svg)
 ![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20MacOS%20%7C%20Windows-lightgrey.svg)
 
-This is a repository for configuring Neovim (nvim) using the Lua programming language. The purpose of this repo is to make using Neovim easier with a preconfigured setup that is designed to be fast and easy to use.
-
-> Read docs click [here](./docs/README.md)
+Ini adalah repo untuk konfigurasi Neovim (nvim) dengan menggunakan bahasa pemrograman Lua. Tujuan dari repo ini adalah untuk memudahkan penggunaan Neovim dengan konfigurasi yang sudah diatur sedemikian rupa sehingga dapat digunakan dengan cepat dan mudah.
 
 ## Plugin
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
@@ -48,18 +46,18 @@ This is a repository for configuring Neovim (nvim) using the Lua programming lan
 - [noice.nvim](https://github.com/agni-nuxt/noice.nvim)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 
-## Why Choose Neovim?
+## Mengapa memilih Neovim?
 
-There are several reasons why we chose Neovim as our text editor of choice. First, Neovim is faster and lighter than Vim. This means that the text editor can be used quickly without lag. Additionally, Neovim is also very flexible, allowing it to be customized to the user's needs.
+Ada beberapa alasan mengapa kami memilih Neovim sebagai editor teks yang kami gunakan. Pertama, Neovim lebih cepat dan lebih ringan daripada Vim. Ini berarti bahwa editor teks dapat digunakan dengan cepat tanpa mengalami lag. Selain itu, Neovim juga sangat fleksibel, sehingga dapat disesuaikan dengan kebutuhan pengguna.
 
-## Repo Link
+## Link repo
 
-Please visit our repo at [github.com/muryp/nvim-conf-lua](https://github.com/muryp/nvim-conf-lua) to see our Neovim configuration. We hope you find this repo useful and can make using Neovim easier for you.
+Silahkan kunjungi repo kami di [github.com/muryp/nvim-conf-lua](https://github.com/muryp/nvim-conf-lua) untuk melihat konfigurasi Neovim kami. Kami berharap Anda menemukan repo ini berguna dan dapat memudahkan penggunaan Neovim Anda.
 
-## License
+## Lisensi
 
-This repo is licensed under the Apache license. Please see the `LICENSE` file for more information.
+Repo ini dilisensikan di bawah lisensi Apache. Silahkan lihat berkas `LICENSE` untuk informasi lebih lanjut.
 
-## Contributing
+## Kontribusi
 
-We greatly appreciate contributions from anyone who wants to help improve this repo. Please see the `CONTRIBUTE.md` file for more information on how to contribute to this repo. Thank you for your contribution!
+Kami sangat menghargai kontribusi dari siapa saja yang ingin membantu meningkatkan repo ini. Silahkan lihat berkas `CONTRIBUTE.md` untuk informasi lebih lanjut tentang cara berkontribusi ke repo ini. Terima kasih atas kontribusinya!
