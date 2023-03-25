@@ -30,7 +30,7 @@ dashboard.section.buttons.val = {
   dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
   dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
   dashboard.button("c", "  Configuration", ":e $MYVIMRC | Cdn<CR>"),
-  dashboard.button("z", "  Packer", ":Packer"),
+  dashboard.button("z", "  Packer", ":Packer"),
   dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
   { type = "padding", val = 1 },
   { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
