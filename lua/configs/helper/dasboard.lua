@@ -29,7 +29,7 @@ dashboard.section.buttons.val = {
   dashboard.button("p", "  Find project", ":Telescope work_space <CR>"),
   dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
   dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-  dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
+  dashboard.button("c", "  Configuration", ":e $MYVIMRC | Cdn<CR>"),
   dashboard.button("z", "  Packer", ":Packer"),
   dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
   { type = "padding", val = 1 },
