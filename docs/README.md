@@ -9,5 +9,5 @@ git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pac
 ```bash
 git clone https://github.com/muryp/nvim-conf-lua ~/.config/nvim
 ```
-- Setelah itu, buka Neovim dengan perintah `nvim`
+- [Setelah](Setelah) itu, buka Neovim dengan perintah `nvim`
 - Tunggu sejenak hingga Neovim selesai memuat plugin dan konfigurasi. Kemudian, jalankan perintah `Tunggu sejenak hingga Neovim selesai memuat plugin dan konfigurasi. Kemudian, jalankan perintah :PackerSync di dalam Neovim untuk menginstal semua plugin yang diperlukan. Tunggu proses instalasi selesai.` di dalam Neovim untuk menginstal semua plugin yang diperlukan. Tunggu proses instalasi selesai.
