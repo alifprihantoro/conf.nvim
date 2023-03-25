@@ -1,12 +1,12 @@
 return function(use)
   -- coc install
-  use {
-    'neoclide/coc.nvim',
-    branch = 'release',
-    cmd = "CocEnable",
-    run = 'yarn install --frozen-lockfile',
-    config = "require('configs.lsp.coc')"
-  }
+  -- use {
+  --   'neoclide/coc.nvim',
+  --   branch = 'release',
+  --   cmd = "CocEnable",
+  --   run = 'yarn install --frozen-lockfile',
+  --   config = "require('configs.lsp.coc')"
+  -- }
   -- lsp
   use {
     'neovim/nvim-lspconfig',
@@ -44,10 +44,10 @@ return function(use)
     'Shougo/deol.nvim',
     after = 'nvim-cmp',
   }
-  use {
-    "jcha0713/cmp-tw2css",
-    after = 'nvim-cmp',
-  }
+  -- use {
+  --   "jcha0713/cmp-tw2css",
+  --   after = 'nvim-cmp',
+  -- }
   use {
     'dcampos/cmp-emmet-vim',
     after = 'nvim-cmp',

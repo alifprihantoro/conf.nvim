@@ -12,9 +12,9 @@ return function(use)
   }
   -- comment togle
   use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
     event = "BufWinEnter",
     opts = true,
-    'JoosepAlviste/nvim-ts-context-commentstring',
   }
   use {
     'numToStr/Comment.nvim',

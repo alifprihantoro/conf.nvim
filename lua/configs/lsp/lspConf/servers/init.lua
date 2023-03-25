@@ -9,10 +9,21 @@ local capabilities = { capabilities = capability }
 
 -- lang, core
 lsp.lua_ls.setup(lua) -- lua
-lsp.flow.setup(capabilities)
+-- lsp.flow.setup(capabilities)
 lsp.tailwindcss.setup(capabilities)
 lsp.tsserver.setup(capabilities) -- js typescript
-lsp.html.setup(capabilities)
+lsp.html.setup({
+  filetypes = { "html", "javascript","typescript" },
+  init_options = {
+      configurationSection = { "html", "javascript","typescript","css" },
+      embeddedLanguages = {
+        css = true,
+        javascript = true
+      },
+      provideFormatter = true
+  },
+  capabilities = capability
+})
 lsp.jsonls.setup(jsonls)
 lsp.cssls.setup(css)
 -- lsp.cssmodules_ls.setup {}
