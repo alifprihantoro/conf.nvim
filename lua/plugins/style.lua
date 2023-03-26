@@ -7,7 +7,7 @@ return function(use)
   }
   use {
     'nvim-treesitter/nvim-treesitter',
-		event = "BufRead",
+    event = "BufRead",
     opts = true,
     config = function()
       require "configs.style.treesitter"
@@ -45,7 +45,7 @@ return function(use)
   })
   use({
     "rcarriga/nvim-notify",
-		event = "BufRead",
+    event = "BufRead",
     opts = true,
     config = "require('configs.style.notify')",
   })

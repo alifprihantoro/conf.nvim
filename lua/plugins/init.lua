@@ -5,6 +5,7 @@ local editor = require('plugins.editor')
 local helper = require('plugins.helper')
 local file = require('plugins.file')
 local custom = require('plugins.custom')
+local debug = require('plugins.debug')
 
 if status == false then
   return
@@ -19,4 +20,5 @@ packer.startup(function(use)
   helper(use)
   file(use)
   custom(use)
+  debug(use)
 end)
