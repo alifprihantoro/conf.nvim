@@ -1,9 +1,12 @@
-local wk = require("which-key")
-wk.register({
+local mapping = require('global.mapping')
+-- Buat sebuah table untuk menampung daftar key mapping
+mapping({
   p = { ':bp<CR>', "PREV_BUF" },
   n = { ':bn<CR>', "NEXT_BUF" },
   w = { ':w<CR>', "SAVE" },
   q = { ':q<CR>', "QUIT" },
+  e = { ':Neotree toggle<CR>', "File Toggle" },
+  E = { ":Neotree focus %<CR>", "File FOCUS" },
   i = { '^', "FIRST_COL", mode = { "n", "v" } },
   a = { '$', "LAST_COL", mode = { "n", "v" } },
   s = { ':%s /', "SEARCH" },
@@ -44,9 +47,10 @@ wk.register({
     b = { 've"_d', "ALL" },
     a = { 'ggVG"_d', "ALL" },
   },
-}, { prefix = "<leader>" })
+}, { prefix = "<leader>", noremap = true })
 
-wk.register({
+mapping({
   d = { '"+d', 'CUT', mode = { "v" } },
-  y = { '"+y', 'COPY', mode = { "v" } }
-})
+  y = { '"+y', 'COPY', mode = { "v" } },
+},
+  { prefix = "<leader>", noremap = true, mode = 'v' })

@@ -11,3 +11,5 @@ git clone https://github.com/muryp/nvim-conf-lua ~/.config/nvim
 ```
 - [Setelah](Setelah) itu, buka Neovim dengan perintah `nvim`
 - Tunggu sejenak hingga Neovim selesai memuat plugin dan konfigurasi. Kemudian, jalankan perintah `Tunggu sejenak hingga Neovim selesai memuat plugin dan konfigurasi. Kemudian, jalankan perintah :PackerSync di dalam Neovim untuk menginstal semua plugin yang diperlukan. Tunggu proses instalasi selesai.` di dalam Neovim untuk menginstal semua plugin yang diperlukan. Tunggu proses instalasi selesai.
+
+> info icons in https://www.nerdfonts.com/cheat-sheet use echo for show icons
