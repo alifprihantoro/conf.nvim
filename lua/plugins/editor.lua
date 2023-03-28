@@ -21,11 +21,4 @@ return function(use)
     after = 'nvim-ts-context-commentstring',
     config = "require('configs.editor.commentToggle')"
   }
-  -- vimwiki or for md
-  use {
-    'vimwiki/vimwiki',
-    opts = true,
-    ft = { "markdown" },
-    config = "require('configs.editor.wiki.after')"
-  }
 end

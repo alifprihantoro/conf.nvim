@@ -9,4 +9,11 @@ return function(use)
     end
   }
   use 'muryp/nvim-muryp-snippet-collection'
+  -- vimwiki or for md
+  use {
+    'muryp/vimwiki',
+    opts = true,
+    ft = { "markdown" },
+    config = "require('configs.editor.wiki.after')"
+  }
 end

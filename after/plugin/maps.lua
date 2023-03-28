@@ -16,7 +16,7 @@ mapping({
   j = { '<C-w>j', "GO_DOWN_SCREEN" },
   k = { '<C-w>k', "GO_UP_SCREEN" },
   x = { ':LualineToggle<CR>', "TOOGLE_LUALINE" },
-  [','] = { ':e ~/.config/nvim/init.lua<CR>:Cdn<CR>', "GOTO_NVIM_CONF" },
+  [','] = { ':e $MYVIMRC | Cdn<CR>', "GOTO_NVIM_CONF" },
   ['-'] = { '<C-w>s', "SPLIT_HORIZONTAL" },
   [']'] = { '<C-w>>', "SPLIT_LEFT" },
   ["["] = { '<C-w><', "SPLIT_RIGHT" },
