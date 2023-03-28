@@ -1,4 +1,6 @@
-require("which-key").register({
+local mapping = require('global.mapping')
+-- Buat sebuah table untuk menampung daftar key mapping
+mapping({
   f = {
     name = "TELESCOPE",
     l    = { ":Telescope<CR>", "LIST_ALL" },
@@ -9,5 +11,6 @@ require("which-key").register({
     h    = { ":Telescope help_tags<CR>", "HELP" },
     c    = { ":Telescope commands<CR>", "COMMAND" },
     w    = { ":Telescope work_space<CR>", "WORK_SPACE" },
+    n    = { ":Telescope notify<CR>", "NOTIFY" },
   },
 }, { prefix = "<leader>" })
