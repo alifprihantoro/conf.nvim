@@ -21,4 +21,5 @@ return function(use)
     after = 'nvim-ts-context-commentstring',
     config = "require('configs.editor.commentToggle')"
   }
+  use 'sbdchd/neoformat'
 end

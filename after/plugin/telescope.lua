@@ -12,5 +12,6 @@ mapping({
     c    = { ":Telescope commands<CR>", "COMMAND" },
     w    = { ":Telescope work_space<CR>", "WORK_SPACE" },
     n    = { ":Telescope notify<CR>", "NOTIFY" },
+    o    = { ":Telescope oldfiles<CR>", "RECENT_OPEN" },
   },
 }, { prefix = "<leader>" })

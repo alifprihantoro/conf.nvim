@@ -2,7 +2,6 @@ local capability   = require('configs.lsp.lspConf.utils.capability')
 local lua          = require('configs.lsp.lspConf.servers.lua')
 local lsp          = require('lspconfig')
 local jsonls       = require('configs.lsp.lspConf.servers.jsonls')
-local css          = require('configs.lsp.lspConf.servers.css')
 local yaml         = require('configs.lsp.lspConf.servers.yaml')
 local rust         = require('configs.lsp.lspConf.servers.rust')
 local capabilities = { capabilities = capability }
@@ -25,7 +24,8 @@ lsp.html.setup({
   capabilities = capability
 })
 lsp.jsonls.setup(jsonls)
-lsp.cssls.setup(css)
+lsp.cssls.setup(capabilities)
+lsp.stylelint_lsp.setup(capabilities)
 -- lsp.cssmodules_ls.setup {}
 lsp.eslint.setup(capabilities)
 lsp.yamlls.setup(yaml)
