@@ -4,7 +4,8 @@ vim.api.nvim_create_user_command('WikiActive', function()
   local cmd = [[
     set filetype=markdown
     set filetype=vimwiki
-  ]] .. 'set filetype=' .. origin_file_type
+  ]]
   vim.cmd(cmd)
   require('configs.editor.wiki.mapping')()
+  vim.cmd('set filetype=' .. origin_file_type)
 end, {})
