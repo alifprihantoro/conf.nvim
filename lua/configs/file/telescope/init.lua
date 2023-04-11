@@ -6,6 +6,12 @@ local extentions = require "configs.file.telescope.configs.extentions"
 require "configs.file.telescope.extensi"
 require('telescope').setup {
   defaults = {
+    borderchars = {
+      { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+      prompt = { "─", "│", " ", "│", '┌', '┐', "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+      preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+    },
     layout_config = layout,
     mappings = maps,
     buffer_previewer_maker = new_maker,
