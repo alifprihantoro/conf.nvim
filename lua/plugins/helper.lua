@@ -8,6 +8,8 @@ return function(use)
       { 'nvim-lua/plenary.nvim' },
     },
   }
+  -- git browser, and more
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use {
     'folke/which-key.nvim',
     config = "require('configs.helper.wichKey')"
