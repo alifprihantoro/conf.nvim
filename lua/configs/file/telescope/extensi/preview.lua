@@ -8,16 +8,18 @@ local new_maker = function(filepath, bufnr, opts)
     args = { "--mime-type", "-b", filepath },
     on_exit = function(j)
       local mime_type = j:result()[1]
-      local include = { 'text', 'json' }
-      for _, value in ipairs(include) do
-        if mime_type:match(value) then
-          return previewers.buffer_previewer_maker(filepath, bufnr, opts)
-        end
+      if mime_type:match('text') or mime_type:match('json') then
+        previewers.buffer_previewer_maker(filepath, bufnr, opts)
+      elseif mime_type:match('empty') then
+        vim.schedule(function()
+          require("telescope.previewers.utils").set_preview_message(bufnr, opts.winid, "emty")
+        end)
+      else
+        -- maybe we want to write something to the buffer here
+        vim.schedule(function()
+          require("telescope.previewers.utils").set_preview_message(bufnr, opts.winid, "cannot be previewed")
+        end)
       end
-      -- maybe we want to write something to the buffer here
-      vim.schedule(function()
-        require("telescope.previewers.utils").set_preview_message(bufnr, opts.winid, "cannot be previewed")
-      end)
     end
   }):sync()
 end
