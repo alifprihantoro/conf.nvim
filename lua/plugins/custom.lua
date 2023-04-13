@@ -16,4 +16,10 @@ return function(use)
     ft = { "markdown" },
     config = "require('configs.editor.wiki.after')"
   }
+  --- file/folder bookmark
+  use {
+    'muryp/nvim-muryp-telescope-bookmark',
+    event = "BufWinEnter",
+    opts = true,
+  }
 end
