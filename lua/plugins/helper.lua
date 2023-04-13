@@ -8,8 +8,13 @@ return function(use)
       { 'nvim-lua/plenary.nvim' },
     },
   }
-  -- git browser, and more
+  -- git diff/browser old commit
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use {
+    'akinsho/git-conflict.nvim',
+    tag = "*",
+    config = "require('configs.helper.gitConflict')"
+  }
   use {
     'folke/which-key.nvim',
     config = "require('configs.helper.wichKey')"
