@@ -56,10 +56,8 @@ There are several reasons why we chose Neovim as our text editor of choice. Firs
 
 Please visit our repo at [github.com/muryp/nvim-conf-lua](https://github.com/muryp/nvim-conf-lua) to see our Neovim configuration. We hope you find this repo useful and can make using Neovim easier for you.
 
-## License
-
-This repo is licensed under the Apache license. Please see the `LICENSE` file for more information.
+## Lisensi
+The `nvim-muryp-git` plugin is distributed under the **Apache License 2.0**. Please refer to the `LICENSE` file for more information about this license.
 
 ## Contributing
-
-We greatly appreciate contributions from anyone who wants to help improve this repo. Please see the `CONTRIBUTE.md` file for more information on how to contribute to this repo. Thank you for your contribution!
+We greatly appreciate contributions from anyone can produce **issue** or **maintaine code** to help this repo. Please read `CONTRIBUTE.md` for more info.
