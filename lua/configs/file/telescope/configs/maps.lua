@@ -1,4 +1,5 @@
 local actions = require "telescope.actions"
+local layouts = require('telescope.actions.layout')
 
 return {
   i = {
@@ -6,14 +7,15 @@ return {
     ["<c-k>"] = actions.move_selection_previous,
     ["<c-p>"] = actions.preview_scrolling_up,
     ["<c-n>"] = actions.preview_scrolling_down,
-    ["<C-f>"] = require('telescope.actions.layout').toggle_preview,
+    ["<C-f>"] = layouts.toggle_preview,
     ["<c-u>"] = false,
     ["<c-l>"] = false,
-    ["<C-s>"] = actions.cycle_previewers_next,
-    ["<C-a>"] = actions.cycle_previewers_prev,
+    ["<C-a>"] = actions.toggle_all,
   },
   n = {
     ["q"] = actions.close,
-    ["<leader>p"] = require('telescope.actions.layout').toggle_preview
+    ["<C-c>"] = actions.close,
+    ["<leader>p"] = layouts.toggle_preview,
+    ["<leader>a"] = actions.toggle_all,
   }
 }

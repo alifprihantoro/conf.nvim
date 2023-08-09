@@ -65,5 +65,9 @@ return function(use)
     after = 'LuaSnip',
     config = "require('configs.lsp.lspConf.luasnip')"
   }
+  use {
+    'hrsh7th/cmp-nvim-lua',
+    after = "nvim-cmp",
+  }
   --end cmp
 end

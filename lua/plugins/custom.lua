@@ -9,6 +9,10 @@ return function(use)
     end
   }
   use 'muryp/nvim-muryp-snippet-collection'
+  -- for md
+  use {
+    'muryp/nvim-muryp-md',
+  }
   -- vimwiki or for md
   use {
     'muryp/vimwiki',
@@ -22,4 +26,13 @@ return function(use)
     event = "BufWinEnter",
     opts = true,
   }
+
+
+
+
+use {
+  'nfrid/markdown-togglecheck',
+  requires = { 'nfrid/treesitter-utils' },
+  ft = { 'markdown' },
+}
 end

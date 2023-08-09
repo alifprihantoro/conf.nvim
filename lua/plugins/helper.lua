@@ -26,4 +26,10 @@ return function(use)
     opts = true,
     config = "require('configs.helper.dasboard')"
   }
+  -- fold like vscode
+  use {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    config = "require('configs.helper.ufo')"
+  }
 end

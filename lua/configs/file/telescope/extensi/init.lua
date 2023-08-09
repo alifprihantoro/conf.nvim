@@ -11,6 +11,6 @@ workspace.setup({
     }
   })
 
-require('nvim-muryp-git').resgisterTelescope()
 require("telescope").load_extension("notify")
+require('nvim-muryp-git').resgisterTelescope()
 plug.work_space = workspace.picker

@@ -13,6 +13,7 @@ local js = { '_', 'html', 'javascript' }
 local jsx = { '_', 'html', 'javascript', 'javascriptreact' }
 local tsx = merger(jsx, { 'typescript', 'typescriptreact' })
 
+extend("html", js)
 extend("javascript", js)
 extend("typescript", merger(js, { 'typescript' }))
 extend("typescriptreact", jsx)

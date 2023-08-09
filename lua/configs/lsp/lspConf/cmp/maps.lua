@@ -47,8 +47,7 @@ end
 local cr = function()
   return map(function(fallback)
     if cmp.visible() then
-      confirm()
-      return
+      return confirm()
     end
     fallback()
   end, { 'i' })

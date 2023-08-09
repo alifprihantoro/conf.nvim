@@ -1,6 +1,7 @@
 local M = {}
 M.sc1 = {
   { name = 'nvim_lsp' },
+  { name = 'git' },
   -- { name = 'zsh' },
   { name = 'luasnip' }, -- For luasnip users.
   { name = 'nvim_lua' },

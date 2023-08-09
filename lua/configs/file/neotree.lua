@@ -1,5 +1,5 @@
 require("neo-tree").setup({
-  close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = true,   -- Close Neo-tree if it is the last window left in the tab
   sort_case_insensitive = false, -- used when sorting files and directories in the tree
   default_component_configs = {
     indent = {
@@ -17,20 +17,52 @@ require("neo-tree").setup({
       expander_highlight = "NeoTreeExpander",
     },
   },
+  use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
   window = {
     mappings = {
-      ["Z"] = "expand_all_nodes",
-      ["Y"] = "copy_path_name_txt",
+      ["A"]     = "git_add_all",
+      ["gu"]    = "git_unstage_file",
+      ["ga"]    = "git_add_file",
+      ["gr"]    = "git_revert_file",
+      ["gc"]    = "git_commit",
+      ["gp"]    = "git_push",
+      ["gg"]    = "git_commit_and_push",
+      ["Z"]     = "expand_all_nodes",
+      ["Y"]     = "copy_path_name_txt",
       ["<c-y>"] = "copy_full_path_txt",
       ["<c-p>"] = "print_full_path",
-      ["<"] = "noop",
-      [">"] = "noop",
-      ["w"] = "noop",
+      ["<"]     = "noop",
+      [">"]     = "noop",
+      ["w"]     = "noop",
+      ["b"]     = "delete_visual",
     },
   },
   nesting_rules = {},
   filesystem = {
     commands = {
+      -- over write default 'delete_visual' command to 'trash' x n.
+      delete_visual = function(state, selected_nodes)
+        local inputs = require("neo-tree.ui.inputs")
+
+        -- get table items count
+        function GetTableLen(tbl)
+          local len = 0
+          for n in pairs(tbl) do
+            len = len + 1
+          end
+          return len
+        end
+
+        local count = GetTableLen(selected_nodes)
+        local msg = "Are you sure you want to trash " .. count .. " files ?"
+        inputs.confirm(msg, function(confirmed)
+          if not confirmed then return end
+          for _, node in ipairs(selected_nodes) do
+            vim.fn.system { "trash", vim.fn.fnameescape(node.path) }
+          end
+          require("neo-tree.sources.manager").refresh(state.name)
+        end)
+      end,
       print_full_path = function(state)
         local node = state.tree:get_node()
         print(node.path)
@@ -83,6 +115,22 @@ require("neo-tree").setup({
         ["u"] = "navigate_up",
         ["<leader><CR>"] = "set_root",
       }
+    },
+  },
+  events = {
+    {
+      event = "file_renamed",
+      handler = function(args)
+        -- fix references to file
+        print(args.source, " renamed to ", args.destination)
+      end
+    },
+    {
+      event = "file_moved",
+      handler = function(args)
+        -- fix references to file
+        print(args.source, " moved to ", args.destination)
+      end
     },
   },
   event_handlers = {

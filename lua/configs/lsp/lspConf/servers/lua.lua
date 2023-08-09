@@ -1,12 +1,15 @@
-local capabilities = require('configs.lsp.lspConf.utils.capability')
+-- local capabilities = require('configs.lsp.lspConf.utils.capability')
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 table.insert(runtime_path, "nvim/?.lua")
-require 'lspconfig'.luau_lsp.setup {}
 return {
-  capabilities = capabilities,
+  single_file_support = true,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  -- capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -20,7 +23,12 @@ return {
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
+        library = {
+          vim.api.nvim_get_runtime_file("", true),
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.stdpath("config") .. "/lua"] = true,
+
+        },
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {

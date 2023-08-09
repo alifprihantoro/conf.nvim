@@ -23,4 +23,3 @@ cmp.setup({
 })
 
 require('configs.lsp.lspConf.cmp.cmdLine')
-CEK_CMP_ACTIVE = true

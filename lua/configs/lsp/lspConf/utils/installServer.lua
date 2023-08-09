@@ -8,6 +8,7 @@ return function(opts)
     'yaml-language-server', -- yaml
     'bash-language-server', -- bash
     'pyright', -- python
+    '@tailwdincss/language-server@0.0.7', -- python
   }
   for _, v in pairs(list_npm) do
     vim.cmd('!npm install -g ' .. v)
