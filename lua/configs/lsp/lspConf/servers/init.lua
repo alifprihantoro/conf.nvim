@@ -1,17 +1,17 @@
-local lua                 = require('configs.lsp.lspConf.servers.lua')
-local lsp                 = require('lspconfig')
-local jsonls              = require('configs.lsp.lspConf.servers.jsonls')
-local yaml                = require('configs.lsp.lspConf.servers.yaml')
-local rust                = require('configs.lsp.lspConf.servers.rust')
-local lsp_defaults        = lsp.util.default_config
+local lua                              = require('configs.lsp.lspConf.servers.lua')
+local lsp                              = require('lspconfig')
+local jsonls                           = require('configs.lsp.lspConf.servers.jsonls')
+local yaml                             = require('configs.lsp.lspConf.servers.yaml')
+local rust                             = require('configs.lsp.lspConf.servers.rust')
+local lsp_defaults                     = lsp.util.default_config
 
 -- folding
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities                     = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
   lineFoldingOnly = true
 }
-lsp_defaults.capabilities = vim.tbl_deep_extend(
+lsp_defaults.capabilities              = vim.tbl_deep_extend(
   'force',
   lsp_defaults.capabilities,
   require('cmp_nvim_lsp').default_capabilities()

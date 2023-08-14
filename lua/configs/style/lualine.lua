@@ -1,6 +1,6 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
-
+local navic = require("nvim-navic")
 -- Bubbles config for lualine
 -- Author: lokesh-krishna
 -- MIT license, see LICENSE for more details.
@@ -18,15 +18,15 @@ local colors = {
 }
 
 local bubbles_theme = {
-  normal = {
+  normal   = {
     a = { fg = colors.black, bg = colors.main },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
   },
 
-  insert  = { a = { fg = colors.black, bg = colors.blue } },
-  visual  = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  insert   = { a = { fg = colors.black, bg = colors.blue } },
+  visual   = { a = { fg = colors.black, bg = colors.cyan } },
+  replace  = { a = { fg = colors.black, bg = colors.red } },
 
   inactive = {
     a = { fg = colors.white, bg = colors.black },
@@ -41,6 +41,18 @@ lualine.setup {
     component_separators = '|',
     section_separators   = { left = '', right = '' },
   },
+  winbar = {
+    lualine_c = {
+      {
+        function()
+          return navic.get_location()
+        end,
+        cond = function()
+          return navic.is_available()
+        end
+      },
+    }
+  },
   sections = {
     lualine_a = {
       {
@@ -50,7 +62,6 @@ lualine.setup {
       },
     },
     lualine_b = { { 'filename', path = 1 } },
-    lualine_c = {},
     lualine_x = {},
     lualine_y = { 'diff', 'diagnostics', 'filetype', },
     lualine_z = {

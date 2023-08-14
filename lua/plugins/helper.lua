@@ -32,4 +32,13 @@ return function(use)
     requires = 'kevinhwang91/promise-async',
     config = "require('configs.helper.ufo')"
   }
+  -- for winbar icon
+  use {
+    "SmiteshP/nvim-navic",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "BufRead",
+    config = function()
+      require("configs.helper.breadcrumb")
+    end,
+  }
 end

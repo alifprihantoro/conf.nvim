@@ -33,7 +33,7 @@ ts.setup {
   },
   autotag = {
     enable = true,
-    filetypes = { "html", "xml", "astro", "javascriptreact", "typescriptreact", 'javascript', 'typescript' },
+    filetypes = { "html", "xml", "astro", "javascriptreact", "typescriptreact", 'javascript', 'typescript','markdown' },
   },
   context_commentstring = {
     enable = true,
