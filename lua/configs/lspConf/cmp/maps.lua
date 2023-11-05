@@ -64,7 +64,7 @@ local confirmCmd = function()
 end
 
 local M = {
-  ['<CR>'] = cr(),
+  -- ['<CR>'] = cr(),
   ['<C-b>'] = map.scroll_docs(-4),
   ['<C-m>'] = map.scroll_docs(4),
   ['<C-Space>'] = map.complete(),

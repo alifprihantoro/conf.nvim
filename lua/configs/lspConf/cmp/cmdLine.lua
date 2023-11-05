@@ -1,5 +1,5 @@
 local cmp = require 'cmp'
-local maps = require('configs.lsp.lspConf.cmp.maps')
+local maps = require('configs.lspConf.cmp.maps')
 
 -- `/` cmdline setup.
 cmp.setup.cmdline('/', {

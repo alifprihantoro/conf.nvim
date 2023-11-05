@@ -1,7 +1,7 @@
-require('configs.lsp.lspConf.maps.default')
-require('configs.lsp.lspConf.servers')
-require('configs.lsp.lspConf.maps.custom')()
--- require('configs.lsp.lspConf.ui')
+require('configs.lspConf.maps.default')
+require('configs.lspConf.servers')
+require('configs.lspConf.maps.custom')()
+-- require('configs.lspConf.ui')
 
 -- thi for if docs hover
 local ErrHove = { 'typescript', 'typescriptreact', 'astro', 'javascript', 'javascriptreact', 'scss', 'css' }

@@ -1,6 +1,6 @@
 -- cmp
-require('configs.lsp.lspConf.maps.custom') -- load custom mapping
-require('configs.lsp.lspConf.cmp')
+require('configs.lspConf.maps.custom') -- load custom mapping
+require('configs.lspConf.cmp')
 TOGGLE_SERVER_LSP = true
 
 -- get snipmate

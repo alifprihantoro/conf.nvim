@@ -4,5 +4,3 @@ vim.defer_fn(function()
 end, 0)
 vim.g.mapleader = " "
 require('plugins')
-require('configs.editor.wiki.before')
-require('core.serverScwich')

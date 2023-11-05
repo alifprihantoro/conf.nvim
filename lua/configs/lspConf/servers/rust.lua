@@ -1,4 +1,4 @@
-local capability   = require('configs.lsp.lspConf.utils.capability')
+local capability   = require('configs.lspConf.utils.capability')
 
 return {
   capabilities = capability,

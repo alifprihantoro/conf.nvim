@@ -1,4 +1,4 @@
-local capability = require('configs.lsp.lspConf.utils.capability')
+local capability = require('configs.lspConf.utils.capability')
 local root_path = '/data/data/com.termux/files/home/.config/nvim/schema/json/'
 
 return {

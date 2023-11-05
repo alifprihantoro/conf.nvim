@@ -1,9 +1,9 @@
-local icons = require('configs.lsp.lspConf.cmp.icons')
-local mapping = require('configs.lsp.lspConf.cmp.maps')
+local icons = require('configs.lspConf.cmp.icons')
+local mapping = require('configs.lspConf.cmp.maps')
 local cmp = require 'cmp'
-local window = require 'configs.lsp.lspConf.cmp.window'
-local snippet = require 'configs.lsp.lspConf.cmp.snippet'
-local sources = require 'configs.lsp.lspConf.cmp.sources'
+local window = require 'configs.lspConf.cmp.window'
+local snippet = require 'configs.lspConf.cmp.snippet'
+local sources = require 'configs.lspConf.cmp.sources'
 
 -- command
 vim.cmd('set completeopt=menu,menuone,noselect')
@@ -22,4 +22,4 @@ cmp.setup({
   },
 })
 
-require('configs.lsp.lspConf.cmp.cmdLine')
+require('configs.lspConf.cmp.cmdLine')

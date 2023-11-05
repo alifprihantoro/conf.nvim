@@ -46,7 +46,7 @@ vim.cmd [[
   " =====================================
   " Initial settings
   " =====================================
-  set go+=a 
+  set go+=a
   "Disable beep / flash
   set vb t_vb=
   set mouse=a
@@ -54,7 +54,7 @@ vim.cmd [[
   " replace tab with spaces
   " allow cursor to move to beginning of tab
   " will interfere with soft line wrapping (set nolist)
-  set list lcs=tab:\ \ 
+  set list lcs=tab:\ \
 
   set wildmenu wildmode=full
 
@@ -83,6 +83,7 @@ vim.cmd [[
   " syntax highlight
   syntax on
   au BufEnter *.html set syntax=html
+  au BufEnter *.mdx set filetype=markdown.mdx
 ]]
 vim.cmd [[
 autocmd TermOpen * setlocal nonumber norelativenumber

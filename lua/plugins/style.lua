@@ -13,6 +13,10 @@ return function(use)
       require "configs.style.treesitter"
     end,
   }
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
   -- File icons
   use {
     'kyazdani42/nvim-web-devicons',

@@ -1,5 +1,5 @@
 local cmd = vim.api.nvim_create_user_command
-local installServer = require('configs.lsp.lspConf.utils.installServer')
+local installServer = require('configs.lspConf.utils.installServer')
 
 cmd('LspDiagnosticOpenFloat', vim.diagnostic.open_float, {})
 cmd('LspDiagnosticPrev', vim.diagnostic.goto_prev, {})

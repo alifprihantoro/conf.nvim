@@ -1,8 +1,8 @@
-local lua                              = require('configs.lsp.lspConf.servers.lua')
+local lua                              = require('configs.lspConf.servers.lua')
 local lsp                              = require('lspconfig')
-local jsonls                           = require('configs.lsp.lspConf.servers.jsonls')
-local yaml                             = require('configs.lsp.lspConf.servers.yaml')
-local rust                             = require('configs.lsp.lspConf.servers.rust')
+local jsonls                           = require('configs.lspConf.servers.jsonls')
+local yaml                             = require('configs.lspConf.servers.yaml')
+local rust                             = require('configs.lspConf.servers.rust')
 local lsp_defaults                     = lsp.util.default_config
 
 -- folding
@@ -31,7 +31,7 @@ lsp.html.setup({
       css = true,
       javascript = true
     },
-    provideFormatter = true
+    provideFormatter = false
   },
 })
 lsp.jsonls.setup(jsonls)
@@ -54,3 +54,17 @@ lsp.astro.setup({
     }
   },
 }) -- astro
+
+
+-- local lspconfig = require('lspconfig')
+local configs = require('lspconfig.configs')
+
+configs.mdx_analyzer = {
+  default_config = {
+    cmd = { 'mdx-language-server', '--stdio' },
+    filetypes = { 'markdown.mdx' },
+    root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
+  },
+}
+
+lsp.mdx_analyzer.setup({})
