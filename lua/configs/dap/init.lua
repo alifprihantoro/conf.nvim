@@ -1,1 +1,1 @@
-require('configs.dap.lua')
+require 'configs.dap.lua'

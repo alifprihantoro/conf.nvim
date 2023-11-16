@@ -1,27 +1,25 @@
-return function(use)
-  -- use {
-  --   'puremourning/vimspector',
-  -- }
-  use {
-    "mfussenegger/nvim-dap",
-    event = "BufWinEnter",
-    opts = true,
-  }
-  -- debug lang
-  use {
+return {
+  {
+    'mfussenegger/nvim-dap',
+    event = 'BufWinEnter',
+    lazy = true,
+  },
+  {
     'jbyuki/one-small-step-for-vimkind',
-    event = "BufWinEnter",
-    opts = true,
-    config = 'require("configs.dap")'
-  }
-  use {
-    "rcarriga/nvim-dap-ui",
-    event = "BufWinEnter",
-    requires = "mfussenegger/nvim-dap",
-    opts = true,
+    event = 'BufWinEnter',
+    lazy = true,
     config = function()
-      -- use nerdfont for this setup
-      require("dapui").setup()
+      require 'configs.dap'
     end,
-  }
-end
+  },
+  {
+    'rcarriga/nvim-dap-ui',
+    event = 'BufWinEnter',
+    dependencies = 'mfussenegger/nvim-dap',
+    lazy = true,
+    config = function()
+      -- ,nerdfont for this setup
+      require('dapui').setup()
+    end,
+  },
+}

@@ -24,7 +24,7 @@ return function(opts)
       [[echo "#\!/bin/bash\n~/.cargo/bin/rust-analyzer" > ~/../usr/bin/rust-analyzer]],
       'chmod 777 ~/../usr/bin/rust-analyzer',
       -- end rust installed
-      "cargo install --features lsp --locked taplo-cli", -- toml
+      'cargo install --features lsp --locked taplo-cli', -- toml
       [[echo "#\!/bin/bash\n~/.cargo/bin/taplo" > ~/../usr/bin/taplo]],
       'chmod 777 ~/../usr/bin/taplo',
     }

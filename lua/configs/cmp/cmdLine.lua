@@ -1,23 +1,22 @@
 local cmp = require 'cmp'
-local maps = require('configs.lspConf.cmp.maps')
+local maps = require 'configs.cmp.maps'
 
 -- `/` cmdline setup.
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(maps),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = 'buffer' },
+  },
 })
 
 -- `:` cmdline setup.
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(maps),
   sources = cmp.config.sources({
-    { name = 'path' }
-  },
+    { name = 'path' },
+  }, {
     {
-      {
-        name = 'cmdline',
-      }
-    })
+      name = 'cmdline',
+    },
+  }),
 })

@@ -30,17 +30,19 @@ set.wrap           = false -- No Wrap lines
 set.backspace      = { 'start', 'eol', 'indent' }
 set.wildignore:append { '*/node_modules/*' }
 -- enable line and column display
-set.ruler      = true
+set.ruler         = true
 -- scroll a bit horizontally when at the end of the line
-set.sidescroll = 6
+set.sidescroll    = 6
 -- Make it easier to work with buffers
 -- http://vim.wikia.com/wiki/Easier_buffer_switching
-set.hidden     = true
-set.confirm    = true
+set.hidden        = true
+set.confirm       = true
 -- open new split panes to right and below (as you probably expect)
-set.splitright = true
-set.splitbelow = true
-
+set.splitright    = true
+set.splitbelow    = true
+vim.o.lazyredraw  = false
+-- set.concealcursor = 'i'
+set.conceallevel = 1
 
 vim.cmd [[
   " =====================================
@@ -61,8 +63,6 @@ vim.cmd [[
   " init autocmd
   autocmd!
 
-  " Don't redraw while executing macros (good performance config)
-  set lazyredraw
   " set showmatch
   " How many tenths of a second to blink when matching brackets
   set mat=2
@@ -75,10 +75,6 @@ vim.cmd [[
 
   set cursorline
   set cursorcolumn
-
-  " Italics
-  let &t_ZH="\e[3m"
-  let &t_ZR="\e[23m"
 
   " syntax highlight
   syntax on

@@ -1,25 +1,30 @@
-return function(use)
-  use {
+return {
+  {
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    after = "nvim-treesitter",
-    config = "require('configs.editor.autopairs')"
-  }
-  use {
+    event = 'InsertEnter',
+    dependencies = 'nvim-treesitter',
+    config = function()
+      require 'configs.editor.autopairs'
+    end,
+  },
+  {
     'windwp/nvim-ts-autotag',
-    event = "InsertEnter",
-    config = "require('configs.editor.tsAutoTag')"
-  }
-  -- comment togle
-  use {
+    event = 'InsertEnter',
+    config = function()
+      require 'configs.editor.tsAutoTag'
+    end,
+  },
+  {
     'JoosepAlviste/nvim-ts-context-commentstring',
-    event = "BufWinEnter",
-    opts = true,
-  }
-  use {
+    event = 'BufWinEnter',
+    lazy = true,
+  },
+  {
     'numToStr/Comment.nvim',
-    after = 'nvim-ts-context-commentstring',
-    config = "require('configs.editor.commentToggle')"
-  }
-  use 'sbdchd/neoformat'
-end
+    dependencies = 'nvim-ts-context-commentstring',
+    config = function()
+      require 'configs.editor.commentToggle'
+    end,
+  },
+  'sbdchd/neoformat',
+}

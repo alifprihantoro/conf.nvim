@@ -1,5 +1,5 @@
-local cmp = require('cmp')
-local luasnip = require("luasnip")
+local cmp = require 'cmp'
+local luasnip = require 'luasnip'
 local map = cmp.mapping
 local confirm = map.confirm {
   behavior = cmp.ConfirmBehavior.Replace,
@@ -29,7 +29,6 @@ local up = function(arg)
     end
   end, arg)
 end
-
 
 local tab = function()
   return map(function(fallback)
@@ -70,10 +69,10 @@ local M = {
   ['<C-Space>'] = map.complete(),
   ['<C-e>'] = map.abort(),
   ['<Tab>'] = tab(),
-  ['<Down>'] = down({ 'i', 's' }),
-  ['<Up>'] = up({ 'i', 's' }),
-  ['<C-j>'] = down({ 'i', 's', 'c' }),
-  ['<C-k>'] = up({ 'i', 's', 'c' }),
+  ['<Down>'] = down { 'i', 's' },
+  ['<Up>'] = up { 'i', 's' },
+  ['<C-j>'] = down { 'i', 's', 'c' },
+  ['<C-k>'] = up { 'i', 's', 'c' },
   ['<C-l>'] = confirmCmd(),
 }
 

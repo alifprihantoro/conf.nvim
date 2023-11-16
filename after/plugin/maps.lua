@@ -3,7 +3,9 @@ local mapping = require('global.mapping')
 mapping({
   p = { ':bp<CR>', "PREV_BUF" },
   n = { ':bn<CR>', "NEXT_BUF" },
-  w = { ':w<CR>', "SAVE" },
+  w = { function()
+    vim.cmd('w')
+  end, "SAVE" },
   q = { ':q<CR>', "QUIT" },
   e = { ':Neotree toggle<CR>', "File Toggle" },
   E = { ":Neotree focus %<CR>", "File FOCUS" },
@@ -47,10 +49,16 @@ mapping({
     b = { 've"_d', "ALL" },
     a = { 'ggVG"_d', "ALL" },
   },
-}, { prefix = "<leader>", noremap = true })
+}, { prefix = "<leader>", noremap = true, mode = { 'v', 'n' }, silent = true })
 
 mapping({
-  d = { '"+d', 'CUT', mode = { "v" } },
-  y = { '"+y', 'COPY', mode = { "v" } },
-},
+    d = { '"+d', 'CUT', mode = { "v" } },
+    y = { '"+y', 'COPY', mode = { "v" } },
+  },
   { prefix = "<leader>", noremap = true, mode = 'v' })
+
+local MAPS_GIT = require('muryp-git-setup').MAPS
+local MAPS_GH = require('muryp-gh.maps')
+local OPTS = { prefix = "<leader>", noremap = true, mode = 'n', silent = true }
+mapping({ g = MAPS_GIT() }, OPTS)
+mapping({ g = MAPS_GH }, OPTS)

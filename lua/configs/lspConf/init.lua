@@ -1,7 +1,6 @@
-require('configs.lspConf.maps.default')
-require('configs.lspConf.servers')
-require('configs.lspConf.maps.custom')()
--- require('configs.lspConf.ui')
+require 'configs.lspConf.servers'
+require 'configs.lspConf.maps'
+require 'configs.lspConf.ui'
 
 -- thi for if docs hover
 local ErrHove = { 'typescript', 'typescriptreact', 'astro', 'javascript', 'javascriptreact', 'scss', 'css' }
@@ -19,7 +18,7 @@ vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
       return
     end
     ---@diagnostic disable-next-line: missing-parameter
-    return vim.notify('No information available')
+    return vim.notify 'No information available'
   end
 
   if not (result and result.contents) then

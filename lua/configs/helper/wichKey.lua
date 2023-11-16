@@ -1,4 +1,4 @@
-require("which-key").setup {
+require('which-key').setup {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -8,10 +8,10 @@ require("which-key").setup {
     },
   },
   key_labels = {
-    ["<space>"] = "SPC",
-    ["<leader>"] = "SPC",
-    ["<cr>"] = "RET",
-    ["<tab>"] = "TAB",
+    ['<space>'] = 'SPC',
+    ['<leader>'] = 'SPC',
+    ['<cr>'] = 'RET',
+    ['<tab>'] = 'TAB',
   },
   popup_mappings = {
     scroll_down = '<c-j>', -- binding to scroll down inside the popup

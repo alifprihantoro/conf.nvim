@@ -1,10 +1,9 @@
 -- local capabilities = require('configs.lspConf.utils.capability')
 
-local runtime_path = vim.split(package.path, ";")
-print(runtime_path)
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-table.insert(runtime_path, "nvim/?.lua")
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
+table.insert(runtime_path, 'nvim/?.lua')
 return {
   single_file_support = true,
   flags = {
@@ -15,7 +14,7 @@ return {
     Lua = {
       runtime = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = "LuaJIT",
+        version = 'LuaJIT',
         path = runtime_path,
       },
       diagnostics = {
@@ -25,10 +24,9 @@ return {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = {
-          vim.api.nvim_get_runtime_file("", true),
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-
+          vim.api.nvim_get_runtime_file('', true),
+          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+          [vim.fn.stdpath 'config' .. '/lua'] = true,
         },
       },
       -- Do not send telemetry data containing a randomized but unique identifier

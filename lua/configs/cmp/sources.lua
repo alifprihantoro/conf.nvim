@@ -8,8 +8,8 @@ M.sc1 = {
   -- { name = 'cmp-tw2css'},
 }
 M.sc2 = {
-  { name = 'buffer',    priority = 7 },
-  { name = 'path',      priority = 7 },
+  { name = 'buffer', priority = 7 },
+  { name = 'path', priority = 7 },
   { name = 'emmet_vim', priority = 9 },
   -- { name = 'emoji' },
 }

@@ -1,65 +1,69 @@
-return function(use)
+return {
   -- lsp
-  use {
+  {
     'neovim/nvim-lspconfig',
-    event = "BufWinEnter",
-    opts = true,
-    config = "require('configs.lspConf')",
-  }
+    event = 'BufWinEnter',
+    lazy = true,
+    config = function()
+      require 'configs.lspConf'
+    end,
+  },
   -- cmp start
-  use {
+  {
     'hrsh7th/nvim-cmp',
-    event = "BufWinEnter",
-    opts = true,
-  }
-  use {
+    event = 'BufWinEnter',
+    lazy = true,
+  },
+  {
     'hrsh7th/cmp-nvim-lsp',
-    after = "nvim-cmp",
-  }
-  use {
+    dependencies = 'nvim-cmp',
+  },
+  {
     'hrsh7th/cmp-buffer',
-    after = "cmp-nvim-lsp",
-  }
-  use {
+    dependencies = 'cmp-nvim-lsp',
+  },
+  {
     'hrsh7th/cmp-path',
-    after = "cmp-buffer",
-  }
-  use {
+    dependencies = 'cmp-buffer',
+  },
+  {
     'hrsh7th/cmp-cmdline',
-    after = "cmp-path",
-  }
-  use {
+    dependencies = 'cmp-path',
+  },
+  {
     'tamago324/cmp-zsh',
-    after = 'nvim-cmp',
-  }
-  use {
+    dependencies = 'nvim-cmp',
+  },
+  {
     'Shougo/deol.nvim',
-    after = 'nvim-cmp',
-  }
-  -- use {
+    dependencies = 'nvim-cmp',
+  },
+  -- {
   --   "jcha0713/cmp-tw2css",
-  --   after = 'nvim-cmp',
-  -- }
-  use {
+  --   dependencies = 'nvim-cmp',
+  -- },
+  {
     'dcampos/cmp-emmet-vim',
-    after = 'nvim-cmp',
-  }
-  use {
-    "mattn/emmet-vim",
-    after = 'cmp-emmet-vim'
-  }
-  use {
+    dependencies = 'nvim-cmp',
+  },
+  {
+    'mattn/emmet-vim',
+    dependencies = 'cmp-emmet-vim',
+  },
+  {
     'L3MON4D3/LuaSnip',
-    after = 'emmet-vim'
-  }
-  use {
+    dependencies = 'emmet-vim',
+  },
+  {
     'saadparwaiz1/cmp_luasnip',
-    after = 'LuaSnip',
-    config = "require('configs.lspConf.luasnip')"
-  }
-  use {
+    dependencies = 'LuaSnip',
+    config = function()
+      require 'configs.luasnip'
+    end,
+  },
+  {
     'hrsh7th/cmp-nvim-lua',
-    after = "nvim-cmp",
-  }
+    dependencies = 'nvim-cmp',
+  },
   --end cmp
-end
+}

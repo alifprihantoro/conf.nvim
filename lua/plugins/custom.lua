@@ -1,37 +1,28 @@
-return function(use)
-  -- git cmd, list, gh cli
-  use {
-    'muryp/nvim-muryp-git',
-    event = "BufWinEnter",
-    opts = true,
+return {
+  -- gh cli
+  {
+    'muryp/muryp-gh.nvim',
     config = function()
-      require('nvim-muryp-git').setup {}
-    end
-  }
-  use 'muryp/nvim-muryp-snippet-collection'
-  -- vimwiki or for md
-  use {
+      require('muryp-gh')
+    end,
+    dependencies = { 'nvim-telescope/telescope.nvim', 'folke/which-key.nvim' },
+  },
+  -- git setup
+  {
+    'muryp/muryp-git-setup.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'folke/which-key.nvim' },
+  },
+  'muryp/nvim-muryp-snippet-collection', -- vimwiki or for md
+  {
     'muryp/muryp-checklist.nvim',
     config = function()
-      require('muryp-checklist').setup({ map = "<leader>'" })
-    end
-  }
-  use {
+      require('muryp-checklist').setup { map = "<leader>'" }
+    end,
+  },
+  {
     'muryp/muryp-link.nvim',
     config = function()
-      require('muryp-link').setup({})
-    end
-  }
-  -- use {
-  --   'muryp/vimwiki',
-  --   opts = true,
-  --   ft = { "markdown" },
-  --   config = "require('configs.editor.wiki.after')"
-  -- }
-  --- file/folder bookmark
-  use {
-    'muryp/nvim-muryp-telescope-bookmark',
-    event = "BufWinEnter",
-    opts = true,
-  }
-end
+      require('muryp-link').setup {}
+    end,
+  },
+}
