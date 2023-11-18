@@ -1,19 +1,29 @@
 local cmd = vim.api.nvim_create_user_command
 local installServer = require 'configs.lspConf.utils.installServer'
-local bufopts = { silent = true }
 local key = vim.keymap.set
 local format = function()
   vim.lsp.buf.format { async = true }
 end
 
--- normal maps
-key('n', 'K', vim.lsp.buf.hover, bufopts)
-key('n', '<leader>tr', vim.lsp.buf.references, bufopts)
-key('n', '<leader>tn', vim.lsp.buf.rename, bufopts)
-key('n', '<leader>ti', vim.lsp.buf.code_action, bufopts)
-key('n', '<leader>tg', vim.lsp.buf.definition, bufopts)
-key('n', '<C-f>', format, bufopts)
-key('n', '<c-d>', ':LspDiagnosticOpenFloat<CR>', bufopts)
+local opts = { silent = true }
+key('n', '<leader>tG', vim.lsp.buf.declaration, opts)
+key('n', '<leader>tg', vim.lsp.buf.definition, opts)
+key('n', 'K', vim.lsp.buf.hover, opts)
+key('n', '<leader>tI', vim.lsp.buf.implementation, opts)
+key('n', '<leader>th', vim.lsp.buf.signature_help, opts)
+key('n', '<leader>twa', vim.lsp.buf.add_workspace_folder, opts)
+key('n', '<leader>twr', vim.lsp.buf.remove_workspace_folder, opts)
+key('n', '<leader>twl', function()
+  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end, opts)
+key('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+key('n', '<leader>tn', vim.lsp.buf.rename, opts)
+key({ 'n', 'v' }, '<leader>ti', vim.lsp.buf.code_action, opts)
+key('n', '<leader>tr', vim.lsp.buf.references, opts)
+key('n', '<C-f>', function()
+  vim.lsp.buf.format { async = true }
+end, opts)
+key('n', '<c-d>', ':LspDiagnosticOpenFloat<CR>', opts)
 vim.api.nvim_create_user_command('Format', format, {})
 -- cmd
 cmd('LspDiagnosticOpenFloat', vim.diagnostic.open_float, {})

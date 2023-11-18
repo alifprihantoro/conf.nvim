@@ -3,6 +3,7 @@
     "./lazy/plenary.nvim/lua",
     "./lazy/muryp-link.nvim/lua",
     "./lazy/noice.nvim/lua",
-    "./lazy/which-key.nvim/lua"
+    "./lazy/which-key.nvim/lua",
+    "./lazy/nui.nvim/lua"
   ]
 }

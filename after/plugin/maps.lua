@@ -49,7 +49,7 @@ mapping({
     b = { 've"_d', "ALL" },
     a = { 'ggVG"_d', "ALL" },
   },
-}, { prefix = "<leader>", noremap = true, mode = { 'v', 'n' }, silent = true })
+}, { prefix = "<leader>", noremap = true, mode = 'n', silent = true })
 
 mapping({
     d = { '"+d', 'CUT', mode = { "v" } },

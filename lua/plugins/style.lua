@@ -46,7 +46,7 @@ return {
           ["cmp.entry.get_documentation"] = true,
         },
         hover = {
-          enabled = true,
+          enabled = false,
         },
         progress = {
           enabled = false,
@@ -71,8 +71,6 @@ return {
   },
   {
     'rcarriga/nvim-notify',
-    -- event = 'BufRead',
-    -- opts = true,
     config = function()
       require 'configs.style.notify'
     end,

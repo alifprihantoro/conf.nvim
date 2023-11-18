@@ -1,5 +1,5 @@
 require('neo-tree').setup {
-  close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = false,  -- Close Neo-tree if it is the last window left in the tab
   sort_case_insensitive = false, -- used when sorting files and directories in the tree
   default_component_configs = {
     indent = {
@@ -121,6 +121,12 @@ require('neo-tree').setup {
         hi NeoTreeDirectoryIcon guifg=#80a0ff
         ]]
       end,
+    },
+    {
+      event = "file_opened",
+      handler = function()
+        require("neo-tree.command").execute({ action = "close" })
+      end
     },
   },
 }

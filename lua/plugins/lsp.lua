@@ -2,8 +2,6 @@ return {
   -- lsp
   {
     'neovim/nvim-lspconfig',
-    event = 'BufWinEnter',
-    lazy = true,
     config = function()
       require 'configs.lspConf'
     end,

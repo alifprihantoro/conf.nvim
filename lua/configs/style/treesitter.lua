@@ -60,9 +60,9 @@ ts.setup {
     enable = true,
     keymaps = {
       init_selection = 'gnn',
-      node_incremental = 'gnn',
-      scope_incremental = 'grc',
-      node_decremental = 'grm',
+      node_incremental = 'gnN',
+      scope_incremental = 'gnc',
+      node_decremental = 'gnm',
     },
   },
   textobjects = {
