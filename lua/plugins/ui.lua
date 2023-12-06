@@ -1,39 +1,4 @@
 return {
-  -- Statusline
-  {
-    'nvim-lualine/lualine.nvim',
-    config = function()
-      require 'configs.style.lualine'
-    end,
-    cmd = 'LualineToggle',
-  },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    event = 'BufRead',
-    opts = true,
-    config = function()
-      require 'configs.style.treesitter'
-    end,
-  },
-  {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    dependencies = 'nvim-treesitter',
-  },
-  {
-    'folke/tokyonight.nvim',
-    config = function()
-      require 'configs.style.tokyonight'
-    end,
-  },
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    event = 'BufWinEnter',
-    opts = true,
-    config = function()
-      require 'configs.style.indentBlank'
-    end,
-  },
-  -- lazy.nvim
   {
     'folke/noice.nvim',
     event = 'BufRead',
@@ -70,6 +35,53 @@ return {
     'rcarriga/nvim-notify',
     config = function()
       require 'configs.style.notify'
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require 'configs.style.lualine'
+    end,
+    cmd = 'LualineToggle',
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    event = 'BufWinEnter',
+    opts = true,
+    config = function()
+      require 'configs.style.indentBlank'
+    end,
+  },
+  {
+    'folke/which-key.nvim',
+    keys = { '<leader>', '"', "'", '`', 'c', 'v' },
+    event = 'VeryLazy',
+    config = function() end,
+  },
+  -- dashboard
+  {
+    'goolord/alpha-nvim',
+    event = 'BufWinEnter',
+    lazy = true,
+    config = function()
+      require 'configs.helper.dasboard'
+    end,
+  },
+  -- fold like vscode
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = 'kevinhwang91/promise-async',
+    config = function()
+      require 'configs.helper.ufo'
+    end,
+  },
+  -- for winbar icon
+  {
+    'SmiteshP/nvim-navic',
+    dependencies = 'neovim/nvim-lspconfig',
+    event = 'BufRead',
+    config = function()
+      require 'configs.helper.breadcrumb'
     end,
   },
 }
