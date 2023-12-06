@@ -14,23 +14,16 @@ for type, icon in pairs(signs) do
 end
 
 vim.o.updatetime = 250
--- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-
--- -- For diagnostics for specific cursor position
--- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
--- Show source in diagnostics
 vim.diagnostic.config {
   virtual_text = {
-    source = 'always', -- Or "if_many"
+    source = 'always',
   },
   float = {
-    source = 'always', -- Or "if_many"
+    source = 'always',
   },
 }
-
--- Change prefix/character preceding the diagnostics' virtual text
 vim.diagnostic.config {
   virtual_text = {
-    prefix = '■', -- Could be '●', '▎', 'x'
+    prefix = '■',
   },
 }
