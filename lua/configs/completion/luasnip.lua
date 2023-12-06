@@ -1,4 +1,4 @@
--- require 'configs.cmp'
+require 'configs.completion'
 
 -- get snipmate
 require('luasnip.loaders.from_snipmate').lazy_load()

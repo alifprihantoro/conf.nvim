@@ -1,8 +1,8 @@
-local icons = require 'configs.cmp.icons'
-local mapping = require 'configs.cmp.maps'
+local icons = require 'configs.completion.icons'
+local mapping = require 'configs.completion.maps'
 local cmp = require 'cmp'
-local window = require 'configs.cmp.window'
-local sources = require 'configs.cmp.sources'
+local window = require 'configs.completion.window'
+local sources = require 'configs.completion.sources'
 
 -- command
 vim.cmd 'set completeopt=menu,menuone,noselect'
@@ -25,4 +25,4 @@ cmp.setup {
   },
 }
 
-require 'configs.cmp.cmdLine'
+require 'configs.completion.cmdLine'

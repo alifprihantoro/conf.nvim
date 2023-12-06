@@ -1,8 +1,8 @@
-local layout = require 'configs.file.telescope.configs.layout'
-local maps = require 'configs.file.telescope.configs.maps'
-local extentions = require 'configs.file.telescope.configs.extentions'
+local layout = require 'configs.editor.telescope.configs.layout'
+local maps = require 'configs.editor.telescope.configs.maps'
+local extentions = require 'configs.editor.telescope.configs.extentions'
 
-require 'configs.file.telescope.extensi'
+require 'configs.editor.telescope.extensi'
 require('telescope').setup {
   defaults = {
     borderchars = {

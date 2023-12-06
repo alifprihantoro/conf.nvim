@@ -2,7 +2,7 @@ return {
   {
     'folke/tokyonight.nvim',
     config = function()
-      require 'configs.style.tokyonight'
+      require 'configs.tokyonight'
     end,
   },
 }

@@ -1,5 +1,5 @@
 local cmp = require 'cmp'
-local maps = require 'configs.cmp.maps'
+local maps = require 'configs.completion.maps'
 
 -- `/` cmdline setup.
 cmp.setup.cmdline('/', {

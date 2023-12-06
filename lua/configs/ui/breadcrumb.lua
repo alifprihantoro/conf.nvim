@@ -1,5 +1,5 @@
 local navic = require 'nvim-navic'
-local icons = require('configs.helper.icons').kind
+local icons = require('configs.ui.icons').kind
 navic.setup {
   icons,
   lsp = {

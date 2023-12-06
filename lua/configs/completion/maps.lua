@@ -1,5 +1,4 @@
 local cmp = require 'cmp'
-local luasnip = require 'luasnip'
 local map = cmp.mapping
 local confirm = map.confirm {
   behavior = cmp.ConfirmBehavior.Replace,
@@ -32,6 +31,7 @@ end
 
 local tab = function()
   return map(function(fallback)
+    local luasnip = require 'luasnip'
     if luasnip.jumpable() then
       luasnip.jump(1)
       return

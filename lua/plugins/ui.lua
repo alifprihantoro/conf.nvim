@@ -34,13 +34,13 @@ return {
   {
     'rcarriga/nvim-notify',
     config = function()
-      require 'configs.style.notify'
+      require 'configs.ui.notify'
     end,
   },
   {
     'nvim-lualine/lualine.nvim',
     config = function()
-      require 'configs.style.lualine'
+      require 'configs.ui.lualine'
     end,
     cmd = 'LualineToggle',
   },
@@ -49,7 +49,7 @@ return {
     event = 'BufWinEnter',
     opts = true,
     config = function()
-      require 'configs.style.indentBlank'
+      require 'configs.ui.indentBlank'
     end,
   },
   {
@@ -61,10 +61,11 @@ return {
   -- dashboard
   {
     'goolord/alpha-nvim',
-    event = 'BufWinEnter',
-    lazy = true,
+    event = "VimEnter",
+    enabled = true,
+    init = false,
     config = function()
-      require 'configs.helper.dasboard'
+      require 'configs.ui.dasboard'
     end,
   },
   -- fold like vscode
@@ -72,7 +73,7 @@ return {
     'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async',
     config = function()
-      require 'configs.helper.ufo'
+      require 'configs.ui.ufo'
     end,
   },
   -- for winbar icon
@@ -81,35 +82,7 @@ return {
     dependencies = 'neovim/nvim-lspconfig',
     event = 'BufRead',
     config = function()
-      require 'configs.helper.breadcrumb'
+      require 'configs.ui.breadcrumb'
     end,
   },
-  {
-    "echasnovski/mini.indentscope",
-    opts = {
-      -- symbol = "▏",
-      symbol = "│",
-      options = { try_as_border = true },
-    },
-    -- init = function()
-    --   vim.api.nvim_create_autocmd("FileType", {
-    --     pattern = {
-    --       "help",
-    --       "alpha",
-    --       "dashboard",
-    --       "neo-tree",
-    --       "Trouble",
-    --       "trouble",
-    --       "lazy",
-    --       "mason",
-    --       "notify",
-    --       "toggleterm",
-    --       "lazyterm",
-    --     },
-    --     callback = function()
-    --       vim.b.miniindentscope_disable = true
-    --     end,
-    --   })
-    -- end,
-  }
 }

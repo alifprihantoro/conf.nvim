@@ -6,7 +6,7 @@ return {
     'nvim-telescope/telescope.nvim',
     cmd = 'Telescope',
     config = function()
-      require 'configs.file.telescope'
+      require 'configs.editor.telescope'
     end,
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -28,7 +28,7 @@ return {
       'MunifTanjim/nui.nvim',
     },
     config = function()
-      require 'configs.file.neotree'
+      require 'configs.editor.neotree'
     end,
   },
   {
