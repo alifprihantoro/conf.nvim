@@ -3,65 +3,39 @@ local lsp = require 'lspconfig'
 local jsonls = require 'configs.lspConf.servers.jsonls'
 local yaml = require 'configs.lspConf.servers.yaml'
 local rust = require 'configs.lspConf.servers.rust'
+local html = require 'configs.lspConf.servers.html'
+local astro = require 'configs.lspConf.servers.astro'
 local lsp_defaults = lsp.util.default_config
 
--- folding
+--- settings
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
-  lineFoldingOnly = true,
+  lineFoldingOnly = true, -- folding
 }
 lsp_defaults.capabilities =
-  vim.tbl_deep_extend('force', lsp_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities())
+    vim.tbl_deep_extend('force', lsp_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities()) --- completion
 
-require('lspconfig').luau_lsp.setup {}
 -- lang, core
-lsp.lua_ls.setup(lua) -- lua
--- lsp.flow.setup(capabilities)
-lsp.tailwindcss.setup {}
-lsp.tsserver.setup {} -- js typescript
-lsp.html.setup {
-  filetypes = { 'html', 'javascript', 'typescript' },
-  init_options = {
-    configurationSection = { 'html', 'javascript', 'typescript', 'css' },
-    embeddedLanguages = {
-      css = true,
-      javascript = true,
-      typescript = true,
-    },
-    provideFormatter = false,
-  },
-}
-lsp.jsonls.setup(jsonls)
-lsp.cssls.setup {}
-lsp.stylelint_lsp.setup {}
--- lsp.cssmodules_ls.setup {}
-lsp.eslint.setup {}
-lsp.yamlls.setup(yaml)
-lsp.bashls.setup {}
-lsp.pyright.setup {}
-lsp.rust_analyzer.setup(rust)
-lsp.taplo.setup {
-  cmd = { 'taplo', 'lsp', 'stdio' },
-}
+lsp.luau_lsp.setup {}                                 --- lua
+lsp.lua_ls.setup(lua)                                 -- lua
+lsp.tsserver.setup {}                                 -- js typescript
+lsp.html.setup(html)                                  --- html
+lsp.jsonls.setup(jsonls)                              --- json
+lsp.cssls.setup {}                                    --- css
+lsp.tailwindcss.setup {}                              --- tailwindcss
+-- lsp.cssmodules_ls.setup {}                        --- css import module
+lsp.yamlls.setup(yaml)                                --- yaml
+lsp.bashls.setup {}                                   --- bash
+lsp.pyright.setup {}                                  --- python
+lsp.rust_analyzer.setup(rust)                         --- rust
+lsp.taplo.setup { cmd = { 'taplo', 'lsp', 'stdio' } } --- toml
+
 -- framework
-lsp.astro.setup {
-  init_options = {
-    typescript = {
-      tsdk = vim.fs.normalize '/data/data/com.termux/files/usr/lib/node_modules/typescript/lib',
-    },
-  },
-} -- astro
+lsp.astro.setup(astro)         -- astro
+require('lspConf.servers.mdx') -- mdx
+lsp.mdx_analyzer.setup {}      -- mdx
 
--- local lspconfig = require('lspconfig')
-local configs = require 'lspconfig.configs'
-
-configs.mdx_analyzer = {
-  default_config = {
-    cmd = { 'mdx-language-server', '--stdio' },
-    filetypes = { 'markdown.mdx' },
-    root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
-  },
-}
-
-lsp.mdx_analyzer.setup {}
+--- lint
+lsp.stylelint_lsp.setup {} --- css lint
+lsp.eslint.setup {}        --- js/ts lint
