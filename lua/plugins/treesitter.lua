@@ -26,7 +26,9 @@ return {
         'windwp/nvim-ts-autotag',
         event = 'InsertEnter',
         config = function()
-          require 'configs.treesitter.ts-autotag'
+          require('nvim-ts-autotag').setup {
+            filetypes = { 'html', 'xml', 'astro', 'javascriptreact', 'typescriptreact', 'javascript', 'typescript' },
+          }
         end,
       },
     },
