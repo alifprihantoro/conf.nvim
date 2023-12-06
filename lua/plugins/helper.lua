@@ -1,23 +1,4 @@
 return {
-  { -- git sign
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require 'configs.helper.gitSigns'
-    end,
-    event = 'BufWinEnter',
-    lazy = true,
-    dependencies = {
-      { 'nvim-lua/plenary.nvim' },
-    },
-  },
-  { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
-  {
-    'akinsho/git-conflict.nvim',
-    config = function()
-      require 'configs.helper.gitConflict'
-    end,
-  },
-
   {
     'folke/which-key.nvim',
     keys = { '<leader>', '"', "'", '`', 'c', 'v' },

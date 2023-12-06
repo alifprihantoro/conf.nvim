@@ -54,7 +54,7 @@ return {
   },
   {
     'saadparwaiz1/cmp_luasnip',
-    dependencies = 'LuaSnip',
+    dependencies = { 'L3MON4D3/LuaSnip', 'muryp/nvim-muryp-snippet-collection' },
     config = function()
       require 'configs.luasnip'
     end,

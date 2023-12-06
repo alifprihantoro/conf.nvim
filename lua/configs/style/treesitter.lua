@@ -37,7 +37,7 @@ ts.setup {
     enable = true,
     filetypes = { 'html', 'xml', 'astro', 'javascriptreact', 'typescriptreact', 'javascript', 'typescript', 'markdown' },
   },
-  context_commentstring = {
+  ts_context_commentstring = {
     enable = true,
     --   config = {
     --     typescript = {

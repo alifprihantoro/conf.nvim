@@ -9,8 +9,14 @@ M.sc1 = {
 }
 M.sc2 = {
   { name = 'buffer', priority = 7 },
-  { name = 'path', priority = 7 },
-  { name = 'emmet_vim', priority = 9 },
+  { name = 'path',   priority = 7 },
+  {
+    name = 'emmet_vim',
+    priority = 9,
+    option = {
+      filetypes = { 'html', 'xml', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'heex', 'tsx', 'jsx', 'js', 'ts', 'typescript', 'javascript' },
+    }
+  },
   -- { name = 'emoji' },
 }
 return M

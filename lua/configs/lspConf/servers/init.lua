@@ -27,6 +27,7 @@ lsp.html.setup {
     embeddedLanguages = {
       css = true,
       javascript = true,
+      typescript = true,
     },
     provideFormatter = false,
   },

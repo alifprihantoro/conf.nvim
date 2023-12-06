@@ -14,10 +14,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local configs = {
-  root = configPath .. '/lazy', -- directory where plugins will be installed
+  root = configPath .. '/lazy',               -- directory where plugins will be installed
   lockfile = configPath .. '/lazy-lock.json', -- lockfile generated after running update.
   git = {
-    log = { '-1' }, -- show commits from the last 3 days
+    log = { '-1' },                           -- show commits from the last 3 days
   },
   readme = {
     enabled = false,

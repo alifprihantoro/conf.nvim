@@ -8,13 +8,6 @@ return {
     end,
   },
   {
-    'windwp/nvim-ts-autotag',
-    event = 'InsertEnter',
-    config = function()
-      require 'configs.editor.tsAutoTag'
-    end,
-  },
-  {
     'JoosepAlviste/nvim-ts-context-commentstring',
     event = 'BufWinEnter',
     lazy = true,

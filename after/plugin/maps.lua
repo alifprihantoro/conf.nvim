@@ -56,9 +56,3 @@ mapping({
     y = { '"+y', 'COPY', mode = { "v" } },
   },
   { prefix = "<leader>", noremap = true, mode = 'v' })
-
-local MAPS_GIT = require('muryp-git-setup').MAPS
-local MAPS_GH = require('muryp-gh.maps')
-local OPTS = { prefix = "<leader>", noremap = true, mode = 'n', silent = true }
-mapping({ g = MAPS_GIT() }, OPTS)
-mapping({ g = MAPS_GH }, OPTS)
