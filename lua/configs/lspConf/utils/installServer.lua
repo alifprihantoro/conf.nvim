@@ -1,17 +1,18 @@
 return function(opts)
   local list_npm = {
-    'vscode-langservers-extracted', -- html, json, css
-    'typescript', -- ts compiler
-    'typescript-language-server', -- ts,js
-    'cssmodules-language-server', -- css module
-    '@astrojs/language-server', -- astro
-    'yaml-language-server', -- yaml
-    'bash-language-server', -- bash
-    'pyright', -- python
-    '@tailwdincss/language-server@0.0.7', -- python
+    'vscode-langservers-extracted',       -- html, json, css
+    'typescript',                         -- ts compiler
+    'typescript-language-server',         -- ts,js,jsx,tsx
+    'cssmodules-language-server',         -- css module
+    '@astrojs/language-server',           -- astro
+    'yaml-language-server',               -- yaml
+    'bash-language-server',               -- bash
+    'pyright',                            -- python
+    '@tailwdincss/language-server@0.0.7', -- tailwind
+    '@mdx-js/language-server',
   }
   for _, v in pairs(list_npm) do
-    vim.cmd('!npm install -g ' .. v)
+    vim.cmd('!pnpm install -g ' .. v)
   end
   if opts.cli == true then
     -- this opts is used to termux (for linux/mac/windows have different installed or dir)
