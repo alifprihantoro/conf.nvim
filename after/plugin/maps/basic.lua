@@ -13,7 +13,7 @@ _G.MAP({
     end,
     'SEARCH_WORD_SYMBOL'
   },
-  [';'] = { ':', 'CMD', mode = 'n' },
+  [';'] = { ':', 'CMD', mode = 'n', silent = false },
   ['<C-k>'] = { '10k', 'SCROLL_UP', mode = { 'n', 'v' } },
   ['<C-j>'] = { '10j', 'SCROLL_DOWN', mode = { 'n', 'v' } },
   ['<C-l>'] = { '20zl', 'SCROLL_LEFT', mode = { 'n', 'v' } },

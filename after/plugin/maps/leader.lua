@@ -4,7 +4,7 @@ _G.MAP({
   E = { ":Neotree focus %<CR>", "File FOCUS" },
   i = { '^', "FIRST_COL", mode = { "n", "v" } },
   a = { '$', "LAST_COL", mode = { "n", "v" } },
-  r = { ':%s /', "REPLACE" },
+  r = { ':%s /', "REPLACE", silent = false },
   u = { '<C-^>', "TOGGLE_CHANGE_BUF" },
   c = { ':e $MYVIMRC | Cdn<CR>', "GOTO_NVIM_CONF" },
   q = { ':q<CR>', 'QUIT' },
@@ -71,11 +71,11 @@ _G.MAP({
   t = {
     name = '+TOGGLE',
     l = { ':LualineToggle<CR>', "LUALINE" },
-    w = { toggle.wrap, "WORD_WRAP" },
-    r = { toggle.relativeNum, "RELATIVE_LINE_NUMBERS" },
-    n = { toggle.lineNum, "LINE_NUMBERS" },
-    d = { toggle.diagnostic, "DIAGNOSTICS" },
-    T = { function() if vim.b.ts_highlight then vim.treesitter.stop() else vim.treesitter.start() end end, "TREESITTER_HIGHLIGHT" },
+    w = { _G.toggle.wrap, "WORD_WRAP" },
+    r = { _G.toggle.relativeNum, "RELATIVE_LINE_NUMBERS" },
+    n = { _G.toggle.lineNum, "LINE_NUMBERS" },
+    d = { _G.toggle.diagnostic, "DIAGNOSTICS" },
+    t = { function() if vim.b.ts_highlight then vim.treesitter.stop() else vim.treesitter.start() end end, "TREESITTER_HIGHLIGHT" },
   },
   d = {
     name = 'DELETE',
@@ -117,5 +117,6 @@ _G.MAP({
     x = { '"+', 'CUT' },
     y = { '"+y', 'COPY' },
     d = { '"_d', 'DELETE' },
+    r = { ':s/', 'REPLACE', silent = false },
   },
-  { prefix = "<leader>", noremap = true, mode = 'v', silent = true })
+  { prefix = "<leader>", noremap = true, mode = 'v' })
