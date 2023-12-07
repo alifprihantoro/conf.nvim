@@ -1,5 +1,5 @@
 local lsp = require 'lspconfig'
-local root_path = '/data/data/com.termux/files/home/.config/nvim/schema/json/'
+local root_path = vim.fn.stdpath('config') .. '/schema/json/'
 
 lsp.jsonls.setup({
   settings = {
@@ -16,11 +16,6 @@ lsp.jsonls.setup({
           url = root_path .. 'tsconfig.json',
         },
         {
-          description = 'Lerna config',
-          fileMatch = { 'lerna.json' },
-          url = root_path .. 'lerna.json',
-        },
-        {
           description = 'Babel configuration',
           fileMatch = { '.babelrc.json', '.babelrc', 'babel.config.json' },
           url = root_path .. 'lerna.json',
@@ -30,11 +25,6 @@ lsp.jsonls.setup({
           fileMatch = { '.eslintrc.json', '.eslintrc' },
           url = root_path .. 'eslintrc.json',
         },
-        -- {
-        --   description = 'Bucklescript config',
-        --   fileMatch = {'bsconfig.json'},
-        --   url = root_path..'build-schema.json'
-        -- },
         {
           description = 'Prettier config',
           fileMatch = { '.prettierrc', '.prettierrc.json', 'prettier.config.json' },
@@ -49,6 +39,11 @@ lsp.jsonls.setup({
           description = 'Stylelint config',
           fileMatch = { '.stylelintrc', '.stylelintrc.json', 'stylelint.config.json' },
           url = root_path .. 'stylelintrc.json',
+        },
+        {
+          description = 'Turborepo config',
+          fileMatch = { 'turbo.json' },
+          url = root_path .. 'turbo.json',
         },
       },
       validate = { enable = true },
