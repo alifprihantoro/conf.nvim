@@ -5,6 +5,7 @@ local extentions = require 'configs.editor.telescope.configs.extentions'
 require 'configs.editor.telescope.extensi'
 require('telescope').setup {
   defaults = {
+    file_ignore_patterns = { '.git/', '.cache' },
     borderchars = {
       { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
@@ -14,5 +15,10 @@ require('telescope').setup {
     layout_config = layout,
     mappings = maps,
     extensions = extentions,
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
   },
 }

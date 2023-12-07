@@ -49,14 +49,12 @@ return {
     event = 'BufWinEnter',
     opts = true,
     config = function()
-      require 'configs.ui.indentBlank'
+      require('ibl').setup()
     end,
   },
   {
     'folke/which-key.nvim',
     keys = { '<leader>', '"', "'", '`', 'c', 'v' },
-    event = 'VeryLazy',
-    config = function() end,
   },
   -- dashboard
   {

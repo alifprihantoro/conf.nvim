@@ -4,15 +4,14 @@ require 'configs.completion'
 require('luasnip.loaders.from_snipmate').lazy_load()
 
 local extend = require('luasnip').filetype_extend
-local merger = require 'global.merger'
 
 local js = { '_', 'html', 'javascript' }
 local jsx = { '_', 'html', 'javascript', 'javascriptreact' }
-local tsx = merger(jsx, { 'typescript', 'typescriptreact' })
+local tsx = _G.MERGE(jsx, { 'typescript', 'typescriptreact' })
 
 extend('html', js)
 extend('javascript', js)
-extend('typescript', merger(js, { 'typescript' }))
+extend('typescript', _G.MERGE(js, { 'typescript' }))
 extend('typescriptreact', jsx)
 extend('javascriptreact', tsx)
-extend('astro', merger(tsx, { 'astro' }))
+extend('astro', _G.MERGE(tsx, { 'astro' }))
