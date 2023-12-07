@@ -1,27 +1,25 @@
+local opts = vim.wo
 _G.toggle = {
   lineNum = function()
-    local cek = vim.wo.number
-    if cek then
-      cek = false
+    if opts.number then
+      opts.number = false
       return
     end
-    cek = true
+    opts.number = true
   end,
   wrap = function()
-    local cek = vim.opt.wrap
-    if cek then
-      cek = false
+    if opts.wrap then
+      opts.wrap = false
       return
     end
-    cek = true
+    opts.wrap = true
   end,
   relativeNum = function()
-    local cek = vim.wo.relativenumber
-    if cek then
-      cek = false
+    if opts.relativenumber then
+      opts.relativenumber = false
       return
     end
-    cek = true
+    opts.relativenumber = true
   end,
   diagnostic = function()
     if _G.Diagnostic then
