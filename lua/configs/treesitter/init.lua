@@ -35,26 +35,19 @@ ts.setup {
   },
   autotag = {
     enable = true,
-    filetypes = { 'html', 'xml', 'astro', 'javascriptreact', 'typescriptreact', 'javascript', 'typescript', 'markdown' },
+    filetypes = {
+      'html',
+      'xml',
+      'astro',
+      'javascriptreact',
+      'typescriptreact',
+      'javascript',
+      'typescript',
+      'markdown'
+    },
   },
   ts_context_commentstring = {
     enable = true,
-    --   config = {
-    --     typescript = {
-    --       __default = '// %s',
-    --       jsx_element = '{/* %s */}',
-    --       jsx_fragment = '{/* %s */}',
-    --       jsx_attribute = '// %s',
-    --       comment = '// %s'
-    --     },
-    --     javascript = {
-    --       __default = '// %s',
-    --       jsx_element = '{/* %s */}',
-    --       jsx_fragment = '{/* %s */}',
-    --       jsx_attribute = '// %s',
-    --       comment = '// %s'
-    --     }
-    --   }
   },
   incremental_selection = {
     enable = true,

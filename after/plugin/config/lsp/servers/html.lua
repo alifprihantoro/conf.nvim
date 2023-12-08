@@ -1,6 +1,6 @@
 local lsp = require 'lspconfig'
 
-lsp.html.setup({
+lsp.html.setup {
   filetypes = { 'html', 'javascript', 'typescript' },
   init_options = {
     configurationSection = { 'html', 'javascript', 'typescript', 'css' },
@@ -11,4 +11,4 @@ lsp.html.setup({
     },
     provideFormatter = false,
   },
-})
+}

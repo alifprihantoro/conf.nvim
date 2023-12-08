@@ -6,7 +6,7 @@ table.insert(runtime_path, 'lua/?/init.lua')
 table.insert(runtime_path, 'nvim/?.lua')
 
 lsp.luau_lsp.setup {} --- lua
-lsp.lua_ls.setup({
+lsp.lua_ls.setup {
   single_file_support = true,
   flags = {
     debounce_text_changes = 150,
@@ -37,4 +37,4 @@ lsp.lua_ls.setup({
       },
     },
   },
-})
+}

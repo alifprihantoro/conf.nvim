@@ -1,5 +1,3 @@
-vim.notify = require 'notify'
-
 -- integration with telescope
 require('notify').setup {
   background_colour = '#000000',

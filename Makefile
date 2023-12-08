@@ -1,6 +1,6 @@
 stylua:
-	stylua --color always lua/
+	stylua --color always lua after ftdetect plugin
 styluaCheck:
-	stylua --color always --check lua/
+	stylua --color always --check lua after ftdetect plugin
 lint:
-	luacheck lua
+	luacheck lua after ftdetect plugin

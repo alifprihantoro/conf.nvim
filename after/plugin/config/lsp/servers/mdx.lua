@@ -8,4 +8,4 @@ configs.mdx_analyzer = {
     root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
   },
 }
-lsp.mdx_analyzer.setup {}      -- mdx
+lsp.mdx_analyzer.setup {} -- mdx

@@ -1,7 +1,7 @@
 local lsp = require 'lspconfig'
-local root_path = vim.fn.stdpath('config') .. '/schema/json/'
+local root_path = vim.fn.stdpath 'config' .. '/schema/json/'
 
-lsp.jsonls.setup({
+lsp.jsonls.setup {
   settings = {
     json = {
       schemas = {
@@ -49,4 +49,4 @@ lsp.jsonls.setup({
       validate = { enable = true },
     },
   },
-})
+}

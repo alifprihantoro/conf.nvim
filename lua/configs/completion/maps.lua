@@ -43,14 +43,6 @@ local tab = function()
     fallback()
   end, { 'i' })
 end
-local cr = function()
-  return map(function(fallback)
-    if cmp.visible() then
-      return confirm()
-    end
-    fallback()
-  end, { 'i' })
-end
 
 local confirmCmd = function()
   return map(function(fallback)
@@ -63,7 +55,6 @@ local confirmCmd = function()
 end
 
 local M = {
-  -- ['<CR>'] = cr(),
   ['<C-b>'] = map.scroll_docs(-4),
   ['<C-m>'] = map.scroll_docs(4),
   ['<C-Space>'] = map.complete(),

@@ -1,14 +1,15 @@
 _G.LspInstallServer = function(opts)
   local list_npm = {
-    'vscode-langservers-extracted',       -- html, json, css
-    'typescript',                         -- ts compiler
-    'typescript-language-server',         -- ts,js,jsx,tsx
-    'cssmodules-language-server',         -- css module
-    '@astrojs/language-server',           -- astro
-    'yaml-language-server',               -- yaml
-    'bash-language-server',               -- bash
-    'pyright',                            -- python
-    '@tailwdincss/language-server@0.0.7', -- tailwind
+    'vscode-langservers-extracted', -- html, json, css
+    'typescript', -- ts compiler
+    'typescript-language-server', -- ts,js,jsx,tsx
+    'cssmodules-language-server', -- css module
+    '@astrojs/language-server', -- astro
+    'yaml-language-server', -- yaml
+    'bash-language-server', -- bash
+    'pyright', -- python
+    -- '@tailwdincss/language-server@0.0.7', -- tailwind
+    '@tailwdincss/language-server@0.0.14', -- tailwind
     '@mdx-js/language-server',
   }
   for _, v in pairs(list_npm) do

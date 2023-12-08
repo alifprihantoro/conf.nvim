@@ -13,7 +13,7 @@ return {
         lineFoldingOnly = true, -- folding
       }
       lsp_defaults.capabilities =
-          vim.tbl_deep_extend('force', lsp_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities()) --- completion
-    end
+        vim.tbl_deep_extend('force', lsp_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities())
+    end,
   },
 }

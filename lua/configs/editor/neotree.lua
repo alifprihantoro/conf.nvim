@@ -1,14 +1,14 @@
 require('neo-tree').setup {
-  close_if_last_window = false,  -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
   sort_case_insensitive = false, -- used when sorting files and directories in the tree
   default_component_configs = {
     git_status = {
       symbols = {
-        added    = "",
-        modified = "",
-        deleted  = "",
-        renamed  = "",
-      }
+        added = '',
+        modified = '',
+        deleted = '',
+        renamed = '',
+      },
     },
   },
   use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
@@ -57,7 +57,7 @@ require('neo-tree').setup {
     filtered_items = {
       hide_dotfiles = false,
       hide_by_name = {
-        ".git"
+        '.git',
       },
     },
     group_empty_dirs = true, -- when true, empty folders will be grouped together
@@ -104,10 +104,10 @@ require('neo-tree').setup {
       end,
     },
     {
-      event = "file_opened",
+      event = 'file_opened',
       handler = function()
-        require("neo-tree.command").execute({ action = "close" })
-      end
+        require('neo-tree.command').execute { action = 'close' }
+      end,
     },
   },
 }

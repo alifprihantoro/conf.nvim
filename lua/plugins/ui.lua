@@ -10,7 +10,7 @@ return {
         -- The default routes will forward notifications to nvim-notify
         -- Benefit of using Noice for this is the routing and consistent history view
         enabled = true,
-        view = "notify",
+        view = 'notify',
       },
       lsp = {
         hover = {
@@ -21,7 +21,7 @@ return {
         },
       },
       popupmenu = {
-        enabled = true,  -- enables the Noice popupmenu UI
+        enabled = true, -- enables the Noice popupmenu UI
         ---@type 'nui'|'cmp'
         backend = 'cmp', -- backend to use to show regular cmdline completions
       },
@@ -59,7 +59,7 @@ return {
   -- dashboard
   {
     'goolord/alpha-nvim',
-    event = "VimEnter",
+    event = 'VimEnter',
     enabled = true,
     init = false,
     config = function()

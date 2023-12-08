@@ -1,6 +1,6 @@
 local lsp = require 'lspconfig'
 
-lsp.yamlls.setup({
+lsp.yamlls.setup {
   settings = {
     yaml = {
       schemas = {
@@ -10,4 +10,4 @@ lsp.yamlls.setup({
       },
     },
   },
-})
+}

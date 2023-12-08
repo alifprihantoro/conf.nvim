@@ -29,5 +29,5 @@ _G.toggle = {
     end
     vim.diagnostic.enable()
     _G.Diagnostic = true
-  end
+  end,
 }
