@@ -5,6 +5,8 @@ local extentions = require 'configs.editor.telescope.configs.extentions'
 require 'configs.editor.telescope.extensi'
 require('telescope').setup {
   defaults = {
+    prompt_prefix = ' ',
+    selection_caret = ' ',
     file_ignore_patterns = { '.git/', '.cache' },
     borderchars = {
       { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
