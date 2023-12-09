@@ -37,7 +37,7 @@ _G.MAP({
     o = { ':Telescope oldfiles<CR>', 'RECENT_OPEN' },
     s = { ':Telescope symbols<CR>', 'SYMBOL' },
   },
-  S = {
+  s = {
     name = '+SCREEN',
     l = { '<C-w>l', 'GO_RIGH_SCREEN' },
     d = { '<C-w>c', 'DELETE_CURRENT_SCREEN' },
@@ -77,7 +77,7 @@ _G.MAP({
     W = { 'viW"+y', 'WORD_SYMBOL' },
     a = { 'ggVG"+y', 'ALL' },
   },
-  L = { ':lua require("lazy").home()', 'LAZY_HOME' },
+  L = { ':lua require("lazy").home()<CR>', 'LAZY_HOME' },
   t = {
     name = '+TOGGLE',
     l = { ':LualineToggle<CR>', 'LUALINE' },
