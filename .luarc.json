@@ -1,10 +1,10 @@
 {
   "workspace.library": [
     "./lazy/plenary.nvim/lua",
-    "./lazy/muryp-link.nvim/lua",
     "./lazy/noice.nvim/lua",
     "./lazy/which-key.nvim/lua",
     "./lazy/nui.nvim/lua",
-    "./lazy/nvim-cmp/lua"
+    "./lazy/lazy.nvim/lua",
+    "./lazy/telescope.nvim/lua"
   ]
 }

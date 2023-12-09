@@ -9,7 +9,14 @@ return {
     dependencies = {
       {
         'numToStr/Comment.nvim',
-        dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+        dependencies =
+        {
+          'JoosepAlviste/nvim-ts-context-commentstring',
+          lazy = true,
+          opts = {
+            enable_autocmd = false,
+          },
+        },
         config = function()
           require 'configs.treesitter.commentToggle'
         end,
