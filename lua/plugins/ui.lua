@@ -21,7 +21,7 @@ return {
         },
       },
       popupmenu = {
-        enabled = true, -- enables the Noice popupmenu UI
+        enabled = true,  -- enables the Noice popupmenu UI
         ---@type 'nui'|'cmp'
         backend = 'cmp', -- backend to use to show regular cmdline completions
       },
@@ -45,12 +45,17 @@ return {
     cmd = 'LualineToggle',
   },
   {
-    'lukas-reineke/indent-blankline.nvim',
-    event = 'BufWinEnter',
-    opts = true,
+    "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require('ibl').setup()
+      local opts = {}
+      local opts_color = {
+        color_transparency = 0.08,
+      }
+      require("ibl").setup(require("indent-rainbowline").make_opts(opts, opts_color))
     end,
+    dependencies = {
+      "TheGLander/indent-rainbowline.nvim",
+    },
   },
   {
     'folke/which-key.nvim',
