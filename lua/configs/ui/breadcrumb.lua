@@ -42,6 +42,6 @@ navic.setup {
   },
   highlight = true,
   click = true,
-  lazy_update_context = true,
+  lazy_update_context = false,
   safe_output = true,
 }
