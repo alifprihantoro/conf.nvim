@@ -1,65 +1,19 @@
-return function(use)
-  -- lsp
-  use {
+---NOTE:all lsp configs on folder `after/plugin/config/lsp`
+return {
+  {
     'neovim/nvim-lspconfig',
-    event = "BufWinEnter",
-    opts = true,
-    config = "require('configs.lspConf')",
-  }
-  -- cmp start
-  use {
-    'hrsh7th/nvim-cmp',
-    event = "BufWinEnter",
-    opts = true,
-  }
-  use {
-    'hrsh7th/cmp-nvim-lsp',
-    after = "nvim-cmp",
-  }
-  use {
-    'hrsh7th/cmp-buffer',
-    after = "cmp-nvim-lsp",
-  }
-  use {
-    'hrsh7th/cmp-path',
-    after = "cmp-buffer",
-  }
-  use {
-    'hrsh7th/cmp-cmdline',
-    after = "cmp-path",
-  }
-  use {
-    'tamago324/cmp-zsh',
-    after = 'nvim-cmp',
-  }
-  use {
-    'Shougo/deol.nvim',
-    after = 'nvim-cmp',
-  }
-  -- use {
-  --   "jcha0713/cmp-tw2css",
-  --   after = 'nvim-cmp',
-  -- }
-  use {
-    'dcampos/cmp-emmet-vim',
-    after = 'nvim-cmp',
-  }
-  use {
-    "mattn/emmet-vim",
-    after = 'cmp-emmet-vim'
-  }
-  use {
-    'L3MON4D3/LuaSnip',
-    after = 'emmet-vim'
-  }
-  use {
-    'saadparwaiz1/cmp_luasnip',
-    after = 'LuaSnip',
-    config = "require('configs.lspConf.luasnip')"
-  }
-  use {
-    'hrsh7th/cmp-nvim-lua',
-    after = "nvim-cmp",
-  }
-  --end cmp
-end
+    config = function()
+      local lsp = require 'lspconfig'
+      local lsp_defaults = lsp.util.default_config
+
+      --- settings
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true, -- folding
+      }
+      lsp_defaults.capabilities =
+        vim.tbl_deep_extend('force', lsp_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities())
+    end,
+  },
+}
