@@ -1,7 +1,14 @@
 return {
   {
+    "vhyrro/luarocks.nvim",
+    config = function()
+      require("luarocks").setup({})
+    end,
+  },
+  {
     "rest-nvim/rest.nvim",
-    dependencies = { { "nvim-lua/plenary.nvim" } },
+    ft = "http",
+    dependencies = { { "luarocks.nvim" }, { "nvim-lua/plenary.nvim" } },
     config = function()
       require("rest-nvim").setup({
         -- Open request results in a horizontal split

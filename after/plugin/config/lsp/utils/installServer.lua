@@ -8,7 +8,7 @@ _G.LspInstallServer = function(opts)
     'yaml-language-server', -- yaml
     'bash-language-server', -- bash
     'pyright', -- python
-    -- '@tailwdincss/language-server@0.0.7', -- tailwind
+    -- '@tailwindcss/language-server@0.0.7', -- tailwind
     '@tailwdincss/language-server@0.0.14', -- tailwind
     '@mdx-js/language-server',
   }
