@@ -45,15 +45,15 @@ set.splitright = true
 set.splitbelow = true
 vim.o.lazyredraw = false
 set.conceallevel = 2
-set.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
-set.wildmode = "longest:full,full" -- Command-line completion mode
+set.virtualedit = 'block' -- Allow cursor to move where there is no text in visual block mode
+set.wildmode = 'longest:full,full' -- Command-line completion mode
 set.winminwidth = 5 -- Minimum window width
 set.termguicolors = true -- True color support
 set.timeoutlen = 300
 set.undofile = true
 set.undolevels = 10000
-set.shortmess:append({ W = true, I = true, c = true, C = true })
-set.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+set.shortmess:append { W = true, I = true, c = true, C = true }
+set.signcolumn = 'yes' -- Always show the signcolumn, otherwise it would shift the text each time
 set.smartcase = true -- Don't ignore case with capitals
 vim.g.markdown_recommended_style = 0
 vim.cmd [[

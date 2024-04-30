@@ -1,10 +1,10 @@
 return {
   {
-    "rest-nvim/rest.nvim",
-    ft = "http",
-    dependencies = { { "luarocks.nvim" }, { "nvim-lua/plenary.nvim" } },
+    'rest-nvim/rest.nvim',
+    ft = 'http',
+    dependencies = { { 'luarocks.nvim' }, { 'nvim-lua/plenary.nvim' } },
     config = function()
-      require("rest-nvim").setup({
+      require('rest-nvim').setup {
         -- Open request results in a horizontal split
         result_split_horizontal = true,
         -- Keep the http file buffer above|left when split horizontal|vertical
@@ -34,10 +34,10 @@ return {
           -- executables or functions for formatting response body [optional]
           -- set them to false if you want to disable them
           formatters = {
-            json = "jq",
+            json = 'jq',
             html = function(body)
-              return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
-            end
+              return vim.fn.system({ 'tidy', '-i', '-q', '-' }, body)
+            end,
           },
         },
         -- Jump to request line on run
@@ -46,7 +46,7 @@ return {
         custom_dynamic_variables = {},
         yank_dry_run = true,
         search_back = true,
-      })
-    end
-  }
+      }
+    end,
+  },
 }
