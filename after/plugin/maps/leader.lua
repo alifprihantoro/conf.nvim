@@ -53,7 +53,7 @@ _G.MAP({
     f = { ':bfirst<CR>', 'FIRST' },
     l = { ':blast<CR>', 'LAST' },
     d = { ':bd<CR>', 'DELETE' },
-    a = { 'Bufonly', 'DELETE_ALL_WITHOUT_CURRENT' },
+    a = { ':Bufonly<CR>', 'DELETE_ALL_WITHOUT_CURRENT' },
     A = { ':bufdo bd<CR>', 'DELETE_ALL' },
     p = { ':bp<CR>', 'PREV_BUF' },
     n = { ':bn<CR>', 'NEXT_BUF' },

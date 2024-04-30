@@ -44,7 +44,7 @@ set.confirm = true
 set.splitright = true
 set.splitbelow = true
 vim.o.lazyredraw = false
-set.conceallevel = 1
+set.conceallevel = 2
 set.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 set.wildmode = "longest:full,full" -- Command-line completion mode
 set.winminwidth = 5 -- Minimum window width
@@ -60,7 +60,5 @@ vim.cmd [[
 autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd TermOpen term://* startinsert
 " syntax highlight
-syntax on
-au BufEnter *.html set syntax=html
 au BufEnter *.mdx set filetype=markdown.mdx
 ]]
