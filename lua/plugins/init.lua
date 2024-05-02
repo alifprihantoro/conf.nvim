@@ -26,8 +26,6 @@ return {
     'muryp/muryp-ui-setup.nvim',
     import = 'muryp-ui-setup.plugins',
   },
-  'sbdchd/neoformat',
-  'muryp/muryp-findList.nvim',
   {
     'Exafunction/codeium.nvim',
     cmd = 'Codeium',
@@ -38,5 +36,9 @@ return {
     config = function()
       require('codeium').setup {}
     end,
+  },
+  {
+    'muryp/muryp-git-setup.nvim',
+    import = 'muryp-git-setup/plugin',
   },
 }

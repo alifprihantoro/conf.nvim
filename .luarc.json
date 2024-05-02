@@ -1,10 +1,14 @@
 {
   "workspace.library": [
     "./lazy/plenary.nvim/lua",
-    "./lazy/noice.nvim/lua",
     "./lazy/which-key.nvim/lua",
-    "./lazy/nui.nvim/lua",
     "./lazy/lazy.nvim/lua",
-    "./lazy/telescope.nvim/lua"
+    "./lazy/muryp-setup-completion.nvim/lua",
+    "./lazy/muryp-lsp-setup.nvim/lua",
+    "./lazy/muryp-md.nvim/lua/",
+    "./lazy/muryp-treesitter-setup.nvim/lua/",
+    "./lazy/muryp-editor-setup.nvim/lua/",
+    "./lazy/muryp-ui-setup.nvim/lua/",
+    "./lazy/muryp-git-setup.nvim/lua/"
   ]
 }

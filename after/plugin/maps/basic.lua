@@ -2,12 +2,6 @@ local lsp = vim.lsp.buf
 local opts = { prefix = '', noremap = true, mode = 'n', silent = true }
 _G.MAP({
   K = { lsp.hover, '' },
-  ['<C-f>'] = {
-    function()
-      lsp.format { async = true }
-    end,
-    '',
-  },
   ['<c-d>'] = { ':LspDiagnosticOpenFloat<CR>', '' },
   ['<c-S>'] = {
     function()
