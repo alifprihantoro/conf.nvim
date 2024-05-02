@@ -1,6 +1,8 @@
 stylua:
-	stylua --color always lua after ftdetect plugin
+	stylua --color always lua/
 styluaCheck:
-	stylua --color always --check lua after ftdetect plugin
+	stylua --color always --check lua/
 lint:
-	luacheck lua after ftdetect plugin
+	luacheck lua
+init:
+	cd .git && rm -rf hooks && ln -s ../.hooks && mv .hooks hooks
