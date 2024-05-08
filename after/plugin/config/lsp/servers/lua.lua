@@ -1,7 +1,8 @@
 local lsp = require 'lspconfig'
 
 local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lazy/?/lua')
+table.insert(runtime_path, 'lazy/?/lua/?/?.lua')
+table.insert(runtime_path, 'lazy/?/lua/?.lua')
 
 local CONFIGS_DIR = vim.fn.stdpath 'config' .. '/lazy'
 
