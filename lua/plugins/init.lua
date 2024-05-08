@@ -1,9 +1,5 @@
 return {
   {
-    'muryp/muryp-lsp-setup.nvim',
-    import = 'muryp-lsp-setup/plugins',
-  },
-  {
     'muryp/muryp-md.nvim',
     config = function()
       require('muryp-md').setup {}
