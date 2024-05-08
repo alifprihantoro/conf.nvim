@@ -2,6 +2,7 @@ return {
   require 'plugins.editor.cmp',
   require 'plugins.editor.lsp',
   require 'plugins.editor.formatter',
+  require 'plugins.file',
   require 'plugins.file.neotree',
   {
     'muryp/muryp-md.nvim',
