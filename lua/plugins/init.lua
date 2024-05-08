@@ -1,4 +1,6 @@
 return {
+  require 'plugins.editor.cmp',
+  require 'plugins.editor.lsp',
   {
     'muryp/muryp-md.nvim',
     config = function()
@@ -9,10 +11,6 @@ return {
   {
     'muryp/muryp-treesitter-setup.nvim',
     import = 'muryp-treesitter-setup.plugins',
-  },
-  {
-    'muryp/muryp-setup-completion.nvim',
-    import = 'muryp-completion.plugin',
   },
   {
     'muryp/muryp-editor-setup.nvim',

@@ -24,4 +24,5 @@ local configs = {
   },
   state = vim.fn.stdpath 'state' .. '/lazy/state.json', -- state info for checker and other things
 }
-require('lazy').setup('plugins', configs)
+local plugins = require 'plugins'
+require('lazy').setup(plugins, configs)
