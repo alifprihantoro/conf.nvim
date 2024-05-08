@@ -22,10 +22,6 @@ see list plugins in [here](./PLUGINS.md)
 
 There are several reasons why we chose Neovim as our text editor of choice. First, Neovim is faster and lighter than Vim. This means that the text editor can be used quickly without lag. Additionally, Neovim is also very flexible, allowing it to be customized to the user's needs.
 
-## Repo Link
-
-Please visit our repo at [github.com/muryp/nvim-conf-lua](https://github.com/muryp/nvim-conf-lua) to see our Neovim configuration. We hope you find this repo useful and can make using Neovim easier for you.
-
 ## Lisensi
 The `nvim-muryp-git` plugin is distributed under the **Apache License 2.0**. Please refer to the `LICENSE` file for more information about this license.
 

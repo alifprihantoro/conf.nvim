@@ -41,4 +41,4 @@ cmp.setup {
   formatting = formatting,
 }
 
-require 'muryp-completion.configs.cmdLine'
+require 'configs.editor.cmp.cmdLine'

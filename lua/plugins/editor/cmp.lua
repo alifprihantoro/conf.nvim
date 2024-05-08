@@ -34,7 +34,7 @@ return {
           'muryp/nvim-muryp-snippet-collection',
           -- 'rafamadriz/friendly-snippets',
           config = function()
-            -- require 'configs.editor.cmp.snippets'
+            require 'configs.editor.cmp.snippets'
           end,
         },
       },

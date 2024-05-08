@@ -1,16 +1,16 @@
 local M = {}
 M.sc1 = {
+  { name = 'luasnip' }, -- For luasnip users.
   { name = 'codeium' },
   { name = 'nvim_lsp' },
-  { name = 'buffer', priority = 7 },
-  { name = 'path', priority = 7 },
   { name = 'zsh' },
-  { name = 'luasnip' }, -- For luasnip users.
   -- { name = 'snippy' },
   { name = 'nvim_lua' },
   -- { name = 'cmp-tw2css'},
 }
 M.sc2 = {
+  { name = 'buffer', priority = 7 },
+  { name = 'path', priority = 7 },
   {
     name = 'emmet_vim',
     priority = 9,
