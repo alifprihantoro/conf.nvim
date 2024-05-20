@@ -46,23 +46,6 @@ ts.setup {
     'gitattributes',
     'prisma',
   },
-  autotag = {
-    enable_rename = true,
-    enable_close = true,
-    enable_close_on_slash = true,
-    enable = true,
-    filetypes = {
-      'html',
-      'xml',
-      'astro',
-      'javascriptreact',
-      'typescriptreact',
-      'javascript',
-      'typescript',
-      'markdown',
-      'php',
-    },
-  },
   ts_context_commentstring = {
     enable = true,
   },

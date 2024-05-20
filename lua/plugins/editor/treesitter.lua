@@ -26,8 +26,24 @@ return {
       'windwp/nvim-ts-autotag',
       event = 'InsertEnter',
       config = function()
+        ---@diagnostic disable-next-line: missing-fields
         require('nvim-ts-autotag').setup {
-          -- filetypes = { 'html', 'xml', 'astro', 'javascriptreact', 'typescriptreact', 'javascript', 'typescript' },
+          opts = {
+            enable_close = true, -- Auto close tags
+            enable_rename = true, -- Auto rename pairs of tags
+            enable_close_on_slash = true, -- Auto close on trailing </
+          },
+          filetypes = {
+            'html',
+            'xml',
+            'astro',
+            'javascriptreact',
+            'typescriptreact',
+            'javascript',
+            'typescript',
+            'markdown',
+            'php',
+          },
         }
       end,
     },

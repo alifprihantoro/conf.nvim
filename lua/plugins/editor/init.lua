@@ -1,6 +1,6 @@
 return {
   {
-    'muryp/muryp-git-setup.nvim',
+    'alifprihantoro/git-setup.nvim',
     import = 'muryp-git-setup/plugin',
   },
   {

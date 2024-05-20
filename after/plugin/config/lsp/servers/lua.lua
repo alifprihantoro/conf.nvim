@@ -1,8 +1,9 @@
 local lsp = require 'lspconfig'
 
 local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lazy/?/lua/?/?.lua')
-table.insert(runtime_path, 'lazy/?/lua/?.lua')
+table.insert(runtime_path, 'lua/init.lua')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/?.lua')
 
 local CONFIGS_DIR = vim.fn.stdpath 'config' .. '/lazy'
 
@@ -27,6 +28,7 @@ lsp.lua_ls.setup {
         -- Get the language server to recognize the `vim` global
         globals = { 'vim' },
       },
+      ['hint.enable'] = true,
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = {

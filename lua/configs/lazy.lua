@@ -13,6 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+---@type LazyConfig
 local configs = {
   root = configPath .. '/lazy', -- directory where plugins will be installed
   lockfile = configPath .. '/lazy-lock.json', -- lockfile generated after running update.

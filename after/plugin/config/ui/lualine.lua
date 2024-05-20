@@ -7,6 +7,9 @@ local navic = require 'nvim-navic'
 -- Author: lokesh-krishna
 -- MIT license, see LICENSE for more details.
 
+local codeium = function()
+  return vim.api.nvim_call_function('codeium#GetStatusString', {})
+end
 -- stylua: ignore
 local colors = {
   blue   = '#80a0ff',
@@ -65,7 +68,7 @@ lualine.setup {
     },
     lualine_b = { { 'filename', path = 1 } },
     lualine_x = {},
-    lualine_y = { 'diff', 'diagnostics', 'filetype' },
+    lualine_y = { codeium, 'diff', 'diagnostics', 'filetype' },
     lualine_z = {
       {
         'branch',

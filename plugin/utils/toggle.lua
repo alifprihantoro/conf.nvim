@@ -21,13 +21,4 @@ _G.toggle = {
     end
     opts.relativenumber = true
   end,
-  diagnostic = function()
-    if _G.Diagnostic then
-      vim.diagnostic.disable()
-      _G.Diagnostic = false
-      return
-    end
-    vim.diagnostic.enable()
-    _G.Diagnostic = true
-  end,
 }

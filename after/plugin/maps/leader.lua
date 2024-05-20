@@ -81,10 +81,22 @@ _G.MAP({
   t = {
     name = '+TOGGLE',
     l = { ':LualineToggle<CR>', 'LUALINE' },
+    c = { ':CodeiumToggle<CR>', 'CODEIUM' },
+    h = {
+      function()
+        return vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end,
+      'HINT_LSP',
+    },
     w = { _G.toggle.wrap, 'WORD_WRAP' },
     r = { _G.toggle.relativeNum, 'RELATIVE_LINE_NUMBERS' },
     n = { _G.toggle.lineNum, 'LINE_NUMBERS' },
-    d = { _G.toggle.diagnostic, 'DIAGNOSTICS' },
+    d = {
+      function()
+        return vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+      end,
+      'DIAGNOSTICS',
+    },
     t = {
       function()
         if vim.b.ts_highlight then
