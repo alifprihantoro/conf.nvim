@@ -37,17 +37,6 @@ _G.MAP({
     o = { ':Telescope oldfiles<CR>', 'RECENT_OPEN' },
     s = { ':Telescope symbols<CR>', 'SYMBOL' },
   },
-  s = {
-    name = '+SCREEN',
-    l = { '<C-w>l', 'GO_RIGH_SCREEN' },
-    d = { '<C-w>c', 'DELETE_CURRENT_SCREEN' },
-    h = { '<C-w>h', 'GO_LEFT_SCREEN' },
-    j = { '<C-w>j', 'GO_DOWN_SCREEN' },
-    k = { '<C-w>k', 'GO_UP_SCREEN' },
-    ['-'] = { '<C-w>s', 'SPLIT_HORIZONTAL' },
-    [']'] = { '<C-w>>', 'SPLIT_LEFT' },
-    ['['] = { '<C-w><', 'SPLIT_RIGHT' },
-  },
   b = {
     name = '+BUFFER',
     f = { ':bfirst<CR>', 'FIRST' },
