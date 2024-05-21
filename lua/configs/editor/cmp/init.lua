@@ -7,7 +7,7 @@ local defaults = require 'cmp.config.default'()
 
 -- command
 vim.api.nvim_set_hl(0, 'CmpGhostText', { link = 'Comment', default = true })
--- vim.cmd 'set completeopt=menu,menuone,noselect'
+---@diagnostic disable-next-line: redundant-parameter
 cmp.setup {
   completion = {
     completeopt = 'menu,menuone,noinsert',
