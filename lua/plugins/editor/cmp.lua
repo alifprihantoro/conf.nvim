@@ -14,7 +14,7 @@ return {
     'mattn/emmet-vim',
     'hrsh7th/cmp-nvim-lua',
     'saadparwaiz1/cmp_luasnip',
-    'dcampos/cmp-snippy',
+    -- 'dcampos/cmp-snippy',
     {
       'L3MON4D3/LuaSnip',
       -- follow latest release.
