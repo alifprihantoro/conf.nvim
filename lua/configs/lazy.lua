@@ -1,6 +1,7 @@
+---@diagnostic disable: undefined-field
 local configPath = vim.fn.stdpath 'config'
 local lazypath = configPath .. '/lazy/lazy.nvim'
--- local configpath = vim.fn.stdpath("config")
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     'git',

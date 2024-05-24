@@ -50,7 +50,7 @@ ts.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = 'gnn',
+      init_selection = 'gv',
     },
   },
 }

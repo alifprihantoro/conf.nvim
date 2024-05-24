@@ -2,7 +2,8 @@ local lsp = vim.lsp.buf
 local opts = { prefix = '', noremap = true, mode = 'n', silent = true }
 _G.MAP({
   K = { lsp.hover, '' },
-  ['<c-d>'] = { ':LspDiagnosticOpenFloat<CR>', '' },
+  ['<Esc>'] = { ':noh<CR>' },
+  ['<c-d>'] = { vim.diagnostic.open_float, 'DIAGNOSTIC_OPEN_FLOAT' },
   ['<c-S>'] = {
     function()
       vim.cmd 'wa'
@@ -15,12 +16,48 @@ _G.MAP({
     end,
     'SAVE',
   },
-  ['gD'] = {
-    function()
-      local current_word = vim.fn.expand '<cWORD>' ---@type string
-      vim.cmd('/' .. current_word)
-    end,
-    'SEARCH_WORD_SYMBOL',
+  f = {
+    name = '+TELESCOPE',
+    l = { ':Telescope<CR>', 'LIST_ALL' },
+    f = { ':Telescope find_files<CR>', 'FIND_FILE' },
+    g = { ':Telescope live_grep<CR>', 'LIVE_GREP' },
+    r = { ':Telescope grep_string<CR>', 'GREP_STRING' },
+    b = { ':Telescope buffers<CR>', 'BUFFER' },
+    h = { ':Telescope help_tags<CR>', 'HELP' },
+    C = { ':Telescope command_history<CR>', 'CMD_HISTORY' },
+    c = { ':Telescope commands<CR>', 'COMMAND' },
+    w = { ':Telescope work_space<CR>', 'WORK_SPACE' },
+    n = { ':Telescope notify<CR>', 'NOTIFY' },
+    o = { ':Telescope oldfiles<CR>', 'RECENT_OPEN' },
+    s = { ':Telescope symbols<CR>', 'SYMBOL' },
+  },
+  g = {
+    name = '+goto',
+    -- WARNING:    v is uses
+    o = { require('telescope.builtin').lsp_definitions, 'LSP_GO_DEFINITION' },
+    i = { lsp.code_action, 'LSP_IMPLEMENT' },
+    I = { require('telescope.builtin').lsp_implementations, 'LSP_IMPLEMENT' },
+    r = { lsp.rename, 'LSP_RENAME_VAR' },
+    O = { lsp.definition, 'LSP_GO_DEFINITION' },
+    D = {
+      function()
+        local current_word = vim.fn.expand '<cWORD>' ---@type string
+        vim.cmd('/' .. current_word)
+      end,
+      'SEARCH_WORD_SYMBOL',
+    },
+    n = {
+      d = { _G.diagnostic_goto(true), 'NEXT_DIAGNOSTIC' },
+      e = { _G.diagnostic_goto(true, 'ERROR'), 'NEXT_DIAGNOSTIC_ERR' },
+      w = { _G.diagnostic_goto(true, 'WARN'), 'NEXT_DIAGNOSTIC_WARN' },
+      i = { ':cnext<CR>', 'LSP_NEXT_REFRENCE' },
+    },
+    p = {
+      d = { _G.diagnostic_goto(false), 'PREV_DIAGNOSTIC' },
+      e = { _G.diagnostic_goto(false, 'ERROR'), 'PREV_DIAGNOSTIC_ERR' },
+      w = { _G.diagnostic_goto(false, 'WARN'), 'PREV_DIAGNOSTIC_WARN' },
+      i = { ':cprevious<CR>', 'LSP_PREV_REFRENCE' },
+    },
   },
   [';'] = { ':', 'CMD', mode = 'n', silent = false },
   ['<C-k>'] = { '10k', 'SCROLL_UP', mode = { 'n', 'v' } },
@@ -37,4 +74,5 @@ _G.MAP({
 _G.MAP({
   ['<BS>'] = { '"_d', 'BACKSPACE', mode = { 'v' } },
   ['<Del>'] = { '"_d', 'DELETE', mode = { 'v' } },
+  ['<C-p>'] = { '"+p', 'PASTE_CLIPBOARD', mode = { 'v' } },
 }, opts)
