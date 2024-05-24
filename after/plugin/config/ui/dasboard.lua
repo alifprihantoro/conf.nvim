@@ -30,16 +30,17 @@ dashboard.section.header.val = board
 dashboard.section.buttons.val = {
   dashboard.button('f', '  Find file', ':Telescope find_files <CR>'),
   dashboard.button('e', '  Open File Tree', ':Neotree<CR>'),
-  dashboard.button('o', '  New file', ':ene <BAR> startinsert <CR>'),
+  dashboard.button('n', '  New file', ':ene <BAR> startinsert <CR>'),
   dashboard.button('p', '  Find project', ':Telescope work_space <CR>'),
-  dashboard.button('r', '  Recently used files', ':Telescope oldfiles <CR>'),
-  dashboard.button('t', '  Find text', ':Telescope live_grep <CR>'),
+  dashboard.button('o', '  Recently used files', ':Telescope oldfiles <CR>'),
+  dashboard.button('g', '  Find text', ':Telescope live_grep <CR>'),
   dashboard.button('c', '  Configuration', ':e $MYVIMRC | Cdn<CR>'),
   dashboard.button('z', '  Packer', ':Packer'),
   dashboard.button('q', '  Quit Neovim', ':qa<CR>'),
   { type = 'padding', val = 1 },
   { type = 'text', val = 'Quick links', opts = { hl = 'SpecialComment', position = 'center' } },
-  dashboard.button('1', '  Muryp', ':e ~/web/muryp<CR>'),
+  dashboard.button('1', '  project', ':e ~/project<CR>'),
+  dashboard.button('2', '  Web', ':e ~/project/web<CR>'),
 }
 
 local function footer()
