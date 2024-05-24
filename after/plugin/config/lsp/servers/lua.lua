@@ -1,6 +1,10 @@
 local lsp = require 'lspconfig'
-
-local runtime_path = vim.split(package.path, ';')
+-- vim.split(package.path, ';')
+local runtime_path = {}
+table.insert(runtime_path, 'lua/init.lua')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
 
 local CONFIGS_DIR = vim.fn.stdpath 'config' .. '/lazy'
 
@@ -15,7 +19,9 @@ local function getFiles(dir)
   return output
 end
 
-local LIST_DIR = {}
+local LIST_DIR = {
+  vim.env.VIMRUNTIME,
+}
 local EXCLUDE_FILE = {}
 for _, file in ipairs(getFiles(CONFIGS_DIR)) do
   if not vim.tbl_contains(EXCLUDE_FILE, file) then
@@ -28,11 +34,13 @@ _G.LIST_DIR_LUA = LIST_DIR
 lsp.luau_lsp.setup {} --- lua
 lsp.lua_ls.setup {
   single_file_support = true,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  settings = {
-    Lua = {
+  on_init = function(client)
+    local path = client.workspace_folders[1].name
+    if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+      return
+    end
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+
       runtime = {
         version = 'LuaJIT',
         path = runtime_path,
@@ -45,12 +53,19 @@ lsp.lua_ls.setup {
       },
       ['hint.enable'] = true,
       workspace = {
+        checkThirdParty = false,
         library = LIST_DIR,
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
         enable = false,
       },
-    },
+    })
+  end,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    Lua = {},
   },
 }
