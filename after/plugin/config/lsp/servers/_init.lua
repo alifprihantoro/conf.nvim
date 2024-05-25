@@ -12,4 +12,8 @@ require('lspconfig').prismals.setup {}
 
 --- lint
 lsp.stylelint_lsp.setup {} --- css lint
-lsp.eslint.setup {} --- js/ts lint
+lsp.eslint.setup {
+  setting = {
+    rename = false,
+  },
+} --- js/ts lint
