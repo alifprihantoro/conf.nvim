@@ -37,7 +37,17 @@ _G.MAP({
     o = { require('telescope.builtin').lsp_definitions, 'LSP_GO_DEFINITION' },
     i = { lsp.code_action, 'LSP_IMPLEMENT' },
     I = { require('telescope.builtin').lsp_implementations, 'LSP_IMPLEMENT' },
-    r = { lsp.rename, 'LSP_RENAME_VAR' },
+    r = {
+      function()
+        local get_current_word = vim.fn.expand '<cword>' ---@type string
+        local userInput = vim.fn.input('Rename to: ', get_current_word)
+        if userInput == '' then
+          return
+        end
+        lsp.rename(userInput)
+      end,
+      'LSP_RENAME_VAR',
+    },
     O = { lsp.definition, 'LSP_GO_DEFINITION' },
     D = {
       function()

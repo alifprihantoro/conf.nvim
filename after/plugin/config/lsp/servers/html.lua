@@ -9,6 +9,5 @@ lsp.html.setup {
       javascript = true,
       typescript = true,
     },
-    provideFormatter = false,
   },
 }
