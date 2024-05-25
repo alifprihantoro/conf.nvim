@@ -89,9 +89,11 @@ _G.MAP({
     W = { 'viW"_d', 'WORD_SYMBOL' },
   },
   I = {
-    name = '+Info',
-    l = { ':LspInfo<CR>', 'INFO' },
-    w = { ':WhichKey<CR>', 'INFO' },
+    name = '+INFO',
+    l = { ':LspInfo<CR>', 'LSP' },
+    w = { ':WhichKey<CR>', 'WICHKEY' },
+    f = { ':ConformInfo<CR>', 'FORMATTER' },
+    p = { ':Lazy<CR>', 'PLUGIN_LAZY' },
   },
 }, { prefix = '<leader>', noremap = true, mode = 'n', silent = true })
 
