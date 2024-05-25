@@ -1,30 +1,6 @@
-local formatter_list = {
-  lua = { 'stylua' },
-  fish = { 'fish_indent' },
-  sh = { 'shfmt' },
-  astro = { 'astro' },
-}
-local ignore_filetypes = {}
-
-local addFormatter = function(listLang, formatter, isIgnore)
-  for _, val in pairs(listLang) do
-    formatter_list[val] = formatter
-    if isIgnore then
-      table.insert(ignore_filetypes, val)
-    end
-  end
-end
-
-addFormatter({
-  'javascript',
-  'javascriptreact',
-  'typescript',
-  'typescriptreact',
-  'typescriptreact',
-}, { 'prettierd', 'eslint_d' }, true)
-addFormatter({ 'html', 'css', 'scss', 'markdown' }, { 'prettierd' }, true)
-
-_G.HELR = ignore_filetypes
+local fmt = require 'plugins.editor.formatter.fn'
+local fmtList = require('plugins.editor.formatter.opts').formatter_list
+require 'plugins.editor.formatter.autoCmd'
 return {
   'stevearc/conform.nvim',
   lazy = true,
@@ -33,9 +9,7 @@ return {
   keys = {
     {
       '<c-f>',
-      function()
-        require('conform').format { timeout_ms = 3000 }
-      end,
+      fmt,
       mode = { 'n', 'v' },
       desc = 'Format Injected Langs',
     },
@@ -51,7 +25,7 @@ return {
         lsp_fallback = true, -- not recommended to change
       },
       ---@type table<string, conform.FormatterUnit[]>
-      formatters_by_ft = formatter_list,
+      formatters_by_ft = fmtList,
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
@@ -68,13 +42,6 @@ return {
           args = { '$FILENAME' },
         },
       },
-      format_on_save = function(bufnr)
-        -- Disable autoformat on certain filetypes
-        if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
-          return
-        end
-        return { timeout_ms = 500, lsp_fallback = true }
-      end,
     }
     return opts
   end,
