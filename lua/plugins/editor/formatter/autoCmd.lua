@@ -1,9 +1,11 @@
 local fmt = require 'plugins.editor.formatter.fn'
--- autocommand by lsp ready
+_G.FORMATTER_ACTIVE = true
 vim.api.nvim_create_autocmd('BufWritePre', {
   desc = 'Auto format on save',
   group = vim.api.nvim_create_augroup('formatOnSave', { clear = true }),
   callback = function()
-    fmt(true)
+    if _G.FORMATTER_ACTIVE then
+      fmt()
+    end
   end,
 })

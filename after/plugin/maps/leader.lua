@@ -1,4 +1,4 @@
-local lsp = vim.lsp.buf
+local opts = vim.wo
 _G.MAP({
   e = { ':Neotree toggle<CR>', 'File Toggle' },
   E = { ':Neotree focus %<CR>', 'File FOCUS' },
@@ -62,9 +62,24 @@ _G.MAP({
       end,
       'HINT_LSP',
     },
-    w = { _G.toggle.wrap, 'WORD_WRAP' },
-    r = { _G.toggle.relativeNum, 'RELATIVE_LINE_NUMBERS' },
-    n = { _G.toggle.lineNum, 'LINE_NUMBERS' },
+    w = {
+      function()
+        opts.wrap = not opts.wrap
+      end,
+      'WORD_WRAP',
+    },
+    r = {
+      function()
+        opts.relativenumber = not opts.relativenumber
+      end,
+      'RELATIVE_LINE_NUMBERS',
+    },
+    n = {
+      function()
+        opts.number = not opts.number
+      end,
+      'LINE_NUMBERS',
+    },
     d = {
       function()
         return vim.diagnostic.enable(not vim.diagnostic.is_enabled())
@@ -80,6 +95,12 @@ _G.MAP({
         end
       end,
       'TREESITTER_HIGHLIGHT',
+    },
+    f = {
+      function()
+        _G.FORMATTER_ACTIVE = not _G.FORMATTER_ACTIVE
+      end,
+      'FORMATTER',
     },
   },
   d = {

@@ -19,7 +19,7 @@ M.jsFam = {
   'typescriptreact',
   'typescriptreact',
 }
-addFormatter(M.jsFam, { 'prettierd', 'eslint_d' })
+addFormatter(M.jsFam, { 'prettierd' })
 addFormatter({
   'html',
   'css',
