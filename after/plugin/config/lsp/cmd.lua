@@ -19,9 +19,6 @@ end, {})
 cmd('LspBufDef', vim.lsp.buf.type_definition, {})
 cmd('LspBufRename', vim.lsp.buf.rename, {})
 cmd('LspBufCodeAction', vim.lsp.buf.code_action, {})
-cmd('LspInstallServer', function()
-  _G.LspInstallServer { termux = false }
-end, {})
-cmd('LspInstallServerTermux', function()
-  _G.LspInstallServer { termux = true }
+cmd('LspTsRenameFile', function()
+  _G.TS_RENAME_FILE()
 end, {})
