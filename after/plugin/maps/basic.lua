@@ -74,7 +74,20 @@ _G.MAP({
   ['<C-j>'] = { '10j', 'SCROLL_DOWN', mode = { 'n', 'v' } },
   ['<C-l>'] = { '20zl', 'SCROLL_LEFT', mode = { 'n', 'v' } },
   ['<C-h>'] = { '20zh', 'SCROLL_RIGH', mode = { 'n', 'v' } },
-  ['ya'] = { 'ggVGy', 'COPY_ALL' },
+  y = {
+    name = 'YANK+',
+    a = { 'ggVGy', 'ALL' },
+    p = { 'v%y', 'PAIR' },
+    P = { 'v%"+y', 'PAIR_CLIPBOARD' },
+    g = { 'gvy', 'INIT_SELECT' },
+  },
+  d = {
+    name = 'CUT+',
+    a = { 'ggVGd', 'ALL' },
+    p = { 'v%d', 'PAIR' },
+    P = { 'v%"+d', 'PAIR_CLIPBOARD' },
+    g = { 'gvd', 'INIT_SELECT' },
+  },
   ['da'] = { 'ggVGd', 'CUT_ALL' },
   ['<BS>'] = { 'v"_d', 'BACKSPACE' },
   ['<C-p>'] = { '"+p', 'PASTE_CLIPBOARD' },
@@ -84,5 +97,5 @@ _G.MAP({
 _G.MAP({
   ['<BS>'] = { '"_d', 'BACKSPACE', mode = { 'v' } },
   ['<Del>'] = { '"_d', 'DELETE', mode = { 'v' } },
-  ['<C-p>'] = { '"+p', 'PASTE_CLIPBOARD', mode = { 'v' } },
+  ['<C-p>'] = { 'd"+P', 'PASTE_CLIPBOARD', mode = { 'v' } },
 }, opts)

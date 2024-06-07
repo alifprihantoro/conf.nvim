@@ -3,6 +3,7 @@ M.formatter_list = {
   lua = { 'stylua' },
   fish = { 'fish_indent' },
   sh = { 'shfmt' },
+  zsh = { 'shfmt' },
   astro = { 'astro' },
 }
 

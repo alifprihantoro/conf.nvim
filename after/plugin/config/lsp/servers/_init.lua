@@ -1,7 +1,14 @@
 local lsp = require 'lspconfig'
 -- lang, core
 lsp.cssls.setup {} --- css
-lsp.tailwindcss.setup {} --- tailwindcss
+lsp.tailwindcss.setup {
+  tailwindCSS = {
+    classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass', 'DefaultClassName' },
+    ['editor.quickSuggestions'] = {
+      strings = 'on',
+    },
+  },
+} --- tailwindcss
 lsp.gopls.setup {} ---golang
 lsp.phpactor.setup {} ---php
 -- lsp.cssmodules_ls.setup {}                        --- css import module

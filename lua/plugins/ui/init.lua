@@ -3,7 +3,9 @@ return {
   {
     'folke/noice.nvim',
     event = 'BufRead',
+    ---@type NoiceConfig
     opts = {
+
       notify = {
         enabled = true,
         view = 'notify',

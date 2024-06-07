@@ -1,11 +1,8 @@
-local lsp = require 'lspconfig'
-local configs = require 'lspconfig.configs'
-
-configs.mdx_analyzer = {
-  default_config = {
-    cmd = { 'mdx-language-server', '--stdio' },
-    filetypes = { 'markdown.mdx' },
-    root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
+require('lspconfig').mdx_analyzer.setup {
+  init_options = {
+    typescript = {
+      enable = true,
+      tsdk = vim.fs.normalize '$HOME/.pnpm/global/5/node_modules/typescript/lib/',
+    },
   },
 }
-lsp.mdx_analyzer.setup {} -- mdx
