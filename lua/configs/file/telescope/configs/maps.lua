@@ -5,12 +5,13 @@ local action_utils = require 'telescope.actions.utils'
 
 local function single_or_multi_select(prompt_bufnr)
   local current_picker = action_state.get_current_picker(prompt_bufnr)
+  local CWD = current_picker.cwd or vim.fn.getcwd()
   local has_multi_selection = (next(current_picker:get_multi_selection()) ~= nil)
 
   if has_multi_selection then
     local results = {}
     action_utils.map_selections(prompt_bufnr, function(selection)
-      table.insert(results, selection[1])
+      table.insert(results, CWD .. '/' .. selection[1])
     end)
 
     -- load the selections into buffers list without switching to them
@@ -30,7 +31,8 @@ local function single_or_multi_select(prompt_bufnr)
   end
 
   -- if does not have multi selection, open single file
-  require('telescope.actions').file_edit(prompt_bufnr)
+  -- require('telescope.actions').file_edit(prompt_bufnr)
+  actions.open_qflist(prompt_bufnr)
 end
 return {
   i = {
