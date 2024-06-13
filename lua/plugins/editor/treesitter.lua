@@ -31,5 +31,9 @@ return {
         }
       end,
     },
+    {
+      'numToStr/Comment.nvim',
+      opts = {},
+    },
   },
 }
