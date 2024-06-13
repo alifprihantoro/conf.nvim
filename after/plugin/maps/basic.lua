@@ -88,10 +88,20 @@ _G.MAP({
     P = { 'v%"+d', 'PAIR_CLIPBOARD' },
     g = { 'gvd', 'INIT_SELECT' },
   },
+  v = {
+    name = 'VISUAL+',
+    a = { 'ggVGd', 'ALL' },
+    p = { '%', 'PAIR' },
+    P = { '%', 'PAIR_CLIPBOARD' },
+    g = { 'gv', 'INIT_SELECT' },
+  },
   ['da'] = { 'ggVGd', 'CUT_ALL' },
   ['<BS>'] = { 'v"_d', 'BACKSPACE' },
   ['<C-p>'] = { '"+p', 'PASTE_CLIPBOARD' },
   ['<Del>'] = { 'v"_d', 'DELETE' },
+  ['>'] = { '>>', 'INDENT_lINES' },
+  ['<'] = { '<<', 'OUTDENT_lINES' },
+  ['<C-n>'] = { ':noh<CR>', 'RM_HILIGHT' },
 }, opts)
 
 _G.MAP({

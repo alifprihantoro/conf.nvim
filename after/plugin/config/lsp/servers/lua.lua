@@ -1,5 +1,4 @@
 local lsp = require 'lspconfig'
--- vim.split(package.path, ';')
 local runtime_path = {}
 table.insert(runtime_path, 'lua/init.lua')
 table.insert(runtime_path, 'lua/?.lua')
@@ -37,10 +36,25 @@ lsp.lua_ls.setup {
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+      client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+        completion = {
+          callSnippet = 'replace',
+        },
+        diagnostics = {
+          globals = { 'vim' },
+        },
+        ['hint.enable'] = true,
+        workspace = {
+          checkThirdParty = false,
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
+        },
+      })
       return
     end
     client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-
       runtime = {
         version = 'LuaJIT',
         path = runtime_path,
