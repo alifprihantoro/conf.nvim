@@ -121,6 +121,6 @@ _G.MAP({
 _G.MAP({
   x = { '"+', 'CUT' },
   y = { '"+y', 'COPY' },
-  d = { '"_d', 'DELETE' },
+  d = { '"+d', 'DELETE' },
   r = { ':s/', 'REPLACE', silent = false },
 }, { prefix = '<leader>', noremap = true, mode = 'v' })
