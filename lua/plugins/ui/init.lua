@@ -1,5 +1,5 @@
 return {
-  'folke/tokyonight.nvim',
+  require('plugins.ui.themes').tokyonight,
   {
     'folke/noice.nvim',
     event = 'BufRead',
