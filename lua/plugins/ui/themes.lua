@@ -55,4 +55,4 @@ M.dracula = {
   end,
 }
 
-return M
+return M.tokyonight

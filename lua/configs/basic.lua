@@ -60,5 +60,4 @@ vim.cmd [[
 autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd TermOpen term://* startinsert
 " syntax highlight
-au BufEnter *.mdx set filetype=markdown.mdx
 ]]

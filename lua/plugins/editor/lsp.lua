@@ -13,5 +13,6 @@ return {
     }
     lsp_defaults.capabilities =
       vim.tbl_deep_extend('force', lsp_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities())
+    _G.IMPORT_FOLDER { include = 'configs/editor/lsp' }
   end,
 }

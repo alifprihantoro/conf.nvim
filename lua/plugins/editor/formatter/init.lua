@@ -1,6 +1,6 @@
-local fmt = require 'plugins.editor.formatter.fn'
-local fmtList = require('plugins.editor.formatter.opts').formatter_list
-require 'plugins.editor.formatter.autoCmd'
+local fmt = require 'configs.editor.formatter.fn'
+local fmtList = require('configs.editor.formatter.opts').formatter_list
+require 'configs.editor.formatter.autoCmd'
 return {
   'stevearc/conform.nvim',
   lazy = true,

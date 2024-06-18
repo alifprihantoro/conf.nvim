@@ -1,5 +1,5 @@
-local fmt = require 'plugins.editor.formatter.fn'
-local ListIgnore = require('plugins.editor.formatter.opts').ignore
+local fmt = require 'configs.editor.formatter.fn'
+local ListIgnore = require('configs.editor.formatter.opts').ignore
 _G.FORMATTER_ACTIVE = true
 vim.api.nvim_create_autocmd('BufWritePre', {
   desc = 'Auto format on save',

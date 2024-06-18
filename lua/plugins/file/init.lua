@@ -7,6 +7,9 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-symbols.nvim',
     },
+    config = function()
+      require 'configs.file.telescope'
+    end,
   },
   {
     'nvim-pack/nvim-spectre', -- multi file replace text

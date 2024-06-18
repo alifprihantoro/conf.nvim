@@ -1,5 +1,4 @@
 return {
-  require('plugins.ui.themes').tokyonight,
   {
     'folke/noice.nvim',
     event = 'BufRead',
@@ -26,23 +25,36 @@ return {
     },
     dependencies = {
       'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
+      {
+        'rcarriga/nvim-notify',
+        config = function()
+          require 'configs.ui.notify'
+        end,
+      },
     },
   },
-  'rcarriga/nvim-notify',
   {
     'nvim-lualine/lualine.nvim',
     cmd = 'LualineToggle',
+    config = function()
+      require 'configs.ui.lualine'
+    end,
   },
   {
     'lukas-reineke/indent-blankline.nvim',
     dependencies = {
       'TheGLander/indent-rainbowline.nvim',
     },
+    config = function()
+      require 'configs.ui.indentBlank'
+    end,
   },
   {
     'folke/which-key.nvim',
     keys = { '<leader>', '"', "'", '`', 'c', 'v' },
+    config = function()
+      require 'configs.ui.wichKey'
+    end,
   },
   -- dashboard
   {
@@ -50,16 +62,25 @@ return {
     event = 'VimEnter',
     enabled = true,
     init = false,
+    config = function()
+      require 'configs.ui.dashboard'
+    end,
   },
   -- fold like vscode
   {
     'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async',
+    config = function()
+      require 'configs.ui.ufo'
+    end,
   },
   -- for winbar icon
   {
     'SmiteshP/nvim-navic',
     dependencies = 'neovim/nvim-lspconfig',
     event = 'BufRead',
+    config = function()
+      require 'configs.ui.breadcrumb'
+    end,
   },
 }

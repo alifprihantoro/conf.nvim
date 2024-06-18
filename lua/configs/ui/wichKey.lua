@@ -18,3 +18,5 @@ require('which-key').setup {
     scroll_up = '<c-k>', -- binding to scroll up inside the popup
   },
 }
+
+_G.IMPORT_FOLDER { include = 'maps' }

@@ -29,7 +29,7 @@ return {
   {
     'muryp/muryp-md.nvim',
     config = function()
-      require('muryp-md').setup {}
+      require('muryp-md').setup()
     end,
     import = 'muryp-md/plugins',
   },

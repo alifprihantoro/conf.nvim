@@ -75,25 +75,61 @@ _G.MAP({
   ['<C-l>'] = { '20zl', 'SCROLL_LEFT', mode = { 'n', 'v' } },
   ['<C-h>'] = { '20zh', 'SCROLL_RIGH', mode = { 'n', 'v' } },
   y = {
-    name = 'YANK+',
+    name = 'COPY+',
     a = { 'ggVGy', 'ALL' },
-    p = { 'v%y', 'PAIR' },
-    P = { 'v%"+y', 'PAIR_CLIPBOARD' },
+    A = { 'ggVG"+y', 'ALL' },
+    p = {
+      function()
+        local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line = vim.api.nvim_get_current_line()
+        local char = line:sub(col + 1, col + 1)
+        vim.cmd('va' .. char .. 'y')
+      end,
+      'PAIR',
+    },
+    P = {
+      function()
+        local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line = vim.api.nvim_get_current_line()
+        local char = line:sub(col + 1, col + 1)
+        vim.cmd('va' .. char .. '"+y')
+      end,
+      'PAIR_CLIPBOARD',
+    },
     v = { 'gvy', 'INIT_SELECT' },
+    V = { 'gv"+y', 'INIT_SELECT_CLIPBOARD' },
   },
   d = {
     name = 'CUT+',
     a = { 'ggVGd', 'ALL' },
-    p = { 'v%d', 'PAIR' },
-    P = { 'v%"+d', 'PAIR_CLIPBOARD' },
+    A = { 'ggVG"+d', 'ALL' },
+    p = {
+      function()
+        local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line = vim.api.nvim_get_current_line()
+        local char = line:sub(col + 1, col + 1)
+        vim.cmd('normal! va' .. char .. 'd')
+      end,
+      'PAIR',
+    },
+    P = {
+      function()
+        local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line = vim.api.nvim_get_current_line()
+        local char = line:sub(col + 1, col + 1)
+        vim.cmd('normal! va' .. char .. '"+d')
+      end,
+      'PAIR_CLIPBOARD',
+    },
     v = { 'gvd', 'INIT_SELECT' },
+    V = { 'gv"+d', 'INIT_SELECT_CLIPBOARD' },
   },
   v = {
     name = 'VISUAL+',
-    a = { 'ggVG', 'ALL' },
-    p = { '%', 'PAIR' },
-    P = { '%', 'PAIR_CLIPBOARD' },
-    v = { 'gv', 'INIT_SELECT' },
+    y = { 'vy', 'COPY' },
+    Y = { 'v"+y', 'COPY' },
+    d = { 'vd', 'CUT' },
+    D = { 'v"+d', 'CUT' },
   },
   ['da'] = { 'ggVGd', 'CUT_ALL' },
   ['<BS>'] = { 'v"_d', 'BACKSPACE' },
@@ -109,3 +145,5 @@ _G.MAP({
   ['<Del>'] = { '"_d', 'DELETE', mode = { 'v' } },
   ['<C-p>'] = { 'd"+P', 'PASTE_CLIPBOARD', mode = { 'v' } },
 }, opts)
+-- unmap v
+-- vim.keymap.del('', 'v')

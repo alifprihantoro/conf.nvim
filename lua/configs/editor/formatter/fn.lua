@@ -1,4 +1,4 @@
-local jsFam = require('plugins.editor.formatter.opts').jsFam
+local jsFam = require('configs.editor.formatter.opts').jsFam
 
 local cekIsFileTypeOnTableJsFam = function(fileType)
   for _, val in pairs(jsFam) do
