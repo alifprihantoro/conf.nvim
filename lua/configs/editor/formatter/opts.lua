@@ -1,10 +1,13 @@
 local M = {}
 M.formatter_list = {
   lua = { 'stylua' },
+  json = { 'jq' },
   fish = { 'fish_indent' },
   sh = { 'shfmt' },
   zsh = { 'shfmt' },
   astro = { 'astro' },
+  markdown = { 'cbfmt', 'prettierd' },
+  ['markdown.mdx'] = { 'cbfmt', 'prettierd' },
 }
 
 local addFormatter = function(listLang, formatter)
@@ -26,7 +29,6 @@ addFormatter({
   'html',
   'css',
   'scss',
-  'markdown',
 }, { 'prettierd' })
 
 return M
