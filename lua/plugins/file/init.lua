@@ -21,4 +21,10 @@ return {
       { "<leader>Sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
     },
   },
+  {
+    'muryp/muryp-file.nvim',
+    config = function()
+      require 'muryp-file.extention'()
+    end,
+  },
 }
