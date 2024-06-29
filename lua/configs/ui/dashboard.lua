@@ -4,15 +4,15 @@ if not status_ok then
 end
 
 local board = {
-  [[  \_________________/  ]],
-  [[ __/__|_________|__\__ ]],
-  [[  /⭕⭕_________⭕⭕\   ]],
-  [[ |__/___GTR-R34___\__| ]],
-  [[ \©©___|_|_|_|_|___©©/ ]],
-  -- [[.-.   .-..-. .-..----..-.  .-..----. ]],
-  -- [[|  `.'  || { } || {}  }\ \/ / | {}  }]],
-  -- [[| |\ /| || {_} || .-. \ }  {  | .--' ]],
-  -- [[`-' ` `-'`-----'`-' `-' `--'  `-'    ]],
+  -- [[  \_________________/  ]],
+  -- [[ __/__|_________|__\__ ]],
+  -- [[  /⭕⭕_________⭕⭕\   ]],
+  -- [[ |__/___GTR-R34___\__| ]],
+  -- [[ \©©___|_|_|_|_|___©©/ ]],
+  [[.-.   .-..-. .-..----..-.  .-..----. ]],
+  [[|  `.'  || { } || {}  }\ \/ / | {}  }]],
+  [[| |\ /| || {_} || .-. \ }  {  | .--' ]],
+  [[`-' ` `-'`-----'`-' `-' `--'  `-'    ]],
 }
 
 local data_exists, custom_dasboard = pcall(require, 'custom.dashboard')
@@ -29,6 +29,7 @@ local dashboard = require 'alpha.themes.dashboard'
 dashboard.section.header.val = board
 dashboard.section.buttons.val = {
   dashboard.button('f', '  Find file', ':Telescope find_files <CR>'),
+  dashboard.button('w', '  NPM WORKSPACE', ':Telescope npm_workspace <CR>'),
   dashboard.button('e', '  Open File Tree', ':Neotree<CR>'),
   dashboard.button('n', '  New file', ':ene <BAR> startinsert <CR>'),
   dashboard.button('p', '  Find project', ':Telescope work_space <CR>'),
