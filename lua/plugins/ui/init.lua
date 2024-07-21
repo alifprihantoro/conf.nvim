@@ -1,7 +1,7 @@
 return {
   {
     'folke/noice.nvim',
-    event = 'BufRead',
+    event = 'CmdlineEnter',
     ---@type NoiceConfig
     opts = {
 
