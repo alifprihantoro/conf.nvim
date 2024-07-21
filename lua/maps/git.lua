@@ -1,133 +1,109 @@
-local IMPORT_GH_MAPS = ":lua require('muryp-gh.api.cmd')"
-local git_api = require 'muryp-git-setup.api'
+local GH_ISSUE = ':GhIssue '
+local git_api = require 'muryp-git.api'
 
 _G.MAP({
   name = '+GIT(VCS)',
   h = {
     name = '+GH_CLI',
     i = {
-      name = 'GH_ISSUE',
+      name = '+GH_ISSUE',
       cf = { ':Telescope gh_issue_cache<CR>', 'LIST_ISSUE_ON_CACHE_FILE' },
       cr = { ':Telescope gh_issue_cache_rg<CR>', 'LIST_ISSUE_ON_CACHE_RG' },
       i = { ':Telescope gh_issue<CR>', 'EDIT_ISSUE' },
-      o = { IMPORT_GH_MAPS .. '.getIssueByNum()<CR>', 'GET_ISSUE_BY_NUM' },
+      o = {
+        name = '+GET_ISSUE_BY_NUM',
+        o = { GH_ISSUE .. 'getByNum true<CR>', 'online' },
+        c = { GH_ISSUE .. 'getByNum false<CR>', 'offline' },
+      },
       a = { ':term gh issue create<CR>', 'ADD_ISSUE' },
-      s = { IMPORT_GH_MAPS .. '.push()<CR>', 'SYNC_LOCAL_TO_GH' },
-      S = { IMPORT_GH_MAPS .. '.update()<CR>', 'SYNC_GH_TO_LOCAL' },
-      e = { IMPORT_GH_MAPS .. '.edit()<CR>', 'EDIT' },
-      d = { IMPORT_GH_MAPS .. '.delete()<CR>', 'DELETE' },
-      p = { IMPORT_GH_MAPS .. '.pin()<CR>', 'pin' },
-      P = { IMPORT_GH_MAPS .. '.unpin()<CR>', 'unpin' },
-      l = { IMPORT_GH_MAPS .. '.lock()<CR>', 'lock' },
-      L = { IMPORT_GH_MAPS .. '.unlock()<CR>', 'unlock' },
-      r = { IMPORT_GH_MAPS .. '.reopen()<CR>', 'reopen' },
-      C = { IMPORT_GH_MAPS .. '.closed()<CR>', 'closed' },
+      s = { GH_ISSUE .. 'push<CR>', 'SYNC_LOCAL_TO_GH' },
+      S = { GH_ISSUE .. 'update<CR>', 'SYNC_GH_TO_LOCAL' },
+      e = { GH_ISSUE .. 'edit<CR>', 'EDIT' },
+      d = { GH_ISSUE .. 'rm<CR>', 'DELETE' },
+      p = { GH_ISSUE .. 'pin<CR>', 'pin' },
+      P = { GH_ISSUE .. 'unpin<CR>', 'unpin' },
+      l = { GH_ISSUE .. 'lock<CR>', 'lock' },
+      L = { GH_ISSUE .. 'unlock<CR>', 'unlock' },
+      r = { GH_ISSUE .. 'reopen<CR>', 'reopen' },
+      C = { GH_ISSUE .. 'closed<CR>', 'closed' },
     },
   },
   g = {
     name = 'GIT',
     b = { ':Telescope git_branches<CR>', 'BRANCH' },
     g = { ':term grb', 'BRANCH' },
-    f = { ':Telescope git_flow<CR>', 'FLOW' },
+    f = {
+      name = 'FLOW',
+      r = {
+        function()
+          git_api.flow { isRebase = true }
+        end,
+        'FLOW_REBASE',
+      },
+      m = {
+        function()
+          git_api.flow { isMerge = true }
+        end,
+        'FLOW_REBASE',
+      },
+    },
     s = { ':Telescope git_status<CR>', 'GIT_STATUS' },
     c = { ':term git commit<CR>', 'COMMIT' },
     a = { ':term git commit --amend<CR>', 'COMMIT_AMEND' },
     v = {
       function()
-        git_api.gitMainCmd {
-          add = true,
-          commit = true,
-        }
+        git_api.commit { isAddAll = true }
       end,
       'ADD_ALL+COMMIT',
     },
     p = {
       name = 'PUSH',
-      p = {
+      a = {
         function()
-          git_api.gitMainCmd {
-            add = true,
-            commit = true,
-            ssh = true,
-            remote_quest = true,
-            pull_quest = true,
-            push = true,
+          git_api.push {
+            isUseSsh = true,
+            isPull = true,
+            isCommit = true,
+            isAddAll = true,
           }
         end,
-        'ADD+COMMIT+SSH+PULL+PUSH',
+        'WITH_ALL',
       },
-      P = {
+      c = {
         function()
-          git_api.gitMainCmd {
-            remote_quest = true,
-            push = true,
+          git_api.push {
+            isUseSsh = true,
+            isCommit = true,
+          }
+        end,
+        'WITH_COMMIT',
+      },
+      p = {
+        function()
+          git_api.push {
+            isUseSsh = true,
           }
         end,
         'PUSH',
       },
-      a = {
+      r = {
         function()
-          vim.cmd(':term ' .. git_api.SSH_CMD() .. ' && git push --all<CR>')
-        end,
-        'PUSH ALL WITH SSH',
-      },
-      A = { ':term git push --all<CR>', 'PUSH ALL' },
-      s = {
-        function()
-          git_api.gitMainCmd {
-            push = true,
-            remote_quest = true,
-            pull_quest = true,
-            ssh = true,
+          git_api.push {
+            isUseSsh = true,
+            isPull = true,
+            isCommit = true,
           }
         end,
-        'SSH+PULL+PUSH',
-      },
-      S = {
-        function()
-          git_api.gitMainCmd {
-            push = true,
-            remote_quest = true,
-            ssh = true,
-          }
-        end,
-        'SSH+PUSH',
+        'WITH_PULL',
       },
     },
     P = {
-      name = 'PULL',
-      A = { ':term git pull --all<CR>', 'PULL ALL' },
-      a = {
-        function()
-          vim.cmd(':term ' .. git_api.SSH_CMD() .. ' && git pull --all<CR>')
-        end,
-        'PULL ALL WITH SSH',
-      },
-      p = {
-        function()
-          git_api.gitMainCmd {
-            remote_quest = true,
-            pull = true,
-          }
-        end,
-        'PULL THIS BRANCH',
-      },
-      P = {
-        function()
-          git_api.gitMainCmd {
-            remote_quest = true,
-            pull = true,
-            ssh = true,
-          }
-        end,
-        'PULL THIS BRANCH WITH SSH',
-      },
-    },
-    o = {
-      name = 'WITH TELESCOPE OPTS',
-      p = { ':Telescope git_push<CR>', 'SSH+PUSH' },
-      v = { ':Telescope git_commit_ssh_push<CR>', 'COMMIT+SSH+PULL+PUSH' },
-      P = { ':Telescope git_pull<CR>', 'PULL' },
+      function()
+        git_api.pull {
+          isUseSsh = true,
+        }
+      end,
+      'PULL',
     },
     d = {
       name = 'DIFF_VIEW',
@@ -147,6 +123,12 @@ _G.MAP({
       b = { ':GitConflictChooseBoth<CR>', 'CHOOSE_BOTH' },
       o = { ':GitConflictChooseOur<CR>', 'CHOOSE_OUR' },
       N = { ':GitConflictChooseNone<CR>', 'CHOOSE_NONE' },
+    },
+    o = {
+      function()
+        git_api.open()
+      end,
+      'OPEN',
     },
   },
 }, { prefix = '<leader>g', noremap = true, mode = 'n', silent = true })
