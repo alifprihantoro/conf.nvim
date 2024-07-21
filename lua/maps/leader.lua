@@ -1,19 +1,12 @@
 local opts = vim.wo
 _G.MAP({
   e = { ':Neotree toggle<CR>', 'File Toggle' },
-  E = { ':Neotree focus %<CR>', 'File FOCUS' },
   i = { '^', 'FIRST_COL', mode = { 'n', 'v' } },
   a = { '$', 'LAST_COL', mode = { 'n', 'v' } },
   r = { ':%s /', 'REPLACE', silent = false },
   u = { '<C-^>', 'TOGGLE_CHANGE_BUF' },
   c = { ':e $MYVIMRC | Cdn<CR>', 'GOTO_NVIM_CONF' },
   q = { ':q<CR>', 'QUIT' },
-  W = {
-    function()
-      vim.cmd 'wa'
-    end,
-    'SAVE_ALL',
-  },
   w = {
     function()
       vim.cmd 'w'
@@ -32,11 +25,6 @@ _G.MAP({
     p = { ':bp<CR>', 'PREV_BUF' },
     n = { ':bn<CR>', 'NEXT_BUF' },
   },
-  D = {
-    name = 'DIR',
-    n = { ':Cdn<CR><CR>', 'DIR_BY_CURRENT_FILE' },
-    g = { ':Cdg<CR><CR>', 'DIR_BY_CURRENT_DOT_GIT' },
-  },
   x = {
     name = '+CUT',
     d = { 'bve"+d', 'LINE' },
@@ -51,7 +39,6 @@ _G.MAP({
     W = { 'viW"+y', 'WORD_SYMBOL' },
     a = { 'ggVG"+y', 'ALL' },
   },
-  L = { ':lua require("lazy").home()<CR>', 'LAZY_HOME' },
   t = {
     name = '+TOGGLE',
     l = { ':LualineToggle<CR>', 'LUALINE' },
@@ -108,13 +95,6 @@ _G.MAP({
     a = { 'ggVG"_d', 'LINE' },
     w = { 'viw"_d', 'WORD' },
     W = { 'viW"_d', 'WORD_SYMBOL' },
-  },
-  I = {
-    name = '+INFO',
-    l = { ':LspInfo<CR>', 'LSP' },
-    w = { ':WhichKey<CR>', 'WICHKEY' },
-    f = { ':ConformInfo<CR>', 'FORMATTER' },
-    p = { ':Lazy<CR>', 'PLUGIN_LAZY' },
   },
 }, { prefix = '<leader>', noremap = true, mode = 'n', silent = true })
 

@@ -24,7 +24,7 @@ return {
   {
     'muryp/muryp-file.nvim',
     config = function()
-      require 'muryp-file.extention'()
+      require('muryp-file').setup()
     end,
   },
 }

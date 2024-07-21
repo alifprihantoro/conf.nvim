@@ -6,6 +6,16 @@ M.sc1 = {
   -- { name = 'snippy' },
   { name = 'nvim_lua' },
   -- { name = 'cmp-tw2css'},
+  {
+    name = 'vim-dadbod-completion',
+    option = {
+      filetypes = {
+        'sql',
+        'mysql',
+        'plsql',
+      },
+    },
+  },
 }
 M.sc2 = {
   { name = 'buffer', priority = 7 },

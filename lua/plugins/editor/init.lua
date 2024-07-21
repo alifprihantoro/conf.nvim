@@ -1,7 +1,6 @@
 return {
   {
     'alifprihantoro/git-setup.nvim',
-    import = 'muryp-git-setup/plugin',
   },
   {
     'echasnovski/mini.pairs',

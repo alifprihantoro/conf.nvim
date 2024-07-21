@@ -26,7 +26,12 @@ _G.MAP({
     h = { ':Telescope help_tags<CR>', 'HELP' },
     C = { ':Telescope command_history<CR>', 'CMD_HISTORY' },
     c = { ':Telescope commands<CR>', 'COMMAND' },
-    w = { ':Telescope npm_workspace<CR>', 'NPM_WORKSPACE' },
+    d = { ':Telescope muryp_cd<CR>', 'CD' },
+    w = {
+      name = '+WORKSPACE',
+      n = { ':Telescope npm_workspace<CR>', 'NPM_WORKSPACE' },
+      b = { ':Telescope muryp_dir_bookmark<CR>', 'BOOKMARK_DIR' },
+    },
     n = { ':Telescope notify<CR>', 'NOTIFY' },
     o = { ':Telescope oldfiles<CR>', 'RECENT_OPEN' },
     s = { ':Telescope symbols<CR>', 'SYMBOL' },

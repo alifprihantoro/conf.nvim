@@ -7,7 +7,7 @@ require('telescope').setup {
   defaults = {
     prompt_prefix = ' ',
     selection_caret = ' ',
-    file_ignore_patterns = { '.git/', '.cache' },
+    file_ignore_patterns = { '%.git/', '.cache' },
     borderchars = {
       { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },

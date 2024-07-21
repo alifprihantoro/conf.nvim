@@ -28,17 +28,17 @@ return {
           ['Z'] = 'expand_all_nodes',
           ['Y'] = 'copy_path_name_txt',
           ['<c-y>'] = 'copy_full_path_txt',
-          ['<c-p>'] = 'print_full_path',
           ['b'] = 'goToParent',
           ['B'] = 'delete_visual',
+          ['O'] = 'open_file',
         },
       },
       nesting_rules = {},
       filesystem = {
         commands = {
-          print_full_path = function(state)
+          open_file = function(state)
             local node = state.tree:get_node()
-            print(node.path)
+            vim.cmd('!xdg-open ' .. node.path)
           end,
           copy_full_path_txt = function(state)
             local node = state.tree:get_node()
