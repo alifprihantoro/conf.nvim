@@ -1,5 +1,6 @@
 local GH_ISSUE = ':GhIssue '
-local git_api = require 'muryp-git.api'
+local GH_PR = ':GhPR '
+local git = require 'muryp-git.api'
 
 _G.MAP({
   name = '+GIT(VCS)',
@@ -27,32 +28,76 @@ _G.MAP({
       r = { GH_ISSUE .. 'reopen<CR>', 'reopen' },
       C = { GH_ISSUE .. 'closed<CR>', 'closed' },
     },
+    p = {
+      name = '+PR',
+      c = {
+        name = '+LIST_CACHE',
+        f = { ':Telescope gh_pr_cache<CR>', 'LIST_ISSUE_ON_CACHE_FILE' },
+        r = { ':Telescope gh_pr_cache_rg<CR>', 'LIST_ISSUE_ON_CACHE_RG' },
+      },
+      i = { ':Telescope gh_pr<CR>', 'EDIT_ISSUE' },
+      o = {
+        name = '+GET_ISSUE_BY_NUM',
+        o = { GH_PR .. 'getByNum true<CR>', 'online' },
+        c = { GH_PR .. 'getByNum false<CR>', 'offline' },
+      },
+      a = { GH_PR .. 'create true<CR>', 'ADD_PR_W_MSG' },
+      A = { GH_PR .. 'create false<CR>', 'ADD_ISSUE_NO_MSG' },
+      s = { GH_PR .. 'push<CR>', 'SYNC_LOCAL_TO_GH' },
+      S = { GH_PR .. 'update<CR>', 'SYNC_GH_TO_LOCAL' },
+      e = { GH_PR .. 'edit<CR>', 'EDIT' },
+      d = { GH_PR .. 'rm<CR>', 'DELETE' },
+      p = { GH_PR .. 'pin<CR>', 'pin' },
+      P = { GH_PR .. 'unpin<CR>', 'unpin' },
+      l = { GH_PR .. 'lock<CR>', 'lock' },
+      L = { GH_PR .. 'unlock<CR>', 'unlock' },
+      r = { GH_PR .. 'reopen<CR>', 'reopen' },
+      C = { GH_PR .. 'closed<CR>', 'closed' },
+    },
   },
   g = {
     name = 'GIT',
     b = { ':Telescope git_branches<CR>', 'BRANCH' },
     g = { ':term grb', 'BRANCH' },
+    u = {
+      function()
+        git.revert1(true)
+      end,
+      'BRANCH',
+    },
+    U = {
+      function()
+        git.revert2(true)
+      end,
+      'BRANCH',
+    },
     f = {
       name = 'FLOW',
       r = {
         function()
-          git_api.flow { isRebase = true }
+          git.flow { isRebase = true }
         end,
         'FLOW_REBASE',
       },
       m = {
         function()
-          git_api.flow { isMerge = true }
+          git.flow { isMerge = true }
         end,
         'FLOW_REBASE',
       },
+    },
+    F = {
+      function()
+        git.browse()
+      end,
+      'FIND_FILE_IN_LOG',
     },
     s = { ':Telescope git_status<CR>', 'GIT_STATUS' },
     c = { ':term git commit<CR>', 'COMMIT' },
     a = { ':term git commit --amend<CR>', 'COMMIT_AMEND' },
     v = {
       function()
-        git_api.commit { isAddAll = true }
+        git.commit { isAddAll = true }
       end,
       'ADD_ALL+COMMIT',
     },
@@ -60,7 +105,7 @@ _G.MAP({
       name = 'PUSH',
       a = {
         function()
-          git_api.push {
+          git.push {
             isUseSsh = true,
             isPull = true,
             isCommit = true,
@@ -71,7 +116,7 @@ _G.MAP({
       },
       c = {
         function()
-          git_api.push {
+          git.push {
             isUseSsh = true,
             isCommit = true,
           }
@@ -80,7 +125,7 @@ _G.MAP({
       },
       p = {
         function()
-          git_api.push {
+          git.push {
             isUseSsh = true,
           }
         end,
@@ -88,7 +133,7 @@ _G.MAP({
       },
       r = {
         function()
-          git_api.push {
+          git.push {
             isUseSsh = true,
             isPull = true,
             isCommit = true,
@@ -99,7 +144,7 @@ _G.MAP({
     },
     P = {
       function()
-        git_api.pull {
+        git.pull {
           isUseSsh = true,
         }
       end,
@@ -126,7 +171,7 @@ _G.MAP({
     },
     o = {
       function()
-        git_api.open()
+        git.open()
       end,
       'OPEN',
     },

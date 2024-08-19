@@ -1,5 +1,11 @@
 return {
   {
+    'muryp/muryp-git.nvim',
+    config = function()
+      require 'muryp-git'
+    end,
+  },
+  {
     'pwntester/octo.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
