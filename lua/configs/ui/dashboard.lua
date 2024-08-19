@@ -27,7 +27,8 @@ end
 
 local dashboard = require 'alpha.themes.dashboard'
 dashboard.section.header.val = board
-dashboard.section.buttons.val = {
+
+local ShortCut = {
   dashboard.button('F', '  Find file', ':Telescope find_files <CR>'),
   dashboard.button('w', '  NPM WORKSPACE', ':Telescope npm_workspace <CR>'),
   dashboard.button('e', '  Open File Tree', ':Neotree<CR>'),
@@ -40,9 +41,23 @@ dashboard.section.buttons.val = {
   dashboard.button('q', '  Quit Neovim', ':qa<CR>'),
   { type = 'padding', val = 1 },
   { type = 'text', val = 'Quick links', opts = { hl = 'SpecialComment', position = 'center' } },
-  dashboard.button('1', '  project', ':e ~/project<CR>'),
-  dashboard.button('2', '  Web', ':e ~/project/web<CR>'),
 }
+-- start quick links
+local getList = vim.fn.system('cat ' .. _G.MURYP_FILE.LIST_PROJECT)
+local ListProject = vim.split(getList, '\n')
+_G.LIST_SOME = {}
+for key, val in pairs(ListProject) do
+  local DIR_NAME = vim.split(val, ' => ')
+  if #DIR_NAME > 1 then
+    -- table.insert(_G.LIST_SOME, { key, NAME, DIR })
+    local NAME = DIR_NAME[1]
+    local DIR = DIR_NAME[2]
+    table.insert(ShortCut, dashboard.button(tostring(key), '  ' .. NAME, ':e ' .. DIR .. '<CR>'))
+  end
+end
+--- end quick links
+
+dashboard.section.buttons.val = ShortCut -- btn shortcut
 
 local function footer()
   return 'Muryp Nvim'
