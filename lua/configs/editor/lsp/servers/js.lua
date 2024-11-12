@@ -43,7 +43,7 @@ local function rename_file()
 end
 
 _G.TS_RENAME_FILE = rename_file
-require('lspconfig').tsserver.setup {
+require('lspconfig').ts_ls.setup {
   commands = {
     RenameFile = {
       rename_file,
@@ -51,7 +51,7 @@ require('lspconfig').tsserver.setup {
     },
   },
 }
-lsp.tsserver.setup {
+lsp.ts_ls.setup {
   commands = {
     RenameFile = {
       rename_file,

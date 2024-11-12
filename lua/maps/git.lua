@@ -54,6 +54,13 @@ _G.MAP({
       r = { GH_PR .. 'reopen<CR>', 'reopen' },
       C = { GH_PR .. 'closed<CR>', 'closed' },
     },
+    m = {
+      name = '+MILESTONE',
+      c = { ':GhMilestone create<CR>', 'CREATE' },
+      l = { ':GhMilestone list<CR>', 'LIST' },
+      d = { ':GhMilestone rm<CR>', 'DELETE' },
+      e = { ':GhMilestone edit<CR>', 'EDIT' },
+    },
   },
   g = {
     name = 'GIT',
