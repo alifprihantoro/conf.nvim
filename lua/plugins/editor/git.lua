@@ -35,8 +35,20 @@ return {
       require('muryp-gh').setup()
     end,
   },
-  -- TODO: fix gitsigns
-  --   'lewis6991/gitsigns.nvim',
+  {
+    'echasnovski/mini.diff',
+    event = 'VeryLazy',
+    opts = {
+      view = {
+        style = 'sign',
+        signs = {
+          add = '',
+          change = '',
+          delete = '󰗨',
+        },
+      },
+    },
+  },
   'nvim-lua/plenary.nvim',
   'sindrets/diffview.nvim',
   'akinsho/git-conflict.nvim',

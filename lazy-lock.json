@@ -23,6 +23,7 @@
   "lspkind.nvim": { "branch": "master", "commit": "a700f1436d4a938b1a1a93c9962dc796afbaef4d" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
+  "mini.diff": { "branch": "main", "commit": "65c59f9967fec965d8759a88c1baa43147699035" },
   "mini.pairs": { "branch": "main", "commit": "7e834c5937d95364cc1740e20d673afe2d034cdb" },
   "muryp-checklist.nvim": { "branch": "main", "commit": "9fa9912696220cbab7406ff6e9c723e80e9de38f" },
   "muryp-file.nvim": { "branch": "master", "commit": "afbb80238bceb5038e3474b47cf9ae8401ff3375" },
