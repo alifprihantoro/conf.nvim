@@ -1,8 +1,5 @@
 return {
   {
-    'alifprihantoro/git-setup.nvim',
-  },
-  {
     'echasnovski/mini.pairs',
     event = 'VeryLazy',
     opts = {

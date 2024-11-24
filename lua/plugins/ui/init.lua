@@ -51,7 +51,7 @@ return {
   },
   {
     'folke/which-key.nvim',
-    keys = { '<leader>', '"', "'", '`', 'c', 'v' },
+    keys = { '<leader>', '"', "'", '`', 'c', 'v', 'f' },
     ---TODO: UPGRADE TO VERSION 2
     version = 'v2',
     config = function()

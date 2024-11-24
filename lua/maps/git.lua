@@ -149,13 +149,55 @@ _G.MAP({
         'WITH_PULL',
       },
     },
+    m = {
+      name = '+MERGE',
+      m = {
+        git.merge,
+        'MERGE',
+      },
+      s = {
+        git.squash,
+        'SQUASH',
+      },
+      r = {
+        git.rebase,
+        'REBASE',
+      },
+    },
     P = {
-      function()
-        git.pull {
-          isUseSsh = true,
-        }
-      end,
-      'PULL',
+      name = 'PULL',
+      P = {
+        function()
+          git.pull {
+            isUseSsh = true,
+          }
+        end,
+        'WITH_SSH',
+      },
+      r = {
+        function()
+          git.pull {
+            isUseSsh = true,
+          }
+        end,
+        'WITH_SSH_REBASE',
+      },
+      s = {
+        function()
+          git.pull {
+            isUseSsh = true,
+          }
+        end,
+        'WITH_SSH_SQUASE',
+      },
+      m = {
+        function()
+          git.pull {
+            isUseSsh = true,
+          }
+        end,
+        'WITH_SSH_merge',
+      },
     },
     d = {
       name = 'DIFF_VIEW',

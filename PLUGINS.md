@@ -6,7 +6,6 @@
 - [muryp-setup-completion.nvim](https://github.com/muryp/muryp-setup-completion.nvim)
 - [muryp-fronmatter.nvim](https://github.com/muryp/muryp-fronmatter.nvim)
 - [muryp-checklist.nvim](https://github.com/muryp/muryp-checklist.nvim)
-- [muryp-git-setup.nvim](https://github.com/muryp/muryp-git-setup.nvim)
 - [muryp-findList.nvim](https://github.com/muryp/muryp-findList.nvim)
 - [nvim-muryp-git](https://github.com/muryp/nvim-muryp-git)
 - [nvim-muryp-md](https://github.com/muryp/nvim-muryp-md)

@@ -1,5 +1,11 @@
 return {
   {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end,
+  },
+  {
     'muryp/muryp-git.nvim',
     config = function()
       require 'muryp-git'
@@ -34,20 +40,6 @@ return {
     config = function()
       require('muryp-gh').setup()
     end,
-  },
-  {
-    'echasnovski/mini.diff',
-    event = 'VeryLazy',
-    opts = {
-      view = {
-        style = 'sign',
-        signs = {
-          add = '',
-          change = '',
-          delete = '󰗨',
-        },
-      },
-    },
   },
   'nvim-lua/plenary.nvim',
   'sindrets/diffview.nvim',
