@@ -3,13 +3,17 @@ local GH_PR = ':GhPR '
 local git = require 'muryp-git.api'
 
 _G.MAP({
+
   name = '+GIT(VCS)',
   h = {
     name = '+GH_CLI',
     i = {
       name = '+GH_ISSUE',
-      cf = { ':Telescope gh_issue_cache<CR>', 'LIST_ISSUE_ON_CACHE_FILE' },
-      cr = { ':Telescope gh_issue_cache_rg<CR>', 'LIST_ISSUE_ON_CACHE_RG' },
+      c = {
+        name = '+CACHE',
+        f = { ':Telescope gh_issue_cache<CR>', 'LIST_ISSUE_ON_CACHE_FILE' },
+        r = { ':Telescope gh_issue_cache_rg<CR>', 'LIST_ISSUE_ON_CACHE_RG' },
+      },
       i = { ':Telescope gh_issue<CR>', 'EDIT_ISSUE' },
       o = {
         name = '+GET_ISSUE_BY_NUM',
@@ -35,7 +39,8 @@ _G.MAP({
         f = { ':Telescope gh_pr_cache<CR>', 'LIST_ISSUE_ON_CACHE_FILE' },
         r = { ':Telescope gh_pr_cache_rg<CR>', 'LIST_ISSUE_ON_CACHE_RG' },
       },
-      i = { ':Telescope gh_pr<CR>', 'EDIT_ISSUE' },
+      m = { GH_PR .. 'merge<CR>', 'MERGE' },
+      i = { ':Telescope gh_pr<CR>', 'LIST_PR' },
       o = {
         name = '+GET_ISSUE_BY_NUM',
         o = { GH_PR .. 'getByNum true<CR>', 'online' },
@@ -45,7 +50,7 @@ _G.MAP({
       A = { GH_PR .. 'create false<CR>', 'ADD_ISSUE_NO_MSG' },
       s = { GH_PR .. 'push<CR>', 'SYNC_LOCAL_TO_GH' },
       S = { GH_PR .. 'update<CR>', 'SYNC_GH_TO_LOCAL' },
-      e = { GH_PR .. 'edit<CR>', 'EDIT' },
+      e = { GH_PR .. 'edit<CR>', 'EDIT_PR' },
       d = { GH_PR .. 'rm<CR>', 'DELETE' },
       p = { GH_PR .. 'pin<CR>', 'pin' },
       P = { GH_PR .. 'unpin<CR>', 'unpin' },
@@ -64,19 +69,26 @@ _G.MAP({
   },
   g = {
     name = 'GIT',
-    b = { ':Telescope git_branches<CR>', 'BRANCH' },
+    b = {
+      name = '+BRANCH',
+      c = { ':Telescope git_branches<CR>', 'CHECKOUT' },
+      a = { git.branch.create, 'CREATE' },
+      r = { git.branch.renameCurr, 'RENAME_CURR' },
+      R = { git.branch.renameList, 'RENAME_LIST' },
+      d = { git.branch.rm, 'REMOVE' },
+    },
     g = { ':term grb', 'BRANCH' },
     u = {
       function()
         git.revert1(true)
       end,
-      'BRANCH',
+      'REVERT1',
     },
     U = {
       function()
         git.revert2(true)
       end,
-      'BRANCH',
+      'REVERT2',
     },
     f = {
       name = 'FLOW',

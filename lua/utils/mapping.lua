@@ -65,8 +65,8 @@ local function normalMap(mappings, opts)
     normalMap(mapping[1], opts2)
   end
 end
----@alias MAPS table<string, data>|{name:string}|optsWK
----Function to do something with a given argument
+---@alias MAPS {[1]:cmd,[2]:description}|{name:string}|optsWK
+---Function to generate mapping from table
 ---@param mappings MAPS
 ---@param opts optsWK
 _G.MAP = function(mappings, opts)
