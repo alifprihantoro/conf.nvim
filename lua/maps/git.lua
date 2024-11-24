@@ -218,11 +218,14 @@ _G.MAP({
       o = { ':GitConflictChooseOur<CR>', 'CHOOSE_OUR' },
       N = { ':GitConflictChooseNone<CR>', 'CHOOSE_NONE' },
     },
-    o = {
-      function()
-        git.open()
-      end,
-      'OPEN',
+    r = {
+      name = '+REMOTE',
+      r = { git.remote.rm, 'REMOVE' },
+      s = { git.remote.show, 'SHOW' },
+      u = { git.remote.urlToSsh, 'URL_TO_SSH' },
+      U = { git.remote.sshToUrl, 'SSH_TO_URL' },
+      n = { git.remote.rename, 'RENAME' },
+      o = { git.remote.open, 'OPEN' },
     },
   },
 }, { prefix = '<leader>g', noremap = true, mode = 'n', silent = true })
