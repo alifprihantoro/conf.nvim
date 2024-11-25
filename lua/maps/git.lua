@@ -101,7 +101,13 @@ _G.MAP({
         function()
           git.flow { isMerge = true }
         end,
-        'FLOW_REBASE',
+        'FLOW_MERGE',
+      },
+      s = {
+        function()
+          git.flow { isSquash = true }
+        end,
+        'FLOW_SQUASH',
       },
     },
     F = {

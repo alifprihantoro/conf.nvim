@@ -30,11 +30,11 @@ _G.MAP({
       end,
       'ADD_BOOKMARK',
     },
-    r = {
+    b = {
       function()
-        require('muryp-file').rmDir()
+        require('muryp-file').gotoBookmark()
       end,
-      'RM_BOOKMARK',
+      'GOTO_BOOKMARK_FILE_CONF',
     },
   },
   l = { ':lua require("lazy").home()<CR>', 'LAZY_HOME' },
