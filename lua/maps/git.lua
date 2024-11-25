@@ -3,7 +3,6 @@ local GH_PR = ':GhPR '
 local git = require 'muryp-git.api'
 
 _G.MAP({
-
   name = '+GIT(VCS)',
   h = {
     name = '+GH_CLI',
@@ -78,18 +77,18 @@ _G.MAP({
       d = { git.branch.rm, 'REMOVE' },
     },
     g = { ':term grb', 'BRANCH' },
-    u = {
-      function()
-        git.revert1(true)
-      end,
-      'REVERT1',
-    },
-    U = {
-      function()
-        git.revert2(true)
-      end,
-      'REVERT2',
-    },
+    -- u = {
+    --   function()
+    --     git.revert1(true)
+    --   end,
+    --   'REVERT1',
+    -- },
+    -- U = {
+    --   function()
+    --     git.revert2(true)
+    --   end,
+    --   'REVERT2',
+    -- },
     f = {
       name = 'FLOW',
       r = {

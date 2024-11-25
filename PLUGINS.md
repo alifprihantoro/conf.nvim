@@ -3,14 +3,12 @@
 - [muryp-gh.nvim](https://github.com/muryp/muryp-gh.nvim)
 - [muryp-link.nvim](https://github.com/muryp/muryp-link.nvim)
 - [nvim-muryp-snippet-collection](https://github.com/muryp/nvim-muryp-snippet-collection)
-- [muryp-setup-completion.nvim](https://github.com/muryp/muryp-setup-completion.nvim)
 - [muryp-fronmatter.nvim](https://github.com/muryp/muryp-fronmatter.nvim)
 - [muryp-checklist.nvim](https://github.com/muryp/muryp-checklist.nvim)
-- [muryp-findList.nvim](https://github.com/muryp/muryp-findList.nvim)
 - [nvim-muryp-git](https://github.com/muryp/nvim-muryp-git)
 - [nvim-muryp-md](https://github.com/muryp/nvim-muryp-md)
-- [nvim-muryp-telescope-bookmark](https://github.com/muryp/nvim-muryp-telescope-bookmark)
-- [nvim-md](https://github.com/muryp/nvim-md)
+- [nvim-muryp-file](https://github.com/muryp/muryp-file.nvim.git)
+- [muryp-md.nvim](https://github.com/muryp/muryp-md.nvim)
 
 ### external plugins
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
