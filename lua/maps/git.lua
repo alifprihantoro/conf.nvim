@@ -39,6 +39,7 @@ _G.MAP({
         r = { ':Telescope gh_pr_cache_rg<CR>', 'LIST_ISSUE_ON_CACHE_RG' },
       },
       m = { GH_PR .. 'merge<CR>', 'MERGE' },
+      M = { GH_PR .. 'currMerge<CR>', 'CURR_MERGE' },
       i = { ':Telescope gh_pr<CR>', 'LIST_PR' },
       o = {
         name = '+GET_ISSUE_BY_NUM',
