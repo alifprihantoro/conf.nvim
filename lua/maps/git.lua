@@ -239,9 +239,10 @@ _G.MAP({
     r = {
       name = '+REMOTE',
       r = { git.remote.rm, 'REMOVE' },
+      a = { git.remote.add, 'ADD' },
       s = { git.remote.show, 'SHOW' },
-      u = { git.remote.urlToSsh, 'URL_TO_SSH' },
-      U = { git.remote.sshToUrl, 'SSH_TO_URL' },
+      u = { git.remote.httpToSsh, 'HTTP_TO_SSH' },
+      U = { git.remote.sshToHttp, 'SSH_TO_HTTP' },
       n = { git.remote.rename, 'RENAME' },
       o = { git.remote.open, 'OPEN' },
     },

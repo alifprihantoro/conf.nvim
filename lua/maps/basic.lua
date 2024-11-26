@@ -62,15 +62,45 @@ _G.MAP({
       'SEARCH_WORD_SYMBOL',
     },
     n = {
-      d = { _G.diagnostic_goto(true), 'NEXT_DIAGNOSTIC' },
-      e = { _G.diagnostic_goto(true, 'ERROR'), 'NEXT_DIAGNOSTIC_ERR' },
-      w = { _G.diagnostic_goto(true, 'WARN'), 'NEXT_DIAGNOSTIC_WARN' },
+      d = {
+        function()
+          _G.diagnostic_goto(true)
+        end,
+        'NEXT_DIAGNOSTIC',
+      },
+      e = {
+        function()
+          _G.diagnostic_goto(true, 'ERROR')
+        end,
+        'NEXT_DIAGNOSTIC_ERR',
+      },
+      w = {
+        function()
+          _G.diagnostic_goto(true, 'WARN')
+        end,
+        'NEXT_DIAGNOSTIC_WARN',
+      },
       i = { ':cnext<CR>', 'LSP_NEXT_REFRENCE' },
     },
     p = {
-      d = { _G.diagnostic_goto(false), 'PREV_DIAGNOSTIC' },
-      e = { _G.diagnostic_goto(false, 'ERROR'), 'PREV_DIAGNOSTIC_ERR' },
-      w = { _G.diagnostic_goto(false, 'WARN'), 'PREV_DIAGNOSTIC_WARN' },
+      d = {
+        function()
+          _G.diagnostic_goto(false)
+        end,
+        'PREV_DIAGNOSTIC',
+      },
+      e = {
+        function()
+          _G.diagnostic_goto(false, 'ERROR')
+        end,
+        'PREV_DIAGNOSTIC_ERR',
+      },
+      w = {
+        function()
+          _G.diagnostic_goto(false, 'WARN')
+        end,
+        'PREV_DIAGNOSTIC_WARN',
+      },
       i = { ':cprevious<CR>', 'LSP_PREV_REFRENCE' },
     },
   },

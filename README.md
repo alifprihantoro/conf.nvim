@@ -14,7 +14,7 @@ mv $HOME/.config/nvim $HOME/.config/nvim.bak
 git clone https://github.com/muryp/nvim-conf-lua --depth=1 $HOME/.config/nvim
 nvim
 ```
-> see install lsp in [here](https://github.com/alifprihantoro/dotconf/blob/master/install/lsp.sh)
+> see install lsp in [here](https://github.com/aliefprihantoro/dotconf/blob/master/install/lsp.sh)
 
 ## Plugin
 see list plugins in [here](./PLUGINS.md)
