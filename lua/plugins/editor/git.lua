@@ -43,5 +43,5 @@ return {
   },
   'nvim-lua/plenary.nvim',
   'sindrets/diffview.nvim',
-  'akinsho/git-conflict.nvim',
+  { 'akinsho/git-conflict.nvim', config = true },
 }

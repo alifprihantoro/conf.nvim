@@ -58,6 +58,5 @@ set.smartcase = true -- Don't ignore case with capitals
 vim.g.markdown_recommended_style = 0
 vim.cmd [[
 autocmd TermOpen * setlocal nonumber norelativenumber
-autocmd TermOpen term://* startinsert
-" syntax highlight
+autocmd TermOpen * startinsert
 ]]
